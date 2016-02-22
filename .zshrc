@@ -1,5 +1,5 @@
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Path to your oh-my-zsh installation.
@@ -89,7 +89,8 @@ export LANG=en_US.UTF-8
 alias ra="ranger"
 alias gita="git add ."
 alias gits="git status"
-alias gitc="git commit -m"
+alias gitcl="git clone"
+alias gitcom="git commit -m"
 alias gitpom="git push origin master"
 alias gitphm="git push heroku master"
 alias suagi="sudo apt-get install"

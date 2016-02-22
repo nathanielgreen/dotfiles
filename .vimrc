@@ -40,12 +40,7 @@ if $COLORTERM == 'gnome-terminal'
   endif
 
 set background=dark
-colorscheme base16-eighties
-
-imap jk <Esc>
-imap kj <Esc>
-vmap jk <Esc>
-vmap kj <Esc>
+colorscheme base16-ocean
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -211,5 +206,28 @@ map <Leader>t:call RunCurrentSpecFile()<CR>
 map <Leader>s:call RunNearestSpecFile()<CR>
 map <Leader>l:call RunLastSpecFile()<CR>
 map <Leader>a:call RunAllSpecFile()<CR>
+
+" Relative Number TOggle
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber 
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+" Clipboard 
+set clipboard=unnamed
+
+function! SetNoPaste()
+  set nopaste
+endfunc
+
+map <Leader>+p :set paste<cr>
+map <Leader>+np :set nopaste<cr>
+
 
 
