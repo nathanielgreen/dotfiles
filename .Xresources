@@ -1,0 +1,11 @@
+URxvt.scrollBar: false
+URxvt.font: xft:monospace:size=12
+URxvt.letterSpace: -1
+URxvt.border: false
+URxvt.internalBorder: 10
+URxvt.borderColor: #2b303b
+
+URxvt.perl-ext-common: default,clipboard
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False

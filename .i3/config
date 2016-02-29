@@ -24,7 +24,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,6 +191,7 @@ gaps outer 20
 # execute programs on startup
 exec_always ~/Documents/startupscripts/foo.sh
 exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
+exec xrdb .Xresources
 
 # audio controls
 

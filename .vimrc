@@ -35,9 +35,6 @@ let g:netrw_liststyle=0
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-  endif
 
 set background=dark
 colorscheme base16-ocean
