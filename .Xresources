@@ -5,7 +5,11 @@ URxvt.border: false
 URxvt.internalBorder: 10
 URxvt.borderColor: #2b303b
 
-URxvt.perl-ext-common: default,clipboard
+URxvt.perl-ext-common: default,clipboard,resize-font
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
