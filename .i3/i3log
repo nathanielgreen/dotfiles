@@ -1,0 +1,22 @@
+05/09/2016 05:05:03 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+05/09/2016 05:05:03 PM - CORE DUMPS: You are running a development version of i3, so coredumps were automatically enabled (ulimit -c unlimited).
+05/09/2016 05:05:03 PM - CORE DUMPS: Your current working directory is "/home/ngreen".
+05/09/2016 05:05:03 PM - CORE DUMPS: Your core_pattern is: "|/run/crw/crw %p %s %u %g %e %h %t %E
+".
+05/09/2016 05:05:03 PM - i3 4.11-404-gfdbe3ce (2015-11-16, branch "gaps") starting
+05/09/2016 05:05:03 PM - Parsing configfile /home/ngreen/.i3/config
+05/09/2016 05:05:03 PM - deciding for version 4 due to this line: # i3 config file (v4)
+05/09/2016 05:05:03 PM - ERROR: You did not specify required configuration option "font"
+05/09/2016 05:05:03 PM - [libi3] libi3/font.c Using X font fixed
+ERROR: Another window manager seems to be running (X error 10)
+05/09/2016 05:05:17 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+05/09/2016 05:05:17 PM - CORE DUMPS: You are running a development version of i3, so coredumps were automatically enabled (ulimit -c unlimited).
+05/09/2016 05:05:17 PM - CORE DUMPS: Your current working directory is "/home/ngreen".
+05/09/2016 05:05:17 PM - CORE DUMPS: Your core_pattern is: "|/run/crw/crw %p %s %u %g %e %h %t %E
+".
+05/09/2016 05:05:17 PM - i3 4.11-404-gfdbe3ce (2015-11-16, branch "gaps") starting
+05/09/2016 05:05:17 PM - Parsing configfile /home/ngreen/.i3/config
+05/09/2016 05:05:17 PM - deciding for version 4 due to this line: # i3 config file (v4)
+05/09/2016 05:05:17 PM - ERROR: You did not specify required configuration option "font"
+05/09/2016 05:05:17 PM - [libi3] libi3/font.c Using X font fixed
+ERROR: Another window manager seems to be running (X error 10)

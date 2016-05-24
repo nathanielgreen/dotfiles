@@ -99,6 +99,8 @@ alias gitphm="git push heroku master"
 alias suagi="sudo apt-get install"
 alias suagr="sudo apt-get remove"
 alias reddit="export BROWSER=w3m && rtv --ascii"
+alias bg="feh -s --bg-fill ~/wallpaper.jpg && clear"
+alias lock="i3lock -i ~/.i3/wallpaper.png"
 
 
 ### Added by the Heroku Toolbelt

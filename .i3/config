@@ -194,7 +194,6 @@ exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
 exec xrdb .Xresources
 
 # audio controls
-
 bindsym $mod+Shift+F10 exec amixer set Master -q 5%+
 bindsym $mod+Shift+F9  exec amixer set Master -q 5%-
 

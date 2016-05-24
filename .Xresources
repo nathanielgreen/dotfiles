@@ -8,7 +8,7 @@ URxvt.borderColor: #2b303b
 URxvt.perl-ext-common: default,clipboard,resize-font
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.iso14755: False
+URxvt.iso14755: false
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up

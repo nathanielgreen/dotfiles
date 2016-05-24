@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mrtazz/simplenote.vim'
+Plugin 'Shougo/vimproc'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -220,3 +221,4 @@ map <Leader>np :set nopaste<cr>
 
 "Simplenote Credentials
 source ~/.simplenoterc
+
