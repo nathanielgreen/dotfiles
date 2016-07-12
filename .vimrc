@@ -217,8 +217,3 @@ endfunc
 
 map <Leader>p :set paste<cr>
 map <Leader>np :set nopaste<cr>
-
-
-"Simplenote Credentials
-source ~/.simplenoterc
-
