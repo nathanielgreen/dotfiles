@@ -87,8 +87,6 @@ PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ra="ranger"
 alias gita="git add ."
 alias gits="git status"
@@ -100,7 +98,7 @@ alias suagi="sudo apt-get install"
 alias suagr="sudo apt-get remove"
 alias reddit="export BROWSER=w3m && rtv --ascii"
 alias bg="feh -s --bg-fill ~/wallpaper.jpg && clear"
-alias lock="i3lock -i ~/.i3/wallpaper.png"
+alias lock="i3lock -i ~/.i3/wallpaper.jpg"
 
 
 ### Added by the Heroku Toolbelt
