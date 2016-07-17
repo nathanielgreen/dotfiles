@@ -1,4 +1,5 @@
 URxvt.scrollBar: false
+!URxvt.font: xft:monospace:size=12
 URxvt.font: xft:monospace:size=12
 URxvt.letterSpace: -1
 URxvt.border: false
@@ -12,4 +13,13 @@ URxvt.iso14755: false
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #2B303B, #2B303B, #1e2529
+rofi.color-normal: #2B303B, #c1c1c1, #2B303B, #4F5B66, #ffffff
+rofi.color-active: #2B303B, #4F5B66, #2B303B, #394249, #80cbc4
+rofi.color-urgent: #2B303B, #ff1844, #2B303B, #394249, #ff1844
 
