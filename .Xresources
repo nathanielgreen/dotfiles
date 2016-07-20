@@ -1,6 +1,7 @@
 URxvt.scrollBar: false
-URxvt.font: xft:monospace:size=12
-URxvt.letterSpace: -1
+URxvt.font: xft:Terminus:pixelsize=16
+URxvt.boldFont: xft:Terminus:bold:pixelsize=16
+URxvt.letterSpace: 0
 URxvt.border: false
 URxvt.internalBorder: 10
 URxvt.borderColor: #2b303b
