@@ -1,6 +1,6 @@
 URxvt.scrollBar: false
-URxvt.font: xft:Terminus:pixelsize=16
-URxvt.boldFont: xft:Terminus:bold:pixelsize=16
+URxvt.font: xft:Terminus:pixelsize=26
+URxvt.boldFont: xft:Terminus:bold:pixelsize=26
 URxvt.letterSpace: 0
 URxvt.border: false
 URxvt.internalBorder: 10
