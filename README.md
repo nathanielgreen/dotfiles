@@ -40,6 +40,9 @@ linux programs I use daily or fun scripts that I've found.
   bindings.
 - [feh](https://feh.finalrewind.org/): X11 image viewer aimed mostly at console
   users.
+- [mpsyt](https://github.com/mps-youtube/mps-youtube): Terminal based
+  Youtube player.
+- [mpv](https://mpv.io/): Open-source cross-platform media player.
 
 
 ## Firefox Extensions
