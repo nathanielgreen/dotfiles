@@ -5,6 +5,7 @@ linux programs I use daily or fun scripts that I've found.
 
 ![screenfetch](screenfetch.png)
 
+
 ## About My Dots
 
 - OS: Ubuntu 14.04
@@ -12,6 +13,7 @@ linux programs I use daily or fun scripts that I've found.
 - WM: i3-gaps
 - Font: Terminus
 - Terminal: urxvt
+
 
 ## Useful Programs
 
@@ -39,9 +41,8 @@ linux programs I use daily or fun scripts that I've found.
 - [feh](https://feh.finalrewind.org/): X11 image viewer aimed mostly at console
   users.
 
-## Firefox Config
 
-Extensions:
+## Firefox Extensions
 
 - Vimperator: Vim-inspired user interface on top of Firefox.
 - RES: Reddit Enhancement Suite.
@@ -53,6 +54,7 @@ Extensions:
 - Custom New Tab: Load any URL for when a new tab is opened.
 - Fireshot: Adds ability to take screenshots of entire web pages.
 - Twily's Powerline Firefox User Style.
+
 
 ## Fun Scripts
 
