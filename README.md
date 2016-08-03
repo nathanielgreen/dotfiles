@@ -61,7 +61,8 @@ linux programs I use daily or fun scripts that I've found.
 - [cmatrix](http://www.asty.org/cmatrix/): Cool scrolling lines from the matrix
   in the terminal.
 - [screenfetch](https://github.com/KittyKatt/screenFetch): Fetches terminal theme information.
-- [3spooky](): Fun 'HACKERS' style ASCII skull in the terminal.
+- [3spooky](https://github.com/nathanielgreen/dotfiles/blob/master/funscripts/3spooky.lua): 
+  Fun 'HACKERS' style ASCII skull in the terminal.
 - [asciiquarium](https://github.com/cmatsuoka/asciiquarium): ASCII Aquarium in
   the terminal.
 
