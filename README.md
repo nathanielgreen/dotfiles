@@ -43,6 +43,9 @@ linux programs I use daily or fun scripts that I've found.
 - [mpsyt](https://github.com/mps-youtube/mps-youtube): Terminal based
   Youtube player.
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
+- [rtv](https://github.com/michael-lazar/rtv): Browse reddit from your terminal.
+- [rainbowstream](http://www.rainbowstream.org/): an interactive twitter client
+  in the terminal.
 
 
 ## Firefox Extensions
