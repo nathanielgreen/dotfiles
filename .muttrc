@@ -64,4 +64,12 @@ color index     yellow default  '~N'
 color index     brightred       default '~F'    # Flagged Messages are important!
 color index     blue default    '~D'            # Deleted Mails - use dark color as these are already "dealt with"
 # }}}
+
+# Clickeable Links
+# CTRL+b to enter w3m and then type : and <ENTER> for clickable links 
 macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+
+# Scroll in Emails w/ Arrow Keys
+bind pager <up> previous-line #scroll inside the message rather than the index
+bind pager <down> next-line
+

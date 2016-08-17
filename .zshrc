@@ -89,7 +89,6 @@ PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ra="ranger"
 alias gita="git add . && gits"
 alias gits="git status"
 alias gitcl="git clone"
@@ -102,8 +101,6 @@ alias suagp="sudo apt-get purge"
 alias reddit="export BROWSER=w3m && rtv --ascii"
 alias bg="feh -s --bg-fill ~/wallpaper.jpg && clear"
 alias lock="i3lock -i ~/.i3/wallpaper.png"
-alias pics="cd /media/removeable/SD\ Card/"
-alias mess="messengerfordesktop --force-device-scale-factor=2 & disown"
 alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
 
 
@@ -111,4 +108,3 @@ alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
