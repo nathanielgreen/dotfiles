@@ -46,6 +46,8 @@ linux programs I use daily or fun scripts that I've found.
 - [rtv](https://github.com/michael-lazar/rtv): Browse reddit from your terminal.
 - [rainbowstream](http://www.rainbowstream.org/): an interactive twitter client
   in the terminal.
+- [mutt](http://www.mutt.org/): A small but very powerful text-based 
+  e-mail client for Unix.
 
 
 ## Firefox Extensions
@@ -59,6 +61,7 @@ linux programs I use daily or fun scripts that I've found.
 - Markdown Viewer: Markdown document viewer.
 - Custom New Tab: Load any URL for when a new tab is opened.
 - Fireshot: Adds ability to take screenshots of entire web pages.
+- AutoHiDPI: Set pixel ratio for Firefox on different tabs, windows and screens.
 - Twily's Powerline Firefox User Style.
 
 
