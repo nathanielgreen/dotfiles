@@ -5,7 +5,6 @@ folder-hook 'account.com.gmail.GMAILUSERNAME' 'source ~/.mutt/account.com.gmail.
 source ~/.mutt/account.com.gmail.GMAILUSERNAME
 
 # Macros for switching accounts
-
 macro index <F10> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.GMAILUSERNAME<enter><change-folder>!<enter>'
 
 # Set default text editor
@@ -65,6 +64,10 @@ color index     brightred       default '~F'    # Flagged Messages are important
 color index     blue default    '~D'            # Deleted Mails - use dark color as these are already "dealt with"
 # }}}
 
+
+
+#-------- Helpful Tweaks -------#
+
 # Clickeable Links
 # CTRL+b to enter w3m and then type : and <ENTER> for clickable links 
 macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
@@ -73,3 +76,8 @@ macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; 
 bind pager <up> previous-line #scroll inside the message rather than the index
 bind pager <down> next-line
 
+# Speed up mutt
+set sleep_time = 0
+
+# Smart wrapping for long emails
+set smart_wrap

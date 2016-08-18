@@ -89,6 +89,7 @@ PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ra="ranger"
 alias gita="git add . && gits"
 alias gits="git status"
 alias gitcl="git clone"

@@ -15,6 +15,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mrtazz/simplenote.vim'
 Plugin 'Shougo/vimproc'
+Plugin 'pangoloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -215,5 +217,9 @@ function! SetNoPaste()
   set nopaste
 endfunc
 
+" Better Pasting
 map <Leader>p :set paste<cr>
 map <Leader>np :set nopaste<cr>
+
+" JSX Syntax Highlighting
+let g:jsx_ext_required = 0
