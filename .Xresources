@@ -18,9 +18,11 @@ URxvt.resize-font.bigger: C-Up
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
 rofi.color-enabled: true
-rofi.color-window: #2B303B, #2B303B, #1e2529
-rofi.color-normal: #2B303B, #c1c1c1, #2B303B, #4F5B66, #ffffff
-rofi.color-active: #2B303B, #4F5B66, #2B303B, #394249, #80cbc4
-rofi.color-urgent: #2B303B, #ff1844, #2B303B, #394249, #ff1844
+rofi.color-window: #181818, #181818, #b0b0b0
+rofi.color-normal: #181818, #c1c1c1, #181818, #282828, #ffffff
+rofi.color-active: #181818, #b0b0b0, #181818, #394249, #7e7e7e
+rofi.color-urgent: #181818, #b0b0b0, #181818, #394249, #ff1844
 
