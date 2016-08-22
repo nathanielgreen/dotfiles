@@ -4,12 +4,13 @@ URxvt.boldFont: xft:Terminus:bold:pixelsize=22
 URxvt.letterSpace: 0
 URxvt.border: false
 URxvt.internalBorder: 10
-URxvt.borderColor: #2b303b
+URxvt.borderColor: #181818
 
 URxvt.perl-ext-common: default,clipboard,resize-font
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: false
+URxvt.imLocale: en_US.UTF-8
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up

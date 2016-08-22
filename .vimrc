@@ -31,7 +31,7 @@ let g:netrw_liststyle=0
 let base16colorspace=256  " Access colors present in 256 colorspace
 
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-default
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup

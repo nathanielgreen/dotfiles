@@ -1,5 +1,5 @@
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Path to your oh-my-zsh installation.
@@ -101,7 +101,7 @@ alias suagr="sudo apt-get remove"
 alias suagp="sudo apt-get purge"
 alias reddit="export BROWSER=w3m && rtv --ascii"
 alias bg="feh -s --bg-fill ~/wallpaper.jpg && clear"
-alias lock="i3lock -i ~/.i3/wallpaper.png"
+alias lock="i3lock -i ~/wallpaper3.png"
 alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
 
 

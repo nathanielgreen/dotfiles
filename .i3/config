@@ -156,8 +156,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $COLOR0 #2B303B
-set $COLOR1 #4F5B66
+set $COLOR0 #181818
+set $COLOR1 #b0b0b0
 set $COLOR2 #ffffff
 set $COLOR3 #7e7e7e
 
@@ -172,7 +172,7 @@ bar {
     statusline #dddddd
     separator #666666
 #                      border  bg      text
-    focused_workspace  $COLOR1 $COLOR1 #ffffff
+    focused_workspace  $COLOR0 $COLOR0 #ffffff
     active_workspace   $COLOR0 $COLOR0 #7e7e7e
     inactive_workspace $COLOR0 $COLOR0 #7e7e7e
   }
@@ -188,16 +188,16 @@ bar {
 bindsym $mod+n bar mode toggle
 
 # Layout colors              bord      bg        text      indicator (split)
- client.focused              $COLOR1   $COLOR1   $COLOR2   $COLOR1
- client.focused_inactive     $COLOR0   $COLOR0   $COLOR3   $COLOR0
- client.unfocused            $COLOR0   $COLOR0   $COLOR3   $COLOR0
+ client.focused              $COLOR3   $COLOR2   $COLOR2   $COLOR1
+ client.focused_inactive     $COLOR0   $COLOR3   $COLOR3   $COLOR0
+ client.unfocused            $COLOR3   $COLOR3   $COLOR3   $COLOR0
  client.urgent               $COLOR0   $COLOR0   $COLOR0   $COLOR0
  client.background           $COLOR0 
 
 # borders + gaps
 new_window pixel 0
-for_window [class="^.*"] border pixel 8
-gaps inner 18
+for_window [class="^.*"] border pixel 1
+gaps inner 16
 gaps outer 0
 
 # execute programs on startup
