@@ -48,6 +48,8 @@ linux programs I use daily or fun scripts that I've found.
   in the terminal.
 - [mutt](http://www.mutt.org/): A small but very powerful text-based 
   e-mail client for Unix.
+- [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
+  interface for testing internet bandwith speed using speedtest.net.
 
 
 ## Firefox Extensions
