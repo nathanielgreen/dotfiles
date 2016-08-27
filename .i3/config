@@ -189,8 +189,8 @@ bindsym $mod+n bar mode toggle
 
 # Layout colors              bord      bg        text      indicator (split)
  client.focused              $COLOR3   $COLOR2   $COLOR2   $COLOR1
- client.focused_inactive     $COLOR0   $COLOR3   $COLOR3   $COLOR0
- client.unfocused            $COLOR3   $COLOR3   $COLOR3   $COLOR0
+ client.focused_inactive     $COLOR0   $COLOR0   $COLOR3   $COLOR0
+ client.unfocused            $COLOR3   $COLOR0   $COLOR3   $COLOR0
  client.urgent               $COLOR0   $COLOR0   $COLOR0   $COLOR0
  client.background           $COLOR0 
 
