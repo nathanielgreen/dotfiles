@@ -167,8 +167,8 @@ set $COLOR4 #90a959
 # finds out, if available)
 bar {
   font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-  font pango:Terminus 20px
-  status_command i3status
+  font pango:RobotoMono-Regular 18px
+  status_command i3blocks
   colors {
     background $COLOR0
     statusline #dddddd
@@ -190,9 +190,9 @@ bar {
 bindsym $mod+n bar mode toggle
 
 # Layout colors              bord      bg        text      indicator (split)
- client.focused              $COLOR2   $COLOR2   $COLOR0   $COLOR0
- client.focused_inactive     $COLOR3   $COLOR3   $COLOR0   $COLOR0
- client.unfocused            $COLOR3   $COLOR3   $COLOR0   $COLOR0
+ client.focused              $COLOR2   $COLOR2   $COLOR0   $COLOR2
+ client.focused_inactive     $COLOR3   $COLOR3   $COLOR0   $COLOR3
+ client.unfocused            $COLOR3   $COLOR3   $COLOR0   $COLOR3
  client.urgent               $COLOR0   $COLOR0   $COLOR0   $COLOR0
  client.background           $COLOR0 
 
