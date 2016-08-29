@@ -50,6 +50,8 @@ linux programs I use daily or fun scripts that I've found.
   e-mail client for Unix.
 - [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
   interface for testing internet bandwith speed using speedtest.net.
+- [sconsify](https://github.com/fabiofalci/sconsify): Spotify console applicaton
+  (note: early stages).
 
 
 ## Firefox Extensions
