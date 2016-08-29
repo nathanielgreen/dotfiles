@@ -143,11 +143,12 @@ mode "resize" {
         bindsym k resize shrink height 2 px or 2 ppt
         bindsym l resize grow width 2 px or 2 ppt
 
+
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 2 px or 2 ppt
-        bindsym Down resize grow height 2 px or 2 ppt
-        bindsym Up resize shrink height 2 px or 2 ppt
-        bindsym Right resize grow width 2 px or 2 ppt
+        bindsym Left resize shrink width 20 px or 20 ppt
+        bindsym Down resize grow height 20 px or 20 ppt
+        bindsym Up resize shrink height 20 px or 20 ppt
+        bindsym Right resize grow width 20 px or 20 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -160,14 +161,14 @@ set $COLOR0 #181818
 set $COLOR1 #b0b0b0
 set $COLOR2 #ffffff
 set $COLOR3 #7e7e7e
-set $COLOR4 #000000
+set $COLOR4 #90a959
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
   font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
   font pango:Terminus 20px
-  status_command i3blocks
+  status_command i3status
   colors {
     background $COLOR0
     statusline #dddddd
@@ -189,9 +190,9 @@ bar {
 bindsym $mod+n bar mode toggle
 
 # Layout colors              bord      bg        text      indicator (split)
- client.focused              $COLOR0   $COLOR2   $COLOR2   $COLOR1
- client.focused_inactive     $COLOR0   $COLOR0   $COLOR3   $COLOR0
- client.unfocused            $COLOR3   $COLOR0   $COLOR3   $COLOR0
+ client.focused              $COLOR2   $COLOR2   $COLOR0   $COLOR0
+ client.focused_inactive     $COLOR3   $COLOR3   $COLOR0   $COLOR0
+ client.unfocused            $COLOR3   $COLOR3   $COLOR0   $COLOR0
  client.urgent               $COLOR0   $COLOR0   $COLOR0   $COLOR0
  client.background           $COLOR0 
 
