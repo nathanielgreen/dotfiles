@@ -100,9 +100,9 @@ alias suagi="sudo apt-get install"
 alias suagr="sudo apt-get remove"
 alias suagp="sudo apt-get purge"
 alias reddit="export BROWSER=w3m && rtv --ascii"
-alias bg="feh -s --bg-fill ~/wallpaper.jpg && clear"
-alias lock="i3lock -i ~/wallpaper3.png"
+alias lock="~/Documents/rice/lock.sh"
 alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
+alias music="~/Documents/rice/sconsify"
 
 
 ### Added by the Heroku Toolbelt
