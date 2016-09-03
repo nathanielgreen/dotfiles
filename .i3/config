@@ -158,9 +158,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $COLOR0 #181818
-set $COLOR1 #b0b0b0
+set $COLOR1 #747369
 set $COLOR2 #ffffff
-set $COLOR3 #7e7e7e
+set $COLOR3 #515151
 set $COLOR4 #90a959
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -174,7 +174,7 @@ bar {
     statusline #dddddd
     separator #666666
 #                      border  bg      text
-    focused_workspace  $COLOR0 $COLOR0 #ffffff
+    focused_workspace  $COLOR0 $COLOR0 $COLOR2
     active_workspace   $COLOR0 $COLOR0 #7e7e7e
     inactive_workspace $COLOR0 $COLOR0 #7e7e7e
   }
@@ -198,12 +198,12 @@ bindsym $mod+n bar mode toggle
 
 # borders + gaps
 new_window pixel 0
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 16
 gaps outer 0
 
 # execute programs on startup
-exec_always ~/Documents/startupscripts/foo.sh
+exec_always ~/Documents/rice/startupscripts/foo.sh
 #exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
 exec compton
 exec xrdb .Xresources
@@ -213,3 +213,6 @@ exec xrandr --dpi 144
 bindsym $mod+Shift+F10 exec amixer set Master -q 5%+
 bindsym $mod+Shift+F9  exec amixer set Master -q 5%-
 
+bindsym $mod+Shift+F6  exec brightness down
+bindsym $mod+Shift+F7 exec brightness up
+bindsym $mod+Shift+p exec ~/Documents/rice/lock.sh
