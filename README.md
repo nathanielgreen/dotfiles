@@ -84,4 +84,5 @@ Command Line Interface:
 - [cmatrix](http://www.asty.org/cmatrix/): Cool scrolling lines from the matrix
   in the terminal.
 - [screenfetch](https://github.com/KittyKatt/screenFetch): Fetches terminal theme information.
-
+- [lock.sh](https://github.com/nathanielgreen/dotfiles/blob/master/funscripts/lock.sh): 
+  An i3lock that pixelates the screen and places a lock icon in the center.
