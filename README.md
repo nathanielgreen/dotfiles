@@ -8,12 +8,15 @@ linux programs I use daily or fun scripts that I've found.
 
 ## About My Dots
 
-- OS: Ubuntu 14.04
+- Operating System: Ubuntu 14.04
+- Window Manager: i3-gaps
 - Shell: zsh 5.0.2
-- WM: i3-gaps
+- Terminal: urxvt
+- Text Editor: Vim
 - Font: Roboto Mono
 - Colors: Base16-Default
-- Terminal: urxvt
+
+
 
 
 ## Useful Programs
@@ -38,6 +41,8 @@ Graphical Interface:
 
 Command Line Interface:
 
+- [alasamixer](https://wiki.ubuntu.com/Audio/Alsamixer): A command-line
+  graphical volume mixer program for controlling PulseAudio ALSA-level volume.
 - [cmus](https://cmus.github.io/#home): A CLI-based music player for UNIX.
 - [feh](https://feh.finalrewind.org/): X11 image viewer aimed mostly at console
   users.
