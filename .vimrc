@@ -9,11 +9,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'mrtazz/simplenote.vim'
 Plugin 'Shougo/vimproc'
 Plugin 'pangoloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -192,11 +190,6 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-"RSpec.vim mappings
-map <Leader>t:call RunCurrentSpecFile()<CR>
-map <Leader>s:call RunNearestSpecFile()<CR>
-map <Leader>l:call RunLastSpecFile()<CR>
-map <Leader>a:call RunAllSpecFile()<CR>
 
 " Relative Number TOggle
 function! NumberToggle()
