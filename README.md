@@ -43,6 +43,8 @@ Command Line Interface:
 
 - [alasamixer](https://wiki.ubuntu.com/Audio/Alsamixer): A command-line
   graphical volume mixer program for controlling PulseAudio ALSA-level volume.
+- [cava](https://github.com/karlstav/cava): Console-based Audio Visualizer for
+  ALSA.
 - [cmus](https://cmus.github.io/#home): A CLI-based music player for UNIX.
 - [feh](https://feh.finalrewind.org/): X11 image viewer aimed mostly at console
   users.
