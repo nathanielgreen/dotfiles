@@ -103,9 +103,12 @@ alias reddit="export BROWSER=w3m && rtv --ascii"
 alias lock="~/Documents/rice/lock.sh"
 alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
 alias music="~/Documents/rice/sconsify"
+alias ruby="rvm all do ruby"
+alias bundle="rvm all do bundle"
 
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export GEM_HOME=/Library/Ruby/Gems/2.1.0
