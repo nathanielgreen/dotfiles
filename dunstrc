@@ -1,5 +1,5 @@
 [global]
-    font = "Roboto Mono"
+    font = "RobotoMono-Regular"
     allow_markup = yes
     format = "<b>%a</b>\n%b"
     sort = yes
@@ -17,8 +17,8 @@
     sticky_history = yes
     line_height = 0
     separator_height = 2
-    padding = 16
-    horizontal_padding = 10
+    padding = 30
+    horizontal_padding = 0
     separator_color = "#585858"
     startup_notification = true
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
