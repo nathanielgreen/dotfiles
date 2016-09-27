@@ -100,11 +100,10 @@ alias suagi="sudo apt-get install"
 alias suagr="sudo apt-get remove"
 alias suagp="sudo apt-get purge"
 alias reddit="export BROWSER=w3m && rtv --ascii"
-alias lock="~/Documents/rice/lock.sh"
-alias skull="lua ~/Documents/rice/funscripts/3spooky.lua"
-alias music="~/Documents/rice/sconsify"
+alias lock="~/Documents/dotfiles/scripts/lock.sh"
+alias skull="lua ~/Documents/dotfiles/scripts/3spooky.lua"
+alias music="~/Documents/programs/sconsify"
 alias ruby="rvm all do ruby"
-alias bundle="rvm all do bundle"
 
 
 ### Added by the Heroku Toolbelt
