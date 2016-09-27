@@ -204,7 +204,7 @@ gaps inner 16
 gaps outer 0
 
 # execute programs on startup
-exec_always ~/Documents/rice/startupscripts/foo.sh
+exec_always ~/Documents/dotfiles/scripts/startupconfig.sh
 #exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
 exec compton
 exec xrdb .Xresources
@@ -216,4 +216,4 @@ bindsym $mod+Shift+F9  exec amixer set Master -q 5%-
 
 bindsym $mod+Shift+F6  exec brightness down
 bindsym $mod+Shift+F7 exec brightness up
-bindsym $mod+Shift+p exec ~/Documents/rice/lock.sh
+bindsym $mod+Shift+p exec ~/Documents/dotfiles/scripts/lock.sh
