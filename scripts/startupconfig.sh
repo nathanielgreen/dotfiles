@@ -1,5 +1,9 @@
+# Laptop
 setxkbmap -layout gb
-#xrandr --newmode "1920x1275_60.00"  206.55  1920 2056 2264 2608  1275 1276 1279 1320  -HSync +Vsync
-#xrandr --addmode eDP1 1920x1275_60.00    
-#xrandr -s 1920x1275_60.00
 feh -s --bg-fill ~/wallpaper2.jpg
+
+# Desktop
+#setxkbmap -layout gb
+#feh -s --no-xinerama --bg-center ~/Pictures/Firefox_wallpaper.png
+#xrandr --output DP-1.2.1 --mode 1920x1080 --left-of DP-1.1
+#xrandr --output DVI-D-0 --mode 1920x1080 --right-of DP-1.1
