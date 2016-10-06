@@ -18,7 +18,6 @@ linux programs I use daily or fun scripts that I've found.
 
 
 
-
 ## Useful Programs
 
 Graphical Interface:
@@ -54,19 +53,20 @@ Command Line Interface:
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
 - [mutt](http://www.mutt.org/): A small but very powerful text-based 
   e-mail client for Unix.
-- [rainbowstream](http://www.rainbowstream.org/): an interactive twitter client
+- [rainbowstream](http://www.rainbowstream.org/): An interactive twitter client
   in the terminal.
 - [ranger](http://ranger.nongnu.org/): Console file manager with VI key
   bindings.
 - [rofi](https://davedavenport.github.io/rofi/): A window switcher, run dialog
-  and demenu replacement.
+  and dmenu replacement.
 - [rtv](https://github.com/michael-lazar/rtv): Browse reddit from your terminal.
-- [sconsify](https://github.com/fabiofalci/sconsify): Spotify console applicaton
-  (note: early stages).
+- [sconsify](https://github.com/fabiofalci/sconsify): Spotify console
+  applicaton.
 - [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
   interface for testing internet bandwith speed using speedtest.net.
 - [wavemon](https://github.com/uoaerg/wavemon): A CLI-based wireless device 
   monitoring application.
+
 
 
 ## Firefox Extensions
@@ -84,14 +84,16 @@ Command Line Interface:
 - Twily's Powerline Firefox User Style.
 
 
+
 ## Fun Scripts
 
 - [3spooky](https://github.com/nathanielgreen/dotfiles/blob/master/funscripts/3spooky.lua): 
   Fun 'HACKERS' style ASCII skull in the terminal.
-- [asciiquarium](https://github.com/cmatsuoka/asciiquarium): ASCII Aquarium in
+- [asciiquarium](https://github.com/cmatsuoka/asciiquarium): An ASCII Aquarium in
   the terminal.
 - [cmatrix](http://www.asty.org/cmatrix/): Cool scrolling lines from the matrix
   in the terminal.
-- [screenfetch](https://github.com/KittyKatt/screenFetch): Fetches terminal theme information.
+- [neofetch](https://github.com/dylanaraps/neofetch): A fast, highly customizable 
+  system info script.
 - [lock.sh](https://github.com/nathanielgreen/dotfiles/blob/master/funscripts/lock.sh): 
   An i3lock that pixelates the screen and places a lock icon in the center.
