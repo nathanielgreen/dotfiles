@@ -109,5 +109,13 @@ alias ruby="rvm all do ruby"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# RVM and Linux Ruby
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GEM_HOME=/Library/Ruby/Gems/2.1.0
+
+# Android SDK Tools
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# CTRL-s disable
+stty -ixon

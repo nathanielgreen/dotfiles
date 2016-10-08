@@ -216,3 +216,6 @@ map <Leader>np :set nopaste<cr>
 
 " JSX Syntax Highlighting
 let g:jsx_ext_required = 0
+
+" Folding
+set foldmethod=marker
