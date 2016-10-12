@@ -1,0 +1,28 @@
+URxvt.scrollBar: false
+URxvt.font: xft:RobotoMono-Regular:pixelsize=16
+URxvt.boldFont: xft:RobotoMono-Regular:bold:pixelsize=16
+URxvt.letterSpace: 0
+URxvt.border: false
+URxvt.internalBorder: 10
+URxvt.borderColor: #181818
+
+URxvt.perl-ext-common: default,clipboard,resize-font
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.imLocale: en_US.UTF-8
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-enabled: true
+rofi.color-window: #181818, #181818, #b0b0b0
+rofi.color-normal: #181818, #c1c1c1, #181818, #282828, #ffffff
+rofi.color-active: #181818, #b0b0b0, #181818, #394249, #7e7e7e
+rofi.color-urgent: #181818, #b0b0b0, #181818, #394249, #ff1844
+
