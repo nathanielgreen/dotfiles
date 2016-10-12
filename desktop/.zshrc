@@ -1,9 +1,8 @@
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/ngreen/.oh-my-zsh
+  export ZSH=/home/nathanielgreen/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -63,7 +62,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 # PROMPT
 PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
@@ -103,7 +102,6 @@ alias reddit="export BROWSER=w3m && rtv --ascii"
 alias lock="~/Documents/dotfiles/scripts/lock.sh"
 alias skull="lua ~/Documents/dotfiles/scripts/3spooky.lua"
 alias music="~/Documents/programs/sconsify"
-alias ruby="rvm all do ruby"
 
 
 ### Added by the Heroku Toolbelt
@@ -119,3 +117,4 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # CTRL-s disable
 stty -ixon
+

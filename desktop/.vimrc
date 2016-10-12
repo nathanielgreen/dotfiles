@@ -13,7 +13,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/vimproc'
-Plugin 'pangoloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
@@ -29,7 +28,12 @@ let g:netrw_liststyle=0
 let base16colorspace=256  " Access colors present in 256 colorspace
 
 set background=dark
-colorscheme base16-default
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+colorscheme base16-default-dark
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup

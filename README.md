@@ -54,6 +54,8 @@ Command Line Interface:
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
 - [mutt](http://www.mutt.org/): A small but very powerful text-based 
   e-mail client for Unix.
+- [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer): CLI and curses 
+  mixer for pulseaudio.
 - [rainbowstream](http://www.rainbowstream.org/): An interactive twitter client
   in the terminal.
 - [ranger](http://ranger.nongnu.org/): Console file manager with VI key

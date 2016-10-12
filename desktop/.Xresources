@@ -1,6 +1,6 @@
 URxvt.scrollBar: false
-URxvt.font: xft:RobotoMono-Regular:pixelsize=20
-URxvt.boldFont: xft:RobotoMono-Regular:bold:pixelsize=20
+URxvt.font: xft:RobotoMono-Regular:pixelsize=16
+URxvt.boldFont: xft:RobotoMono-Regular:bold:pixelsize=16
 URxvt.letterSpace: 0
 URxvt.border: false
 URxvt.internalBorder: 10
