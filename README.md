@@ -8,7 +8,7 @@ linux programs I use daily or fun scripts that I've found.
 
 ## About My Dots
 
-- Operating System: Debian 8.6 (jessie)
+- Operating System: Ubuntu 16.04.1 LTS
 - Window Manager: i3-gaps
 - Shell: zsh 5.0.2
 - Terminal: rxvt-unicode
@@ -16,6 +16,7 @@ linux programs I use daily or fun scripts that I've found.
 - Font: Roboto Mono
 - Theme: Arc-Darker
 - Colors: Base16-Default
+- Laptop: Lenovo Thinkpad X260
 
 
 
