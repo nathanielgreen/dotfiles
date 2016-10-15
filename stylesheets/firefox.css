@@ -21,8 +21,8 @@
     --bg-light: #282828; --bg-dark: #181818;
     --fg-light: #ffffff; --fg-dark: #b0b0b0;
     --tab-triangle-correction: -1px;
-    --tab-height: 20px; --tab-icon-size: 12px; --tab-strip-margin: -12px; --tab-overlap: -5px;
-    --tab-fonts: "Lemon",monospace,"Dejavu Sans"; --tab-font-size: 8pt;
+    --tab-height: 22px; --tab-icon-size: 12px; --tab-strip-margin: -12px; --tab-overlap: -5px;
+    --tab-fonts: "Lemon",monospace,"Dejavu Sans"; --tab-font-size: 10pt;
     --tab-text-align: center; /* left | center | right */
     --tab-triangle: block;  /* block | none */
 
@@ -340,4 +340,5 @@ tabbrowser tabpanels, #appcontent > #content { background: var(--bg-light) !impo
     input, textarea { color: #282333 !important; -moz-appearance: none !important; }
 }
 /**/
+
 
