@@ -17,6 +17,11 @@ linux programs I use daily or fun scripts that I've found.
 - Theme: Arc-Darker
 - Colors: Base16-Default
 - Laptop: Lenovo Thinkpad X260
+  - Intel Core i5-6200U 
+  - 8GB DDR4 RAM 
+  - 128GB SSD
+  - 1920x1080 12.5" IPS Display,
+  - 2x 3 Cell Li-Ion Battery 23.2WH
 
 
 
@@ -38,7 +43,6 @@ Graphical Interface:
   slack client for linux.
 - [Thunderbird](https://www.mozilla.org/en-GB/thunderbird/): Free email client
   by Mozilla.
-- [Whatsie](https://whatsie.chat/): Cross-platform desktop client for WhatsApp Web.
 
 Command Line Interface:
 
