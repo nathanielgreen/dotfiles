@@ -195,12 +195,14 @@ exec_always sh ~/Documents/dotfiles/laptop/scripts/startupconfig.sh
 #exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
 exec compton
 exec xrdb .Xresources
-#exec xrandr --dpi 144
+
+# brightness controls
+bindsym Shift+F5 exec xbacklight -10
+bindsym Shift+F6 exec xbacklight +10
 
 # audio controls
-bindsym $mod+Shift+F2 exec amixer set Master -q 5%+
-bindsym $mod+Shift+F3  exec amixer set Master -q 5%-
+bindsym Shift+F2 exec amixer set Master -q 5%-
+bindsym Shift+F3 exec amixer set Master -q 5%+
 
-bindsym $mod+Shift+F5  exec brightness down
-bindsym $mod+Shift+F6 exec brightness up
+# i3lock
 bindsym $mod+Shift+p exec ~/Documents/dotfiles/laptop/scripts/lock.sh
