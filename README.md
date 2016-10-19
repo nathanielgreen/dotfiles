@@ -70,6 +70,8 @@ Command Line Interface:
 - [rtv](https://github.com/michael-lazar/rtv): Browse reddit from your terminal.
 - [sconsify](https://github.com/fabiofalci/sconsify): Spotify console
   applicaton.
+- [screenkey](https://github.com/wavexx/screenkey): A screencast tool to display
+  your pressed keyboard keys.
 - [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
   interface for testing internet bandwith speed using speedtest.net.
 - [wavemon](https://github.com/uoaerg/wavemon): A CLI-based wireless device 
