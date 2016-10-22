@@ -197,8 +197,8 @@ exec compton
 exec xrdb .Xresources
 
 # brightness controls
-bindsym Shift+F5 exec xbacklight -10
-bindsym Shift+F6 exec xbacklight +10
+bindsym Shift+F5 exec xbacklight -5
+bindsym Shift+F6 exec xbacklight +5
 
 # audio controls
 bindsym Shift+F2 exec amixer set Master -q 5%-
