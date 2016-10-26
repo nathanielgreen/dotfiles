@@ -1,5 +1,5 @@
 [global]
-    font = "RobotoMono-Regular"
+    font = "RobotoMono-Regular" 10
     allow_markup = yes
     format = "<b>%a</b>\n%b"
     sort = yes
@@ -9,7 +9,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "400x10-40+80"
+    geometry = "400x10-20+50"
     transparency = 0
     idle_threshold = 120
     monitor = 0
@@ -17,7 +17,7 @@
     sticky_history = yes
     line_height = 0
     separator_height = 2
-    padding = 30
+    padding = 20
     horizontal_padding = 0
     separator_color = "#585858"
     startup_notification = true
