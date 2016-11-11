@@ -37,14 +37,13 @@ TEXT
 # JSON for i3bar
 
  [
-  { "full_text" : "down: ${downspeed wlan0}", "color" : "\#ffffff" },
-  { "full_text" : "up: ${upspeed wlan0}", "color" : "\#ffffff" },
+  { "full_text" : "down: ${downspeed wlan3}", "color" : "\#ffffff" },
+  { "full_text" : "up: ${upspeed wlan3}", "color" : "\#ffffff" },
   { "full_text" : "cpu: ${cpu}%", "color" : "\#ffffff" },
-  { "full_text" : "battery: ${battery_percent BAT0}%", "color" : "\#ffffff" },
   { "full_text" : "mem: ${mem}" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "storage: ${fs_free /home}" , "color" : "\#ffffff" },
-  { "full_text" : "wifi: ${wireless_essid wlan0}", "color" : "\#ffffff" },
+  { "full_text" : "wifi: ${wireless_essid wlan3}", "color" : "\#ffffff" },
   { "full_text" : "${time %A %d-%m-%Y %H:%M}", "color" : "\#ffffff" }
 ],
 
