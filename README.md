@@ -41,8 +41,10 @@ Graphical Interface:
   control for PulseAudio.
 - [ScudCloud](https://github.com/raelgc/scudcloud): An open-source
   slack client for linux.
+- [Spotify](https://www.spotify.com/uk/): Native client for spotify.
 - [Thunderbird](https://www.mozilla.org/en-GB/thunderbird/): Free email client
   by Mozilla.
+
 
 Command Line Interface:
 
