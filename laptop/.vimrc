@@ -14,6 +14,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/vimproc'
 Plugin 'mxw/vim-jsx'
+Plugin 'groenewege/vim-less'
+Plugin 'chrisbra/Colorizer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -33,7 +35,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-colorscheme base16-default-dark
+colorscheme base16-solarized-dark
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -101,18 +103,6 @@ set expandtab
 " Display extra whitespace
 set nolist
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
@@ -136,9 +126,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
@@ -150,11 +137,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
@@ -223,3 +205,6 @@ let g:jsx_ext_required = 0
 
 " Folding
 set foldmethod=marker
+
+" Colorizer Toggle
+map <Leader>co :ColorToggle<cr>
