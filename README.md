@@ -39,13 +39,15 @@ Graphical Interface:
   desktop client for Facebook Messenger.
 - [Pavucontrol](https://apps.ubuntu.com/cat/applications/pavucontrol/): Volume
   control for PulseAudio.
+- [PIA](https://www.privateinternetaccess.com/): VPN service offered by
+  privateinternetaccess. 
 - [ScudCloud](https://github.com/raelgc/scudcloud): An open-source
   slack client for linux.
+- [Seafile](https://seafile.net/accounts/login/): Encrypted Cloud Storage System
+  which also allows you to host your own server.
 - [Spotify](https://www.spotify.com/uk/): Native client for spotify.
 - [Thunderbird](https://www.mozilla.org/en-GB/thunderbird/): Free email client
   by Mozilla.
-- [Seafile](https://seafile.net/accounts/login/): Encrypted Cloud Storage System
-  which also allows you to host your own server.
 
 
 Command Line Interface:
@@ -63,6 +65,9 @@ Command Line Interface:
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
 - [mutt](http://www.mutt.org/): A small but very powerful text-based 
   e-mail client for Unix.
+- [openvpn](https://openvpn.net/index.php/open-source.html): Open-source 
+  software application that implements virtual private
+  network techniques.
 - [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer): CLI and curses 
   mixer for pulseaudio.
 - [rainbowstream](http://www.rainbowstream.org/): An interactive twitter client
