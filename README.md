@@ -44,6 +44,8 @@ Graphical Interface:
 - [Spotify](https://www.spotify.com/uk/): Native client for spotify.
 - [Thunderbird](https://www.mozilla.org/en-GB/thunderbird/): Free email client
   by Mozilla.
+- [Seafile](https://seafile.net/accounts/login/): Encrypted Cloud Storage System
+  which also allows you to host your own server.
 
 
 Command Line Interface:
@@ -80,6 +82,8 @@ Command Line Interface:
   interface for testing internet bandwith speed using speedtest.net.
 - [wavemon](https://github.com/uoaerg/wavemon): A CLI-based wireless device 
   monitoring application.
+- [seafile-cli](https://seacloud.cc/group/3/wiki/seafile-cli-manual): Encrypted 
+  Cloud Storage System which also allows you to host your own server.
 
 
 
