@@ -60,6 +60,8 @@ Command Line Interface:
 - [feh](https://feh.finalrewind.org/): X11 image viewer aimed mostly at console
   users.
 - [htop](http://hisham.hm/htop/): Interactive process viewer for UNIX.
+- [masterpassword](https://ssl.masterpasswordapp.com/): Cross-platform password
+  generator that uses no cloud storage or vault.
 - [mpsyt](https://github.com/mps-youtube/mps-youtube): Terminal based
   Youtube player.
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
