@@ -107,6 +107,9 @@ Command Line Interface:
 - Fireshot: Adds ability to take screenshots of entire web pages.
 - AutoHiDPI: Set pixel ratio for Firefox on different tabs, windows and screens.
 - Twily's Powerline Firefox User Style.
+- [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/):
+  Automatically removes cookies when they are no longer used by open browser
+  tabs.
 
 
 
