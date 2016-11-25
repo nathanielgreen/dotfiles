@@ -110,6 +110,9 @@ Command Line Interface:
 - [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/):
   Automatically removes cookies when they are no longer used by open browser
   tabs.
+- [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/):
+  A privacy enhancing firefox addon which aims to hinder browser fingerprinting.
+  It does this by changing the browser/device profile on a timer. 
 
 
 
