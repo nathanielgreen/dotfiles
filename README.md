@@ -113,6 +113,9 @@ Command Line Interface:
 - [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/):
   A privacy enhancing firefox addon which aims to hinder browser fingerprinting.
   It does this by changing the browser/device profile on a timer. 
+- [HTTPS Everywhere](https://www.eff.org/https-everywhere): A Firefox, Chrome,
+  and Opera extension that encrypts your communications with many major
+  websites, making your browsing more secure. 
 
 
 
