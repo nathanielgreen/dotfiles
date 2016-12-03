@@ -40,8 +40,8 @@ TEXT
   { "full_text" : "down: ${downspeed wlp4s0}", "color" : "\#ffffff" },
   { "full_text" : "up: ${upspeed wlp4s0}", "color" : "\#ffffff" },
   { "full_text" : "cpu: ${cpu}%", "color" : "\#ffffff" },
-  { "full_text" : "battery1: ${battery_percent BAT0}%", "color" : "\#ffffff" },
-  { "full_text" : "battery2: ${battery_percent BAT1}%", "color" : "\#ffffff" },
+  { "full_text" : "bat1: ${battery_percent BAT0}%", "color" : "\#ffffff" },
+  { "full_text" : "bat2: ${battery_percent BAT1}%", "color" : "\#ffffff" },
   { "full_text" : "mem: ${mem}" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "storage: ${fs_free /home}" , "color" : "\#ffffff" },

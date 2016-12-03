@@ -35,7 +35,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-colorscheme base16-solarized-dark
+colorscheme base16-default-dark
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup

@@ -6,7 +6,7 @@ URxvt.border: false
 URxvt.internalBorder: 10
 URxvt.borderColor: #181818
 
-URxvt.perl-ext-common: default,clipboard,resize-font
+URxvt.perl-ext-common: default,resize-font
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: false
@@ -25,4 +25,3 @@ rofi.color-window: #181818, #181818, #b0b0b0
 rofi.color-normal: #181818, #c1c1c1, #181818, #282828, #ffffff
 rofi.color-active: #181818, #b0b0b0, #181818, #394249, #7e7e7e
 rofi.color-urgent: #181818, #b0b0b0, #181818, #394249, #ff1844
-
