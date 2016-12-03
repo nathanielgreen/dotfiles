@@ -70,6 +70,8 @@ Command Line Interface:
 - [openvpn](https://openvpn.net/index.php/open-source.html): Open-source 
   software application that implements virtual private
   network techniques.
+- [polybar](https://github.com/jaagr/polybar): A fast and easy-to-use WM status
+  bar.
 - [pulsemixer](https://github.com/GeorgeFilipkin/pulsemixer): CLI and curses 
   mixer for pulseaudio.
 - [rainbowstream](http://www.rainbowstream.org/): An interactive twitter client
