@@ -1,2 +1,3 @@
 setxkbmap -layout gb -option caps:super
-feh -s --bg-center ~/Documents/dotfiles/wallpapers/blackempty.png
+wal -i ~/Documents/dotfiles/wallpapers/darklight.png
+~/Documents/dotfiles/laptop/scripts/wal-set
