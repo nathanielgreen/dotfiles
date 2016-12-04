@@ -67,6 +67,8 @@ Command Line Interface:
 - [mpv](https://mpv.io/): Open-source cross-platform media player.
 - [mutt](http://www.mutt.org/): A small but very powerful text-based 
   e-mail client for Unix.
+- [nmtui](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Networking_Config_Using_nmtui.html): 
+  A text user interface network configuration tool.
 - [openvpn](https://openvpn.net/index.php/open-source.html): Open-source 
   software application that implements virtual private
   network techniques.
