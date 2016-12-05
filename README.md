@@ -91,6 +91,8 @@ Command Line Interface:
   that multiplexes a physical terminal between several processes.
 - [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
   interface for testing internet bandwith speed using speedtest.net.
+- [wal](https://github.com/dylanaraps/wal): Generate and change colorschemes
+  based off your wallpaper on the fly.
 - [wavemon](https://github.com/uoaerg/wavemon): A CLI-based wireless device 
   monitoring application.
 - [seafile-cli](https://seacloud.cc/group/3/wiki/seafile-cli-manual): Encrypted 
