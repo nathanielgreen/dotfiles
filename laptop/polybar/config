@@ -31,7 +31,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 overline-size = 0
-overline-color = #f00
+overline-color = #ffffff
 underline-size = 0
 underline-color = #00f
 

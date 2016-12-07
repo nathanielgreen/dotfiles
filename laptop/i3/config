@@ -176,9 +176,10 @@ set_from_resource $bg i3wm.color2
 
 set $COLOR0 #2c3238
 set $COLOR1 #7e62b3
+set $COLOR2 #FDF4C1
 
 # Layout colors              bord  bg    text  indicator (split)
- client.focused              $COLOR1   $COLOR1   $COLOR1   $COLOR1
+ client.focused              $COLOR1   $COLOR1   $COLOR2   $COLOR1
  client.focused_inactive     $COLOR0   $COLOR0   $COLOR1   $COLOR0
  client.unfocused            $COLOR0   $COLOR0   $COLOR1   $COLOR0
  client.urgent               $COLOR0   $COLOR0   $COLOR1   $COLOR0
@@ -186,9 +187,9 @@ set $COLOR1 #7e62b3
 
 # borders + gaps
 new_window pixel 0
-for_window [class="^.*"] border pixel 2
-gaps inner 12
-gaps outer 16
+for_window [class="^.*"] border pixel 1
+gaps inner 0
+gaps outer 0
 
 # execute programs on startup
 exec_always sh ~/Documents/dotfiles/laptop/scripts/startupconfig.sh

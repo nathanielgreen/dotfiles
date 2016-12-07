@@ -19,7 +19,7 @@
     separator_height = 2
     padding = 14
     horizontal_padding = 0
-    separator_color = "#E5CF99"
+    separator_color = "#7e62b3"
     startup_notification = true
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
     #icon_position = left
@@ -27,7 +27,7 @@
 
 [frame]
     width = 2
-    color = #E5CF99
+    color = #7e62b3
 
 [shortcuts]
     close = ctrl+space
@@ -36,13 +36,13 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#00171F"
-    foreground = "#666666"
+    background = "#07090d"
+    foreground = "#9e9ecb"
     timeout = 3
 
 [urgency_normal]
-    background = "#00171F"
-    foreground = "#E5CF99"
+    background = "#07090d"
+    foreground = "#9e9ecb"
     timeout = 5
 
 [urgency_critical]
