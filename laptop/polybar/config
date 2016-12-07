@@ -8,22 +8,21 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
+background = #020508
+background-alt = #2c3238
+foreground = #9e9ecb
 foreground-alt = #55
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 10
+margin-bottom = 10
 
-[bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/Bar]
 width = 100%
-height = 26
+height = 28
 offset-x = 0
 offset-y = 0
 
@@ -31,12 +30,12 @@ offset-y = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 2
+overline-size = 0
 overline-color = #f00
-underline-size = 2
+underline-size = 0
 underline-color = #00f
 
-border-bottom = 2
+border-bottom = 0
 border-bottom-color = #333
 
 spacing = 1
@@ -49,9 +48,9 @@ font-0 = fixed:pixelsize=16;0
 font-1 = unifont:size=6:heavy:fontformat=truetype;-2
 font-2 = siji:pixelsize=10;0
 
-modules-left = bspwm i3 xwindow
+modules-left = bspwm i3 
 modules-center = 
-modules-right = backlight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = backlight memory cpu wlan battery battery2 temperature date
 
 tray-position = right
 tray-padding = 2
@@ -173,7 +172,9 @@ toggle-off-foreground = #66
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+format-prefix = "backlight: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = 
 
 bar-width = 10
 bar-indicator = │
@@ -181,7 +182,7 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #fffff
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -189,17 +190,17 @@ bar-empty-foreground = ${colors.foreground-alt}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU: "
+format-prefix = "cpu: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ffffff
+format-underline = #555D5E
 label = %percentage%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "mem: "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #ffffff
 label = %percentage_used%
 
 [module/wlan]
@@ -207,6 +208,7 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
+format-prefix = "wifi: "
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 format-disconnected-underline = ${self.format-connected-underline}
@@ -240,7 +242,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date =
+date = "%d-%m-%Y "
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -307,6 +309,34 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
 
 [module/temperature]
 type = internal/temperature

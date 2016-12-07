@@ -16,6 +16,7 @@ Plugin 'Shougo/vimproc'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'chrisbra/Colorizer'
+Plugin 'dylanaraps/wal'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -24,6 +25,7 @@ filetype plugin indent on    " required
 
 " Leader
 let mapleader = ","
+
 
 let g:netrw_liststyle=0
 
@@ -35,7 +37,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-colorscheme base16-default-dark
+colorscheme base16-darktooth
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup

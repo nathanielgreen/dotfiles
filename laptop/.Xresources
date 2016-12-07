@@ -4,7 +4,7 @@ URxvt.boldFont: xft:RobotoMono-Regular:bold:pixelsize=16
 URxvt.letterSpace: 0
 URxvt.border: false
 URxvt.internalBorder: 10
-URxvt.borderColor: #181818
+URxvt.borderColor: #07090d
 
 URxvt.perl-ext-common: default,resize-font
 
