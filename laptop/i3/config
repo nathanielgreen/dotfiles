@@ -194,8 +194,8 @@ gaps outer 0
 # execute programs on startup
 exec_always sh ~/Documents/dotfiles/laptop/scripts/startupconfig.sh
 exec_always --no-startup-id ~/Documents/dotfiles/laptop/polybar/launch.sh
-exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
-#exec compton
+#exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c'
+exec compton
 exec xrdb .Xresources
 #exec nm-applet
 #exec sh ~/Documents/programs/pia/pia.sh
