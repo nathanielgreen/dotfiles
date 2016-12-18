@@ -116,4 +116,3 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # CTRL-s disable
 stty -ixon
-

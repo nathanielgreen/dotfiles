@@ -6,9 +6,10 @@ URxvt.border: false
 URxvt.internalBorder: 10
 URxvt.borderColor: #07090d
 
-URxvt.perl-ext-common: default,resize-font
+URxvt.perl-ext-common: default,resize-font,selection-to-clipboard,pasta
 
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Control-Shift-V    : perl:pasta:paste
+
 URxvt.iso14755: false
 URxvt.imLocale: en_US.UTF-8
 
