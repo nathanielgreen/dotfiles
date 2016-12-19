@@ -1,10 +1,12 @@
 URxvt.scrollBar: false
-URxvt.font: xft:RobotoMono-Regular:pixelsize=16
-URxvt.boldFont: xft:RobotoMono-Regular:bold:pixelsize=16
+URxvt.font: xft:Terminus:pixelsize=16
+URxvt.boldFont: xft:Terminus:bold:pixelsize=16
+!URxvt.font: xft:RobotoMono-Regular:pixelsize=16
+!URxvt.boldFont: xft:RobotoMono-Bold:pixelsize=16
 URxvt.letterSpace: 0
 URxvt.border: false
-URxvt.internalBorder: 10
-URxvt.borderColor: #07090d
+URxvt.internalBorder: 24
+URxvt.borderColor: #322b26
 
 URxvt.perl-ext-common: default,resize-font,selection-to-clipboard,pasta
 
@@ -22,7 +24,31 @@ URxvt.resize-font.bigger: C-Up
 
 ! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
 rofi.color-enabled: true
-rofi.color-window: #07090d, #07090d, #9E9ECB
-rofi.color-normal: #07090d, #9E9ECB, #07090d, #2C3238, #FDF4C1
-rofi.color-active: #07090d, #b0b0b0, #07090d, #394249, #7e7e7e
-rofi.color-urgent: #07090d, #b0b0b0, #07090d, #394249, #ff1844
+rofi.color-window: #322b26, #322b26, #c8b49d
+rofi.color-normal: #322b26, #c8b49d, #322b26, #bd6151, #332c27
+rofi.color-active: #322b26, #b0b0b0, #322b26, #394249, #7e7e7e
+rofi.color-urgent: #322b26, #b0b0b0, #322b26, #394249, #ff1844
+rofi.font: Terminus 12
+
+#include </home/ngreen/Documents/programs/crayolo/colors/harbing>
+
+! Colors  
+*background:   bg  
+*foreground:   fg  
+*color0:      blk  
+*color8:      bblk  
+*color1:      red  
+*color9:      bred  
+*color2:      grn  
+*color10:     bgrn  
+*color3:      ylw  
+*color11:     bylw  
+*color4:      blu  
+*color12:     bblu  
+*color5:      mag  
+*color13:     bmag  
+*color6:      cyn  
+*color14:     bcyn  
+*color7:      wht  
+*color15:     bwht  
+

@@ -1,7 +1,3 @@
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-
 # Path to your oh-my-zsh installation.
   export ZSH=/home/ngreen/.oh-my-zsh
 
@@ -116,3 +112,5 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # CTRL-s disable
 stty -ixon
+
+

@@ -10,13 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/vimproc'
-Plugin 'mxw/vim-jsx'
-Plugin 'groenewege/vim-less'
 Plugin 'chrisbra/Colorizer'
-Plugin 'dylanaraps/wal'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -26,18 +22,12 @@ filetype plugin indent on    " required
 " Leader
 let mapleader = ","
 
-
-let g:netrw_liststyle=0
-
-let base16colorspace=256  " Access colors present in 256 colorspace
-
+syntax enable
 set background=dark
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+set t_Co=16
 
-colorscheme base16-darktooth
+" Explorer Tree Style
+let g:netrw_liststyle=0
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -128,12 +118,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
-
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -179,7 +163,7 @@ endif
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" Relative Number TOggle
+" Relative Number Toggle
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
@@ -188,7 +172,6 @@ function! NumberToggle()
     set relativenumber 
   endif
 endfunc
-
 nnoremap <C-n> :call NumberToggle()<cr>
 
 " Clipboard 
@@ -202,11 +185,16 @@ endfunc
 map <Leader>p :set paste<cr>
 map <Leader>np :set nopaste<cr>
 
-" JSX Syntax Highlighting
-let g:jsx_ext_required = 0
-
 " Folding
 set foldmethod=marker
 
 " Colorizer Toggle
 map <Leader>co :ColorToggle<cr>
+
+" Airline Theme
+let g:airline_theme='raven'
+
+" Number Colors
+highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight ColorColumn ctermbg=black
+highlight Comment ctermfg=darkgrey

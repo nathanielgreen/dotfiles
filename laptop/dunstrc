@@ -1,5 +1,5 @@
 [global]
-    font = "RobotoMono-Regular" 10
+    font = Terminus 12
     allow_markup = yes
     format = "<b>%a</b>\n%b"
     sort = yes
@@ -19,15 +19,15 @@
     separator_height = 2
     padding = 14
     horizontal_padding = 0
-    separator_color = "#7e62b3"
+    separator_color = "#bd6151"
     startup_notification = true
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
     #icon_position = left
     #icon_folders = /usr/share/icons/elementary/actions/16/
 
 [frame]
-    width = 2
-    color = #7e62b3
+    width = 5
+    color = #bd6151
 
 [shortcuts]
     close = ctrl+space
@@ -36,13 +36,13 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#07090d"
-    foreground = "#9e9ecb"
+    background = "#322b26"
+    foreground = "#c8b49d"
     timeout = 3
 
 [urgency_normal]
-    background = "#07090d"
-    foreground = "#9e9ecb"
+    background = "#322b26"
+    foreground = "#c8b49d"
     timeout = 5
 
 [urgency_critical]
