@@ -13,9 +13,9 @@ linux programs I use daily or fun scripts that I've found.
 - Shell: zsh 5.0.2
 - Terminal: rxvt-unicode
 - Text Editor: Vim
-- Font: Roboto Mono
+- Font: Terminus
 - Theme: Arc-Darker
-- Colors: Base16-Default
+- Colors: Custom (See .Xresources)
 - Laptop: Lenovo Thinkpad X260
   - Intel Core i5-6200U 
   - 8GB DDR4 RAM 
