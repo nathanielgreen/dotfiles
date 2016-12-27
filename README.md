@@ -10,6 +10,7 @@ linux programs I use daily or fun scripts that I've found.
 
 - Operating System: Ubuntu 16.04.1 LTS
 - Window Manager: i3-gaps
+  - Bar: Polybar
 - Shell: zsh 5.0.2
 - Terminal: rxvt-unicode
 - Text Editor: Vim
