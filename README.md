@@ -8,22 +8,37 @@ linux programs I use daily or fun scripts that I've found.
 
 ## About My Dots
 
+### ThinkPad X260
 - Operating System: Ubuntu 16.04.1 LTS
 - Window Manager: i3-gaps
   - Bar: Polybar
 - Shell: zsh 5.0.2
 - Terminal: rxvt-unicode
-- Text Editor: Vim
+- Text Editor: vim
 - Font: Terminus
 - Theme: Arc-Darker
 - Colors: Custom (See .Xresources)
-- Laptop: Lenovo Thinkpad X260
+- Specs: -
   - Intel Core i5-6200U 
   - 8GB DDR4 RAM 
   - 128GB SSD
   - 1920x1080 12.5" IPS Display,
   - 2x 3 Cell Li-Ion Battery 23.2WH
 
+### Macbook Pro (Retina, 15-inch, Mid 2015
+- Operating System: macOS Sierra v10.12
+- Window Manager: Spectacle
+- Shell: zsh 5.2
+- Terminal iTerm2
+- Text Edtior: vim
+- Font:
+- Colors: base16-ocean
+- Specs: -
+  - Intel Core i7 2.2GHz
+  - 16 GB 1600MHz DDR3 RAM
+  - 256GB SSD
+  - 2880x1800 15.4" Display
+  - Intel Iris Pro 1536MB Graphics
 
 
 ## Useful Programs
