@@ -18,6 +18,7 @@ Plugin 'tianon/vim-docker'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'junegunn/fzf'
+Plugin 'colepeters/spacemacs-theme.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -213,6 +214,9 @@ let g:netrw_winsize = 25
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 
-" vimgrep dir ignores
+" vimgrep file ignores
 set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
 
+" Newline without insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
