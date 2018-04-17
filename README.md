@@ -99,22 +99,15 @@ Command Line Interface:
 
 ## Firefox Extensions
 
-- Vimperator: Vim-inspired user interface on top of Firefox.
+- [Vim Vixen](https://addons.mozilla.org/en-GB/firefox/addon/vim-vixen/): An
+  add-on which allows you to navigate with vim-like bindings.
+- [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
 - RES: Reddit Enhancement Suite.
-- Stylish: A firefox user styles manager.
-- Tile Tabs: Tiles browser tabs horizontally or vertically in a grid.
-- React Devtools: React debugging tools for Firefox.
 - Pin/Unpin Tab: Provides shortcuts to quickly pin/unpin tabs.
-- Markdown Viewer: Markdown document viewer.
-- Custom New Tab: Load any URL for when a new tab is opened.
-- Fireshot: Adds ability to take screenshots of entire web pages.
-- AutoHiDPI: Set pixel ratio for Firefox on different tabs, windows and screens.
-- Twily's Powerline Firefox User Style.
-- [Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/):
+- [Cookie
+  AutoDelete](https://addons.mozilla.org/en-GB/firefox/addon/cookie-autodelete/):
   Automatically removes cookies when they are no longer used by open browser
   tabs.
-- [Random Agent Spoofer](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/):
-  A privacy enhancing firefox addon which aims to hinder browser fingerprinting.
   It does this by changing the browser/device profile on a timer. 
 - [HTTPS Everywhere](https://www.eff.org/https-everywhere): A Firefox, Chrome,
   and Opera extension that encrypts your communications with many major
