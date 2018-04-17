@@ -1,37 +1,47 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Vundle Start
+set nocompatible
+filetype off
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'jparise/vim-graphql'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/vimproc'
 Plugin 'chrisbra/Colorizer'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'gisphm/vim-gitignore'
+Plugin 'tpope/vim-vinegar'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'junegunn/fzf'
+Plugin 'chriskempson/base16-vim'
+Plugin 'posva/vim-vue'
+Plugin 'kristijanhusak/vim-carbon-now-sh'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Put your non-Plugin stuff after this line
+call vundle#end()
+filetype plugin indent on
+" Vundle End
 
 " Leader
 let mapleader = ","
 
 syntax enable
 set background=dark
-set t_Co=16
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " Explorer Tree Style
 let g:netrw_liststyle=0
 
 set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
+set nobackup      " No autocreation of backup files
+set nowritebackup " No autocreation of backup files
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set ruler         " show the cursor position all the time
@@ -73,7 +83,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
   " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
+  "autocmd FileType markdown setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
@@ -124,9 +134,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -139,19 +146,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {"regex": "possibly useless use of a variable in void context"}
-
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-"set spellfile=$HOME/.vim-spell-en.utf-8.add
-
-" Autocomplete with dictionary words when spell check is on
-"set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
@@ -169,12 +163,12 @@ function! NumberToggle()
     set norelativenumber
     set number
   else
-    set relativenumber 
+    set relativenumber
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
-" Clipboard 
+" Clipboard
 set clipboard=unnamed
 
 function! SetNoPaste()
@@ -196,5 +190,23 @@ let g:airline_theme='raven'
 
 " Number Colors
 highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight ColorColumn ctermbg=black
+highlight ColorColumn ctermbg=darkgrey
 highlight Comment ctermfg=darkgrey
+hi MatchParen cterm=none ctermbg=grey ctermfg=black
+
+" netrw settings
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+" vim-markdown remap
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
+
+" vimgrep file ignores
+set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
+
+" Newline without insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>

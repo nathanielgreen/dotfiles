@@ -1,3 +1,6 @@
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # Path to your oh-my-zsh installation.
   export ZSH=/home/ngreen/.oh-my-zsh
 
@@ -97,6 +100,11 @@ alias suagr="sudo apt-get remove"
 alias suagp="sudo apt-get purge"
 alias reddit="export BROWSER=w3m && rtv --ascii"
 alias 3spooky="lua5.3 ~/Documents/dotfiles/desktop/scripts/3spooky.lua"
+alias connectmonitor="sh ~/Documents/dotfiles/laptop/scripts/connectmonitor.sh"
+alias mux="tmuxinator"
+alias ngrok="~/Documents/programs/ngrok/ngrok"
+alias snotes="~/Documents/programs/standardnotes/standardnotes"
+alias hacktheplanet="xxd < /dev/urandom"
 
 
 ### Added by the Heroku Toolbelt
@@ -114,3 +122,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 stty -ixon
 
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
