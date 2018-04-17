@@ -25,12 +25,13 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Shift+Return exec sh ~/shell.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -show-icons -sidebar-mode
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -174,22 +175,25 @@ bindsym $mod+n bar mode toggle
 set_from_resource $fg i3wm.color7 
 set_from_resource $bg i3wm.color2 
 
-set $COLOR0 #322b26
-set $COLOR1 #bd6151
-set $COLOR2 #FDF4C1
+set $COLOR0 #090300 
+# focused red
+set $COLOR1 #FB543F
+set $COLOR2 #000
+# unfocused grey
+set $COLOR3 #333333
 
 # Layout colors              bord      bg        text      indicator (split)
  client.focused              $COLOR1   $COLOR1   $COLOR2   $COLOR1
- client.focused_inactive     $COLOR0   $COLOR0   $COLOR1   $COLOR0
- client.unfocused            $COLOR0   $COLOR0   $COLOR1   $COLOR0
+ client.focused_inactive     $COLOR3   $COLOR3   $COLOR1   $COLOR0
+ client.unfocused            $COLOR3   $COLOR3   $COLOR1   $COLOR0
  client.urgent               $COLOR0   $COLOR0   $COLOR1   $COLOR0
  client.background           $COLOR0 
 
 # borders + gaps
 new_window pixel 0
-for_window [class="^.*"] border pixel 5
-gaps inner 8
-gaps outer 10
+for_window [class="^.*"] border pixel 3
+gaps inner 4
+gaps outer 6
 
 # execute programs on startup
 exec_always sh ~/Documents/dotfiles/laptop/scripts/startupconfig.sh
@@ -198,7 +202,7 @@ exec_always --no-startup-id ~/Documents/dotfiles/laptop/polybar/launch.sh
 exec compton
 exec xrdb .Xresources
 #exec nm-applet
-#exec sh ~/Documents/programs/pia/pia.sh
+exec --no-startup-id "xrandr --output DP1 --mode 1024x768"
 
 
 # brightness controls
