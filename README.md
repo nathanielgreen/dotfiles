@@ -3,9 +3,6 @@
 This is where my dotfiles are stored, as well as a list of useful
 linux programs I use daily or fun scripts that I've found.
 
-![screenfetch](screenfetch.png)
-
-
 ## About My Dots
 
 ### ThinkPad X260
@@ -24,22 +21,6 @@ linux programs I use daily or fun scripts that I've found.
   - 128GB SSD
   - 1920x1080 12.5" IPS Display,
   - 2x 3 Cell Li-Ion Battery 23.2WH
-
-### Macbook Pro (Retina, 15-inch, Mid 2015
-- Operating System: macOS Sierra v10.12
-- Window Manager: Spectacle
-- Shell: zsh 5.2
-- Terminal iTerm2
-- Text Edtior: vim
-- Font:
-- Colors: base16-ocean
-- Specs: -
-  - Intel Core i7 2.2GHz
-  - 16 GB 1600MHz DDR3 RAM
-  - 256GB SSD
-  - 2880x1800 15.4" Display
-  - Intel Iris Pro 1536MB Graphics
-
 
 ## Useful Programs
 
