@@ -6,21 +6,37 @@ linux programs I use daily or fun scripts that I've found.
 ## About My Dots
 
 ### ThinkPad X260
+
 - Operating System: Ubuntu 16.04.1 LTS
 - Window Manager: i3-gaps
   - Bar: Polybar
-- Shell: zsh 5.0.2
-- Terminal: rxvt-unicode
+- Shell: zsh
+- Terminal: Termite
 - Text Editor: vim
 - Font: Terminus
 - Theme: Arc-Darker
-- Colors: Custom (See .Xresources)
+- Colors: base16-outrun
 - Specs: -
   - Intel Core i5-6200U 
   - 8GB DDR4 RAM 
   - 128GB SSD
-  - 1920x1080 12.5" IPS Display,
+  - 1920x1080 12.5" IPS Display
   - 2x 3 Cell Li-Ion Battery 23.2WH
+
+
+### Macbook Pro 13" No Touchbar
+
+- Operating System: macOS High Sierra
+- Window Manager: Amethyst
+- Shell: zsh
+- Terminal: iTerm2
+- Text Editor: vim
+- Specs: -
+  - 2.3GHz Intel Core i5
+  - 8GB DDR3 RAM 
+  - 128GB SSD
+  - 2560x1600 13.3" Display
+
 
 ## Useful Programs
 
