@@ -31,7 +31,7 @@ let mapleader = ","
 syntax enable
 set background=dark
 
-colorscheme base16-flat
+colorscheme base16-eighties
 
 
 " Explorer Tree Style
@@ -209,3 +209,8 @@ nmap <CR> o<Esc>
 
 " Line numbers in netrw
 let g:netrw_bufsettings = 'noma nomod rnu nobl nowrap ro'
+
+" Tab Line Colors
+:hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
+:hi TabLine ctermfg=Black ctermbg=DarkGreen
+:hi TabLineSel ctermfg=DarkGreen ctermbg=Black
