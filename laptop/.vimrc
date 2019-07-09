@@ -1,29 +1,18 @@
-" Vundle Start
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'jparise/vim-graphql'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Shougo/vimproc'
-Plugin 'chrisbra/Colorizer'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'gisphm/vim-gitignore'
-Plugin 'tpope/vim-vinegar'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'junegunn/fzf'
-Plugin 'chriskempson/base16-vim'
-Plugin 'posva/vim-vue'
-Plugin 'kristijanhusak/vim-carbon-now-sh'
-
-call vundle#end()
-filetype plugin indent on
-" Vundle End
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-vinegar'
+Plug 'edkolev/tmuxline.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+Plug 'rust-lang/rust.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'chriskempson/base16-vim', {'do': 'git checkout dict_fix'}
+Plug 'dart-lang/dart-vim-plugin'
+call plug#end()
 
 " Leader
 let mapleader = ","
@@ -36,9 +25,11 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" Explorer Tree Style
-let g:netrw_liststyle=0
+" Dart Tab Width 2
+autocmd Filetype dart setlocal ts=2 sw=2 expandtab
 
+
+set nocompatible
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup      " No autocreation of backup files
 set nowritebackup " No autocreation of backup files
@@ -50,57 +41,14 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-filetype plugin indent on
-
-augroup vimrcEx
-  autocmd!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-  " Enable spellchecking for Markdown
-  "autocmd FileType markdown setlocal spell
-
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-  " Automatically wrap at 72 characters and spell check git commit messages
-  autocmd FileType gitcommit setlocal textwidth=72
-  autocmd FileType gitcommit setlocal spell
-
-  " Allow stylesheets to autocomplete hyphenated words
-  autocmd FileType css,scss,sass setlocal iskeyword+=-
-augroup END
-
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+
+" Softtabs, 4 spaces for Rust
+autocmd FileType rs setlocal shiftwidth=4 tabstop=4
 
 " Display extra whitespace
 set nolist
@@ -128,12 +76,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -154,8 +96,6 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Relative Number Toggle
 function! NumberToggle()
@@ -186,7 +126,7 @@ set foldmethod=marker
 map <Leader>co :ColorToggle<cr>
 
 " Airline Theme
-let g:airline_theme='raven'
+let g:airline_theme='base16'
 
 " Number Colors
 highlight LineNr ctermfg=darkgrey ctermbg=black
@@ -199,10 +139,8 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-
-" vim-markdown remap
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
+" Line numbers in netrw
+let g:netrw_bufsettings = 'noma nomod rnu nobl nowrap ro'
 
 " vimgrep file ignores
 set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
@@ -210,3 +148,6 @@ set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
 " Newline without insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" Vim Elixir Format Options
+let g:mix_format_on_save = 1

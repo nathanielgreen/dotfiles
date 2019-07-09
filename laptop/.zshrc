@@ -1,24 +1,34 @@
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/ngreen/.oh-my-zsh
+  export ZSH="/home/ngreen/.oh-my-zsh"
+  export PATH="$PATH:/home/ngreen/Work/Flutter/flutter/bin/"
+  export PATH="$PATH:/home/ngreen/Work/android-studio/bin"
+  export PATH="$PATH":"$HOME/Work/Flutter/flutter/.pub-cache/bin"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="mh"
-HOSTNAME=$(hostname)
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="bullet-train"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -42,30 +52,31 @@ HOSTNAME=$(hostname)
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-# User configuration
-
-  export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
-# export MANPATH="/usr/local/man:$MANPATH"
+plugins=(git zsh-completions history-substring-search)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-#export LANG=en_US.UTF-8
+# User configuration
 
-# PROMPT
-PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -78,51 +89,68 @@ PROMPT="%{$reset_color%}%{$fg[red]%}%30<...<%~%<<%{$reset_color%} > "
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ra="ranger"
-alias gita="git add . && gits"
-alias gits="git status"
-alias gitcl="git clone"
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ngreen/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
+
+# setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+# Base16 Shell end
+
+
+
+# Bullet-train Config
+BULLETTRAIN_DIR_FG=black
+BULLETTRAIN_NVM_FG=black
+BULLETRAIN_CUSTOM_MSG="dart -v"
+
+# Bullet-train Config End
+
+
+
+# ASDF Version Manger Config
+. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
+# ASDF Version Manger Config End
+
+
+
+# Rust Source
+source $HOME/.cargo/env
+# Rust Source End
+
+# Alias
 alias gitcom="git commit -m"
-alias gitpom="git push origin master"
-alias gitphm="git push heroku master"
-alias suagi="sudo apt-get install"
-alias suagr="sudo apt-get remove"
-alias suagp="sudo apt-get purge"
-alias reddit="export BROWSER=w3m && rtv --ascii"
-alias 3spooky="lua5.3 ~/Documents/dotfiles/desktop/scripts/3spooky.lua"
-alias connectmonitor="sh ~/Documents/dotfiles/laptop/scripts/connectmonitor.sh"
-alias mux="tmuxinator"
-alias ngrok="~/Documents/programs/ngrok/ngrok"
-alias snotes="~/Documents/programs/standardnotes/standardnotes"
-alias hacktheplanet="xxd < /dev/urandom"
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# RVM and Linux Ruby
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export GEM_HOME=/Library/Ruby/Gems/2.1.0
-
-# Android SDK Tools
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-# CTRL-s disable
-stty -ixon
-
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias gits="git status"
+alias gita="git add . && git status"
+# Alias End
