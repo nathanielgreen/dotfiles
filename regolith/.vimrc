@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'evanleck/vim-svelte'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -16,6 +17,7 @@ Plug 'thosakwe/vim-flutter'
 Plug 'w0rp/ale'
 Plug 'ajh17/VimCompletesMe'
 Plug 'tomlion/vim-solidity'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 " Leader
@@ -169,5 +171,15 @@ let g:ale_fixers = {
       \  'javascript': ['prettier'],
       \  'css': ['prettier'],
       \  'html': ['prettier'],
+      \  'vue': ['prettier'],
       \}
+let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_text_changed = 'always'
+
+let g:ale_fix_on_save = 1
+
+let g:ale_lint_on_insert_leave = 0
+
+" Stop adding newline at end of files
+set nofixendofline
 
