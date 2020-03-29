@@ -1,23 +1,27 @@
 call plug#begin('~/.vim/plugged')
-Plug 'evanleck/vim-svelte'
+" Plug 'evanleck/vim-svelte'
+Plug 'Yggdroot/indentLine'
+Plug 'leafgarland/typescript-vim'
+"Plug 'peitalin/vim-jsx-typescript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'posva/vim-vue'
-Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-vinegar'
 Plug 'edkolev/tmuxline.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
+Plug 'tpope/vim-fugitive'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'mhinz/vim-mix-format'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'chriskempson/base16-vim'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+" Plug 'thosakwe/vim-flutter'
 Plug 'w0rp/ale'
 Plug 'ajh17/VimCompletesMe'
-Plug 'tomlion/vim-solidity'
-Plug 'elmcast/elm-vim'
+" Plug 'tomlion/vim-solidity'
+" Plug 'elmcast/elm-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " Leader
@@ -125,9 +129,6 @@ map <Leader>np :set nopaste<cr>
 " Folding
 set foldmethod=marker
 
-" Colorizer Toggle
-map <Leader>co :ColorToggle<cr>
-
 " Airline Theme
 let g:airline_theme='base16'
 
@@ -148,38 +149,48 @@ let g:netrw_bufsettings = 'noma nomod rnu nobl nowrap ro'
 " vimgrep file ignores
 set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
 
-" Newline without insert mode
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-
-" Vim Elixir Format Options
-let g:mix_format_on_save = 1
-
-" Flutter Shortcuts
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
-nnoremap <leader>fD :FlutterVisualDebug<cr>
-
 " Dart Styling
 let dart_style_guide = 2
 let dart_format_on_save = 1
 
-" Prettier
+" Prettier and ALE
 let g:ale_fixers = {
       \  'javascript': ['prettier'],
       \  'css': ['prettier'],
       \  'html': ['prettier'],
       \  'vue': ['prettier'],
+      \  'typescript': ['prettier'],
+      \  'tsx': ['prettier'],
       \}
 let g:ale_lint_on_text_changed = 'never'
-"let g:ale_lint_on_text_changed = 'always'
-
-let g:ale_fix_on_save = 1
-
 let g:ale_lint_on_insert_leave = 0
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_fix_on_save = 1
+highlight ALEError ctermbg=none cterm=underline
+
+map <Leader>f :ALEFix prettier<cr>
 
 " Stop adding newline at end of files
 set nofixendofline
 
+" TSX Config
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+" dark red
+hi tsxTagName guifg=#E06C75
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxCloseTagName guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+" By default, CursorHold is triggered after the cursor remains still for 4 seconds, and is configurable via updatetime.
+" Triggers Autoread of changed files
+au CursorHold,CursorHoldI * checktime
+" Add the following to your vimrc to trigger autoread when changing buffers while inside vim:
+au FocusGained,BufEnter * :checktime
+
+" Stop indentLine fucking jsons
+let g:indentLine_setConceal = 1
