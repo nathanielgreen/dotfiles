@@ -7,18 +7,17 @@ linux programs I use daily or fun scripts that I've found.
 
 ### ThinkPad X260
 
-- Operating System: Ubuntu 16.04.1 LTS
+- Operating System: Regolith (Ubuntu) 19.04
 - Window Manager: i3-gaps
-  - Bar: Polybar
 - Shell: zsh
-- Terminal: Termite
+- Terminal: kitty
 - Text Editor: vim
 - Font: Terminus
-- Theme: Arc-Darker
+- Theme: Nordic
 - Colors: base16-outrun
 - Specs: -
   - Intel Core i5-6200U 
-  - 8GB DDR4 RAM 
+  - 16GB DDR4 RAM 
   - 128GB SSD
   - 1920x1080 12.5" IPS Display
   - 2x 3 Cell Li-Ion Battery 23.2WH
@@ -38,35 +37,15 @@ linux programs I use daily or fun scripts that I've found.
   - 2560x1600 13.3" Display
 
 
-## Useful Programs
+## Programs/Software
 
-Graphical Interface:
-
-- [Easytag](https://wiki.gnome.org/Apps/EasyTAG): Tag viewer and editor for
-  music files.
-- [Filezilla](https://filezilla-project.org/): Open-source FTP solution.
-- [Firefox](https://www.mozilla.org/en-GB/firefox/new/): A free web browser by
+**GUI:**
+- Browser: [Firefox](https://www.mozilla.org/en-GB/firefox/new/): A free web browser by
   Mozilla.
-- [GIMP](https://www.gimp.org/): Open-source cross-platform image editor.
-- [Messenger for Desktop](https://messengerfordesktop.com/): Cross-platform
-  desktop client for Facebook Messenger.
-- [Pavucontrol](https://apps.ubuntu.com/cat/applications/pavucontrol/): Volume
-  control for PulseAudio.
-- [PIA](https://www.privateinternetaccess.com/): VPN service offered by
-  privateinternetaccess. 
-- [ScudCloud](https://github.com/raelgc/scudcloud): An open-source
-  slack client for linux.
-- [Seafile](https://seafile.net/accounts/login/): Encrypted Cloud Storage System
-  which also allows you to host your own server.
-- [Spotify](https://www.spotify.com/uk/): Native client for spotify.
-- [Thunderbird](https://www.mozilla.org/en-GB/thunderbird/): Free email client
-  by Mozilla.
+- Image Editor: [GIMP](https://www.gimp.org/): Open-source cross-platform image editor.
+- Email: [Protonmail](https://protonmail.com/) Secure Email Based in Switzerland
 
-
-Command Line Interface:
-
-- [alasamixer](https://wiki.ubuntu.com/Audio/Alsamixer): A command-line
-  graphical volume mixer program for controlling PulseAudio ALSA-level volume.
+**CLI**
 - [cava](https://github.com/karlstav/cava): Console-based Audio Visualizer for
   ALSA.
 - [cmus](https://cmus.github.io/#home): A CLI-based music player for UNIX.
@@ -96,20 +75,14 @@ Command Line Interface:
 - [rofi](https://davedavenport.github.io/rofi/): A window switcher, run dialog
   and dmenu replacement.
 - [rtv](https://github.com/michael-lazar/rtv): Browse reddit from your terminal.
-- [sconsify](https://github.com/fabiofalci/sconsify): Spotify console
-  applicaton.
 - [screenkey](https://github.com/wavexx/screenkey): A screencast tool to display
   your pressed keyboard keys.
-- [screen](https://www.gnu.org/software/screen/): A full-screen window manager
-  that multiplexes a physical terminal between several processes.
 - [speedtest-cli](https://github.com/sivel/speedtest-cli): A command-line 
   interface for testing internet bandwith speed using speedtest.net.
 - [wal](https://github.com/dylanaraps/wal): Generate and change colorschemes
   based off your wallpaper on the fly.
 - [wavemon](https://github.com/uoaerg/wavemon): A CLI-based wireless device 
   monitoring application.
-- [seafile-cli](https://seacloud.cc/group/3/wiki/seafile-cli-manual): Encrypted 
-  Cloud Storage System which also allows you to host your own server.
 
 
 
@@ -118,10 +91,8 @@ Command Line Interface:
 - [Vim Vixen](https://addons.mozilla.org/en-GB/firefox/addon/vim-vixen/): An
   add-on which allows you to navigate with vim-like bindings.
 - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
-- RES: Reddit Enhancement Suite.
 - Pin/Unpin Tab: Provides shortcuts to quickly pin/unpin tabs.
-- [Cookie
-  AutoDelete](https://addons.mozilla.org/en-GB/firefox/addon/cookie-autodelete/):
+- [Cookie AutoDelete](https://addons.mozilla.org/en-GB/firefox/addon/cookie-autodelete/):
   Automatically removes cookies when they are no longer used by open browser
   tabs.
   It does this by changing the browser/device profile on a timer. 
