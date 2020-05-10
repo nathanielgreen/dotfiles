@@ -113,7 +113,6 @@ BULLETTRAIN_PROMPT_ORDER=(
   status
   dir
   git
-  nvm
 )
 BULLETTRAIN_DIR_FG=black
 BULLETTRAIN_NVM_FG=black
@@ -125,40 +124,10 @@ BULLETTRAIN_KCTX_FG=black
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-# Asciiquarium shit
-PATH="/home/ngreen/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ngreen/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ngreen/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ngreen/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ngreen/perl5"; export PERL_MM_OPT;
+export BROWSER=/usr/bin/firefox
 
 # Kubernetes Config
 export KUBECONFIG=~/.config/kubeconfig
 
-# Add Linuxbrew to path
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-function gitstart () {
-  local board_initials=$1
-  local board_initials_upper=$(echo $board_initials | tr a-z A-Z)
-  local ticket_number=$2
-  shift
-  shift
-  local ticket_name="$*"
-  local kebab_case_ticket_name=$(echo $ticket_name | sed 's/\.//g' | sed 's/\,//g' | sed 's/://g' | sed 's/ - /-/g' | sed 's/ /-/g' | tr A-Z a-z)
-  local new_branch_name="task/$board_initials-$ticket_number-$kebab_case_ticket_name"
-  local current_branch_name=$(git rev-parse --abbrev-ref HEAD)
-  local pull_request_name=$(echo -e "[$board_initials_upper-$ticket_number] (Task) $ticket_name\n\n[$board_initials_upper-$ticket_number]")
-#   echo $board_initials
-#   echo $board_initials_upper
-#   echo $ticket_number
-#   echo $ticket_name
-#   echo $kebab_case_ticket_name
-# echo $pull_request_name
-  git pull
-  git checkout -b $new_branch_name
-  git commit --allow-empty -m "$board_initials_upper-$ticket_number: Initial Commit"
-  git push --set-upstream origin $new_branch_name
-  hub pull-request -d -b $current_branch_name -m  $pull_request_name
-}
+alias cmon="xrandr --auto && xrandr --output DP1 --primary && xrandr --output eDP1 --off"
+alias dcmon="xrandr --auto && xrandr --output eDP1 --primary && xrandr --output DP1 --off"

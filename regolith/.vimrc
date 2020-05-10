@@ -136,7 +136,7 @@ let g:airline_theme='base16'
 highlight LineNr ctermfg=darkgrey ctermbg=black
 highlight ColorColumn ctermbg=darkgrey
 highlight Comment ctermfg=darkgrey
-hi MatchParen cterm=none ctermbg=grey ctermfg=black
+hi MatchParen cterm=none ctermbg=darkgrey ctermfg=white
 
 " netrw settings
 let g:netrw_banner = 0
