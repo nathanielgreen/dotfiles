@@ -1,27 +1,30 @@
 call plug#begin('~/.vim/plugged')
-" Plug 'evanleck/vim-svelte'
 Plug 'Yggdroot/indentLine'
+Plug 'mcchrish/nnn.vim'
 Plug 'leafgarland/typescript-vim'
-"Plug 'peitalin/vim-jsx-typescript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'posva/vim-vue'
-Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-abolish'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'elixir-editors/vim-elixir'
-" Plug 'mhinz/vim-mix-format'
 Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'chriskempson/base16-vim'
-Plug 'dart-lang/dart-vim-plugin'
-" Plug 'thosakwe/vim-flutter'
 Plug 'w0rp/ale'
 Plug 'ajh17/VimCompletesMe'
-" Plug 'tomlion/vim-solidity'
-" Plug 'elmcast/elm-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'kristijanhusak/vim-carbon-now-sh'
+" Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
+" Plug 'evanleck/vim-svelte'
+" Plug 'elmcast/elm-vim': Disabled as not using elm
+" Plug 'tomlion/vim-solidity': Disabled as not using solidity
+" Plug 'thosakwe/vim-flutter': Disabled as not using flutter
+" Plug 'dart-lang/dart-vim-plugin'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'mhinz/vim-mix-format'
+"Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 " Leader
@@ -138,20 +141,8 @@ highlight ColorColumn ctermbg=darkgrey
 highlight Comment ctermfg=darkgrey
 hi MatchParen cterm=none ctermbg=darkgrey ctermfg=white
 
-" netrw settings
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-" Line numbers in netrw
-let g:netrw_bufsettings = 'noma nomod rnu nobl nowrap ro'
-
 " vimgrep file ignores
 set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
-
-" Dart Styling
-let dart_style_guide = 2
-let dart_format_on_save = 1
 
 " Prettier and ALE
 let g:ale_fixers = {
@@ -194,3 +185,15 @@ au FocusGained,BufEnter * :checktime
 
 " Stop indentLine fucking jsons
 let g:indentLine_setConceal = 1
+
+" NNN Navigation
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-x>': 'split',
+      \ '<c-v>': 'vsplit' }
+
+" Open NNN with nn and in current dir
+nnoremap <leader>nn :NnnPicker '%:p:h'<CR>
+
+" Change Buffer quickly shortcut
+nnoremap gb :ls<CR>:b<Space>
