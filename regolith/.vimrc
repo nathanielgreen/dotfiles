@@ -192,8 +192,8 @@ let g:nnn#action = {
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
 
-" Open NNN with nn and in current dir
-nnoremap <leader>nn :NnnPicker '%:p:h'<CR>
+" Open NNN with - and in current dir
+nnoremap - :NnnPicker '%:p:h'<CR>
 
 " Change Buffer quickly shortcut
 nnoremap gb :ls<CR>:b<Space>
