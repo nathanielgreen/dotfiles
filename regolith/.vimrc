@@ -16,6 +16,7 @@ Plug 'w0rp/ale'
 Plug 'ajh17/VimCompletesMe'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 " Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
 " Plug 'evanleck/vim-svelte'
 " Plug 'elmcast/elm-vim': Disabled as not using elm
@@ -156,7 +157,7 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 highlight ALEError ctermbg=none cterm=underline
 
 map <Leader>f :ALEFix prettier<cr>

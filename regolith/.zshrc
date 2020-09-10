@@ -131,3 +131,10 @@ export KUBECONFIG=~/.config/kubeconfig
 
 alias cmon="xrandr --auto && xrandr --output DP1 --primary && xrandr --output eDP1 --off"
 alias dcmon="xrandr --auto && xrandr --output eDP1 --primary && xrandr --output DP1 --off"
+alias weather="curl wttr.in | less"
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/home/ngreen/.netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.netlify/helper/path.zsh.inc'; fi
+
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
