@@ -119,8 +119,9 @@ BULLETTRAIN_NVM_FG=black
 BULLETTRAIN_KCTX_FG=black
 
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+alias vim=nvim
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -129,8 +130,6 @@ export BROWSER=/usr/bin/firefox
 # Kubernetes Config
 export KUBECONFIG=~/.config/kubeconfig
 
-alias cmon="xrandr --auto && xrandr --output DP1 --primary && xrandr --output eDP1 --off"
-alias dcmon="xrandr --auto && xrandr --output eDP1 --primary && xrandr --output DP1 --off"
 alias weather="curl wttr.in | less"
 
 # The next line updates PATH for Netlify's Git Credential Helper.

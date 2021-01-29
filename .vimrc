@@ -17,6 +17,8 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'ycm-core/YouCompleteMe'
+Plug 'junegunn/goyo.vim'
 " Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
 " Plug 'evanleck/vim-svelte'
 " Plug 'elmcast/elm-vim': Disabled as not using elm
@@ -64,9 +66,13 @@ autocmd FileType rs setlocal shiftwidth=4 tabstop=4
 " Display extra whitespace
 set nolist
 
-" Make it obvious where 80 characters is
+" Set color column to 80 when in insert mode
 set textwidth=80
-set colorcolumn=+1
+augroup ColorcolumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=80
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
 
 " Numbers
 set number
@@ -145,7 +151,7 @@ hi MatchParen cterm=none ctermbg=darkgrey ctermfg=white
 " vimgrep file ignores
 set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
 
-" Prettier and ALE
+" Prettier and ALE CONFIG START
 let g:ale_fixers = {
       \  'javascript': ['prettier'],
       \  'css': ['prettier'],
@@ -157,7 +163,9 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
+" Prettier and ALE CONFIG END
+
 highlight ALEError ctermbg=none cterm=underline
 
 map <Leader>f :ALEFix prettier<cr>
@@ -187,14 +195,22 @@ au FocusGained,BufEnter * :checktime
 " Stop indentLine fucking jsons
 let g:indentLine_setConceal = 1
 
+" PLUGIN START CONFIG: nnn
 " NNN Navigation
 let g:nnn#action = {
       \ '<c-t>': 'tab split',
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
 
+let g:nnn#command = 'nnn -C'
+
 " Open NNN with - and in current dir
-nnoremap - :NnnPicker '%:p:h'<CR>
+nnoremap - :NnnPicker %:p:h<CR>
+" PLUGIN END CONFIG: nnn
 
 " Change Buffer quickly shortcut
 nnoremap gb :ls<CR>:b<Space>
+
+" What: Reset the Search when searching via an empty slash
+" Why: Otherwise the last highlight will still be highlight, and either a
+" gibberish search needs to be made, or the command :noh
