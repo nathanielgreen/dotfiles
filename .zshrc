@@ -1,17 +1,44 @@
+#  _   _
+# | |_| |__   ___ _ __ ___   ___
+# | __| '_ \ / _ \ '_ ` _ \ / _ \
+# | |_| | | |  __/ | | | | |  __/
+#  \__|_| |_|\___|_| |_| |_|\___|
+# Bullet Train Zsh Theme
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  status
+  dir
+  git
+)
+BULLETTRAIN_DIR_FG=black
+BULLETTRAIN_NVM_FG=black
+BULLETTRAIN_KCTX_FG=black
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+
+#           _
+#  ___  ___| |_ _   _ _ __
+# / __|/ _ \ __| | | | '_ \
+# \__ \  __/ |_| |_| | |_) |
+# |___/\___|\__|\__,_| .__/
+#                    |_|
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ngreen/.oh-my-zsh"
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bullet-train"
+
+
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,33 +134,29 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Bullet Train Zsh Theme
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  dir
-  git
-)
-BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_NVM_FG=black
-BULLETTRAIN_KCTX_FG=black
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-alias vim=nvim
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export BROWSER=/usr/bin/firefox
 
 # Kubernetes Config
 export KUBECONFIG=~/.config/kubeconfig
 
-alias weather="curl wttr.in | less"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/ngreen/.netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.netlify/helper/path.zsh.inc'; fi
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+#        _ _
+#   __ _| (_) __ _ ___  ___  ___
+#  / _` | | |/ _` / __|/ _ \/ __|
+# | (_| | | | (_| \__ \  __/\__ \
+#  \__,_|_|_|\__,_|___/\___||___/ 
+alias vim=nvim
+alias weather="curl wttr.in | less"
