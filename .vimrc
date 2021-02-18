@@ -276,6 +276,20 @@ let g:airline_theme='base16'
 " Why: If at setting 0, the lines are not intended, if any higher, some
 " characters are invisible until viewing in visual mode
 let g:indentLine_setConceal = 1
+ 
+" What: Set the indentLine characters default highlight group to Special key
+" Why: The special key highlight group is the same light grey as comments,
+" otherwise the default is a darker grey like body text
+let g:indentLine_defaultGroup = 'SpecialKey'
 " *** PLUGIN END: indentLine
+"
+"
+"
+" *** PLUGIN START: YouCompletesMe
+" What: Close the YouCompletesMe preview window after finish typing
+" Why: Otherwise a buffer with the preview of the completion stays open,
+" unnecissarily taking up screen real estate
+let g:ycm_autoclose_preview_window_after_completion=1
+" *** PLUGIN END: YouCompletesMe
 
 " ### PLUGINS END
