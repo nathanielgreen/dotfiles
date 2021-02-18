@@ -1,45 +1,47 @@
 call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/indentLine'
-Plug 'mcchrish/nnn.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Language Support
 Plug 'posva/vim-vue'
-Plug 'tpope/vim-abolish'
-Plug 'edkolev/tmuxline.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'chriskempson/base16-vim'
-Plug 'w0rp/ale'
-Plug 'ajh17/VimCompletesMe'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'kristijanhusak/vim-carbon-now-sh'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
-Plug 'ycm-core/YouCompleteMe'
-Plug 'junegunn/goyo.vim'
-" Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
+Plug 'leafgarland/typescript-vim'
 " Plug 'evanleck/vim-svelte'
-" Plug 'elmcast/elm-vim': Disabled as not using elm
-" Plug 'tomlion/vim-solidity': Disabled as not using solidity
-" Plug 'thosakwe/vim-flutter': Disabled as not using flutter
 " Plug 'dart-lang/dart-vim-plugin'
 " Plug 'elixir-editors/vim-elixir'
 " Plug 'mhinz/vim-mix-format'
-"Plug 'peitalin/vim-jsx-typescript'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'elmcast/elm-vim': Disabled as not using elm
+" Plug 'tomlion/vim-solidity': Disabled as not using solidity
+" Plug 'thosakwe/vim-flutter': Disabled as not using flutter
+
+" Themes
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+Plug 'chriskempson/base16-vim'
+" Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
+
+" Navigation
+Plug 'mcchrish/nnn.vim' " Folder Navigation
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+
+" Code Completion, formatting, and linting
+Plug 'w0rp/ale'
+Plug 'ycm-core/YouCompleteMe'
+" Plug 'ajh17/VimCompletesMe # Disabled to try out just YCM
+
+" Other
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Leader
-let mapleader = ","
+let mapleader = " "
 
-syntax enable
-set background=dark
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 
 
 set nocompatible
@@ -66,13 +68,6 @@ autocmd FileType rs setlocal shiftwidth=4 tabstop=4
 " Display extra whitespace
 set nolist
 
-" Set color column to 80 when in insert mode
-set textwidth=80
-augroup ColorcolumnOnlyInInsertMode
-  autocmd!
-  autocmd InsertEnter * setlocal colorcolumn=80
-  autocmd InsertLeave * setlocal colorcolumn=0
-augroup END
 
 " Numbers
 set number
@@ -114,61 +109,13 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-" Relative Number Toggle
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
 
 " Clipboard
 set clipboard=unnamed
 
-function! SetNoPaste()
-  set nopaste
-endfunc
-
-" Better Pasting
-map <Leader>p :set paste<cr>
-map <Leader>np :set nopaste<cr>
 
 " Folding
 set foldmethod=marker
-
-" Airline Theme
-let g:airline_theme='base16'
-
-" Number Colors
-highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight ColorColumn ctermbg=darkgrey
-highlight Comment ctermfg=darkgrey
-hi MatchParen cterm=none ctermbg=darkgrey ctermfg=white
-
-" vimgrep file ignores
-set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
-
-" Prettier and ALE CONFIG START
-let g:ale_fixers = {
-      \  'javascript': ['prettier'],
-      \  'css': ['prettier'],
-      \  'html': ['prettier'],
-      \  'vue': ['prettier'],
-      \  'typescript': ['prettier'],
-      \  'tsx': ['prettier'],
-      \}
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_fix_on_save = 1
-" Prettier and ALE CONFIG END
-
-highlight ALEError ctermbg=none cterm=underline
-
-map <Leader>f :ALEFix prettier<cr>
 
 " Stop adding newline at end of files
 set nofixendofline
@@ -192,10 +139,116 @@ au CursorHold,CursorHoldI * checktime
 " Add the following to your vimrc to trigger autoread when changing buffers while inside vim:
 au FocusGained,BufEnter * :checktime
 
-" Stop indentLine fucking jsons
-let g:indentLine_setConceal = 1
+"        _   _ _ _ _
+"  _   _| |_(_) (_) |_ _   _
+" | | | | __| | | | __| | | |
+" | |_| | |_| | | | |_| |_| |
+"  \__,_|\__|_|_|_|\__|\__, |
+"                      |___/
+" ### UTILITY START
+" What: Set vimgrep to ingore file file ignores
+" Why: Without it, vimgrep will grep through the below file paths and be very
+" slow, also giving unwanted results
+set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
 
-" PLUGIN START CONFIG: nnn
+" ### UTILITY END
+"
+"  _   _
+" | |_| |__   ___ _ __ ___   ___
+" | __| '_ \ / _ \ '_ ` _ \ / _ \
+" | |_| | | |  __/ | | | | |  __/
+"  \__|_| |_|\___|_| |_| |_|\___|
+"
+" ### THEME START
+" What: Enable syntax highlighting
+syntax enable
+
+" What: Set color column to 80 when in insert mode
+set textwidth=80
+augroup ColorcolumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=80
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
+
+" What: Set the base16 color space to 256 to allow full theme colors to display
+" Why: Otherwise the base16 shell theme will not display properly in vim
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+" ### THEME END
+"
+"      _                _             _
+"  ___| |__   ___  _ __| |_ ___ _   _| |_ ___
+" / __| '_ \ / _ \| '__| __/ __| | | | __/ __|
+" \__ \ | | | (_) | |  | || (__| |_| | |_\__ \
+" |___/_| |_|\___/|_|   \__\___|\__,_|\__|___/
+"
+" ### SHORTCUTS START
+" What: Change Buffer quickly shortcut
+nnoremap gb :ls<CR>:b<Space>
+
+" What: Sets relative number to be on by default
+" Why: Ease navigation around file using command e.g. 32j
+set relativenumber
+
+" What: Function for Relative Number Toggle
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+
+" What: Function declaration for SetNoPaste
+function! SetNoPaste()
+  set nopaste
+endfunc
+
+" What: Shortcut for better Pasting
+" Why: When trying to paste without :set paste, the first line can be
+" incorrectly indented
+map <Leader>p :set paste<cr>
+map <Leader>np :set nopaste<cr>
+" ### SHORTCUTS END
+"
+"
+"        _             _
+"  _ __ | |_   _  __ _(_)_ __  ___
+" | '_ \| | | | |/ _` | | '_ \/ __|
+" | |_) | | |_| | (_| | | | | \__ \
+" | .__/|_|\__,_|\__, |_|_| |_|___/
+" |_|            |___/
+"
+" ### PLUGINS START
+" *** PLUGIN START CONFIG: ale
+let g:ale_fixers = {
+      \  'javascript': ['prettier'],
+      \  'css': ['prettier'],
+      \  'html': ['prettier'],
+      \  'vue': ['prettier'],
+      \  'typescript': ['prettier'],
+      \  'tsx': ['prettier'],
+      \}
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_fix_on_save = 1
+
+" What: When ale detects an error, underline the code instead of block
+" highlighting
+" Why: Otherwise it'll be a block of red that's difficult to read
+highlight ALEError ctermbg=none cterm=underline
+
+" What: Shortcut to run ALEFix with local prettier settings
+map <Leader>f :ALEFix prettier<cr>
+" *** PLUGIN END CONFIG: ale
+"
+"
+"
+" *** PLUGIN START CONFIG: nnn
 " NNN Navigation
 let g:nnn#action = {
       \ '<c-t>': 'tab split',
@@ -206,11 +259,23 @@ let g:nnn#command = 'nnn -C'
 
 " Open NNN with - and in current dir
 nnoremap - :NnnPicker %:p:h<CR>
-" PLUGIN END CONFIG: nnn
+" *** PLUGIN END CONFIG: nnn
+"
+"
+"
+" *** PLUGIN START CONFIG: vim-airline
+" What: Sets the airline theme to match the shell theme of base16
+" Why: Otherwise it does not match the terminal colorscheme
+let g:airline_theme='base16'
+" *** PLUGIN END CONFIG: vim-airline
+"
+"
+"
+" *** PLUGIN START: indentLine
+" What: Set the indentLine vim-conceal behaviour to setting 1
+" Why: If at setting 0, the lines are not intended, if any higher, some
+" characters are invisible until viewing in visual mode
+let g:indentLine_setConceal = 1
+" *** PLUGIN END: indentLine
 
-" Change Buffer quickly shortcut
-nnoremap gb :ls<CR>:b<Space>
-
-" What: Reset the Search when searching via an empty slash
-" Why: Otherwise the last highlight will still be highlight, and either a
-" gibberish search needs to be made, or the command :noh
+" ### PLUGINS END
