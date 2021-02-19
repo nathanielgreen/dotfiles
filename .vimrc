@@ -41,85 +41,15 @@ Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
-" Leader
-let mapleader = " "
-
-
-" Default Tab Width
-:set tabstop=2
-:set shiftwidth=0
-" use spaces over tabs
-:set expandtab
-
-" Numbers
-set number
-set numberwidth=5
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" Always use vertical diffs
-set diffopt+=vertical
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
-
-"        _   _ _ _ _
-"  _   _| |_(_) (_) |_ _   _
-" | | | | __| | | | __| | | |
-" | |_| | |_| | | | |_| |_| |
-"  \__,_|\__|_|_|_|\__|\__, |
-"                      |___/
-" ### UTILITY START
-" What - Set vimgrep to ingore file file ignores
-" Why - Without it, vimgrep will grep through the below file paths and be very
-" slow, also giving unwanted results
-set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
-
-" ### UTILITY END
-"
-"  _   _
-" | |_| |__   ___ _ __ ___   ___
-" | __| '_ \ / _ \ '_ ` _ \ / _ \
-" | |_| | | |  __/ | | | | |  __/
-"  \__|_| |_|\___|_| |_| |_|\___|
-"
-" ### THEME START
-" What - Enable syntax highlighting
-syntax enable
-
-" What - Set color column to 80 when in insert mode
-set textwidth=80
-augroup ColorcolumnOnlyInInsertMode
-  autocmd!
-  autocmd InsertEnter * setlocal colorcolumn=80
-  autocmd InsertLeave * setlocal colorcolumn=0
-augroup END
-
-" What - Set the base16 color space to 256 to allow full theme colors to display
-" Why - Otherwise the base16 shell theme will not display properly in vim
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-" ### THEME END
-"
 "      _                _             _
 "  ___| |__   ___  _ __| |_ ___ _   _| |_ ___
 " / __| '_ \ / _ \| '__| __/ __| | | | __/ __|
 " \__ \ | | | (_) | |  | || (__| |_| | |_\__ \
 " |___/_| |_|\___/|_|   \__\___|\__,_|\__|___/
 "
-" ### SHORTCUTS START
+" Map Leader Key Leader
+let mapleader = " "
+
 " What - Change Buffer quickly shortcut
 nnoremap gb :ls<CR>:b<Space>
 
@@ -149,8 +79,93 @@ endfunc
 map <Leader>pp :set paste<cr>
 map <Leader>pn :set nopaste<cr>
 " ### SHORTCUTS END
+
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+"      _                _             _                        _
+"  ___| |__   ___  _ __| |_ ___ _   _| |_ ___    ___ _ __   __| |
+" / __| '_ \ / _ \| '__| __/ __| | | | __/ __|  / _ \ '_ \ / _` |
+" \__ \ | | | (_) | |  | || (__| |_| | |_\__ \ |  __/ | | | (_| |
+" |___/_| |_|\___/|_|   \__\___|\__,_|\__|___/  \___|_| |_|\__,_|
+
+
+
+"        _   _ _ _ _
+"  _   _| |_(_) (_) |_ _   _
+" | | | | __| | | | __| | | |
+" | |_| | |_| | | | |_| |_| |
+"  \__,_|\__|_|_|_|\__|\__, |
+"                      |___/
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
+
+" What - Set vimgrep to ingore file file ignores
+" Why - Without it, vimgrep will grep through the below file paths and be very
+" slow, also giving unwanted results
+set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
+
+" Always use vertical diffs
+set diffopt+=vertical
+
+" Default Tab Width
+:set tabstop=2
+:set shiftwidth=0
+" use spaces over tabs
+:set expandtab
+
+" Numbers
+set number
+set numberwidth=5
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+"        _   _ _ _ _                          _
+"  _   _| |_(_) (_) |_ _   _    ___ _ __   __| |
+" | | | | __| | | | __| | | |  / _ \ '_ \ / _` |
+" | |_| | |_| | | | |_| |_| | |  __/ | | | (_| |
+"  \__,_|\__|_|_|_|\__|\__, |  \___|_| |_|\__,_|
+"                      |___/
+
+
+
+"  _   _
+" | |_| |__   ___ _ __ ___   ___
+" | __| '_ \ / _ \ '_ ` _ \ / _ \
+" | |_| | | |  __/ | | | | |  __/
+"  \__|_| |_|\___|_| |_| |_|\___|
 "
-"
+" What - Enable syntax highlighting
+syntax enable
+
+" What - Set color column to 80 when in insert mode
+set textwidth=80
+augroup ColorcolumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=80
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
+
+" What - Set the base16 color space to 256 to allow full theme colors to display
+" Why - Otherwise the base16 shell theme will not display properly in vim
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+"  _   _                                          _
+" | |_| |__   ___ _ __ ___   ___    ___ _ __   __| |
+" | __| '_ \ / _ \ '_ ` _ \ / _ \  / _ \ '_ \ / _` |
+" | |_| | | |  __/ | | | | |  __/ |  __/ | | | (_| |
+"  \__|_| |_|\___|_| |_| |_|\___|  \___|_| |_|\__,_|
+
+
+
 "        _             _
 "  _ __ | |_   _  __ _(_)_ __  ___
 " | '_ \| | | | |/ _` | | '_ \/ __|
@@ -226,5 +241,11 @@ let g:indentLine_defaultGroup = 'SpecialKey'
 " unnecissarily taking up screen real estate
 let g:ycm_autoclose_preview_window_after_completion=1
 " *** PLUGIN END: YouCompletesMe
+"        _             _                            _
+"  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
+" | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
+" | |_) | | |_| | (_| | | | | \__ \ |  __/ | | | (_| |
+" | .__/|_|\__,_|\__, |_|_| |_|___/  \___|_| |_|\__,_|
+" |_|            |___/
 
-" ### PLUGINS END
+
