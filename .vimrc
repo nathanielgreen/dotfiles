@@ -24,6 +24,7 @@ Plug 'chriskempson/base16-vim'
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'christoomey/vim-tmux-navigator'
 
 " Code Completion, formatting, and linting
 Plug 'w0rp/ale'
@@ -33,6 +34,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 
 " Other
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-abolish'
@@ -43,53 +45,15 @@ call plug#end()
 let mapleader = " "
 
 
-
-set nocompatible
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup      " No autocreation of backup files
-set nowritebackup " No autocreation of backup files
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-
-" Softtabs, 4 spaces for Rust
-autocmd FileType rs setlocal shiftwidth=4 tabstop=4
-
-" Display extra whitespace
-set nolist
-
+" Default Tab Width
+:set tabstop=2
+:set shiftwidth=0
+" use spaces over tabs
+:set expandtab
 
 " Numbers
 set number
 set numberwidth=5
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -108,24 +72,6 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-
-
-" Clipboard
-set clipboard=unnamed
-
-
-" Folding
-set foldmethod=marker
-
-" Stop adding newline at end of files
-set nofixendofline
-
-
-" By default, CursorHold is triggered after the cursor remains still for 4 seconds, and is configurable via updatetime.
-" Triggers Autoread of changed files
-au CursorHold,CursorHoldI * checktime
-" Add the following to your vimrc to trigger autoread when changing buffers while inside vim:
-au FocusGained,BufEnter * :checktime
 
 "        _   _ _ _ _
 "  _   _| |_(_) (_) |_ _   _

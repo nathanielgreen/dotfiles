@@ -152,6 +152,7 @@ if [ -f '/home/ngreen/.netlify/helper/path.zsh.inc' ]; then source '/home/ngreen
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
