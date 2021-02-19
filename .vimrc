@@ -1,6 +1,6 @@
-" Set up VimPlug package installer 
+"Language Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
-" Language Support
+" Syntax Support
 Plug 'rust-lang/rust.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
@@ -27,8 +27,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'christoomey/vim-tmux-navigator'
 
 " Code Completion, formatting, and linting
-Plug 'w0rp/ale'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -126,6 +125,14 @@ set numberwidth=5
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 "        _   _ _ _ _                          _
 "  _   _| |_(_) (_) |_ _   _    ___ _ __   __| |
 " | | | | __| | | | __| | | |  / _ \ '_ \ / _` |
@@ -172,31 +179,6 @@ endif
 " | |_) | | |_| | (_| | | | | \__ \
 " | .__/|_|\__,_|\__, |_|_| |_|___/
 " |_|            |___/
-"
-" ### PLUGINS START
-" *** PLUGIN START CONFIG: ale
-let g:ale_fixers = {
-      \  'javascript': ['prettier'],
-      \  'css': ['prettier'],
-      \  'html': ['prettier'],
-      \  'vue': ['prettier'],
-      \  'typescript': ['prettier'],
-      \  'tsx': ['prettier'],
-      \}
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_fix_on_save = 1
-
-" What - When ale detects an error, underline the code instead of block
-" highlighting
-" Why - Otherwise it'll be a block of red that's difficult to read
-highlight ALEError ctermbg=none cterm=underline
-
-" What - Shortcut to run ALEFix with local prettier settings
-map <Leader>f :ALEFix prettier<cr>
-" *** PLUGIN END CONFIG: ale
-"
-"
-"
 " *** PLUGIN START CONFIG: nnn
 " NNN Navigation
 let g:nnn#action = {
@@ -232,15 +214,6 @@ let g:indentLine_setConceal = 1
 " otherwise the default is a darker grey like body text
 let g:indentLine_defaultGroup = 'SpecialKey'
 " *** PLUGIN END: indentLine
-"
-"
-"
-" *** PLUGIN START: YouCompletesMe
-" What - Close the YouCompletesMe preview window after finish typing
-" Why - Otherwise a buffer with the preview of the completion stays open,
-" unnecissarily taking up screen real estate
-let g:ycm_autoclose_preview_window_after_completion=1
-" *** PLUGIN END: YouCompletesMe
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
