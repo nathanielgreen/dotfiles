@@ -10,6 +10,9 @@ This is where my dotfiles are stored.
   - [oh-my-zsh](https://ohmyz.sh/)
     - Prompt Theme: [bullet-train.zsh](https://github.com/caiogondim/bullet-train.zsh)
 - Terminal Colors/Theme: [base16-shell](https://github.com/chriskempson/base16-shell)
+- Utilities:
+  - Code searcher: [ag](https://github.com/ggreer/the_silver_searcher)
+  - Fuzzy finder: [fzf](https://github.com/junegunn/fzf)
 - Runtime Manager: [asdf](https://asdf-vm.com/)
   - [asdf-node](https://github.com/asdf-vm/asdf-nodejs)
   - [asdf-go](https://github.com/kennyp/asdf-golang)
