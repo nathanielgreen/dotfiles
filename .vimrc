@@ -84,6 +84,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
 "      _                _             _                        _
 "  ___| |__   ___  _ __| |_ ___ _   _| |_ ___    ___ _ __   __| |
 " / __| '_ \ / _ \| '__| __/ __| | | | __/ __|  / _ \ '_ \ / _` |
@@ -133,17 +134,18 @@ set splitright
 
 " What - Tab completion, that will insert tab at beginning of line, or
 " will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+
+let g:coc_snippet_next = '<tab>'
 " Why - Otherwise pressing tab to autocomplete will just instert a tab/space
 " characters, and the arrow keys must be used instead.
 "        _   _ _ _ _                          _
@@ -215,6 +217,9 @@ nnoremap - :NnnPicker %:p:h<CR>
 
 " *** PLUGIN START: fzf
 nnoremap <C-p> :FZF<CR>
+
+" What - Shortcut to open window switcher
+map <Leader>w :W<cr>
 " *** PLUGIN END: fzf
 
 

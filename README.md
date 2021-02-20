@@ -35,3 +35,7 @@ sudo ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```
+
+# Post Install
+
+In vim run: `:CocInstall coc-tsserver coc-snippets`
