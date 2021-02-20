@@ -1,4 +1,4 @@
-" Language Set up VimPlug package installer 
+" Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
 " Syntax Support
 Plug 'rust-lang/rust.vim'
@@ -103,10 +103,14 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-" What - Set vimgrep to ingore file file ignores
-set wildignore+=*/node_modules/**,*/.git/**,*/bower_components/**
-" Why - Without it, vimgrep will grep through the below file paths and be very
-" slow, also giving unwanted results
+" What - no autocreation of backup files
+set nobackup      " No autocreation of backup files
+set nowritebackup " No autocreation of backup files
+" Why - BUG: Without these lines, storybook and angular will halt when tring to
+" save files
+"
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set autowrite     " Automatically :write before running commands
 
 set diffopt+=vertical
 " What - Always use vertical diffs
