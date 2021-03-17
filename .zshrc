@@ -161,3 +161,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #  \__,_|_|_|\__,_|___/\___||___/ 
 alias vim=nvim
 alias weather="curl wttr.in | less"
+alias nnn="nnn -c"
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/home/ngreen/.config/netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.config/netlify/helper/path.zsh.inc'; fi

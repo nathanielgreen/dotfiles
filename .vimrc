@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
+Plug 'google/vim-jsonnet'
 " Plug 'posva/vim-vue'
 " Plug 'evanleck/vim-svelte'
 " Plug 'dart-lang/dart-vim-plugin'
@@ -204,7 +205,7 @@ let g:nnn#action = {
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
 
-let g:nnn#command = 'nnn -C'
+let g:nnn#command = 'nnn -c'
 
 " What - Open nnn in a floating window instead of the default pane
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
