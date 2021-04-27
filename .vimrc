@@ -40,6 +40,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "      _                _             _
@@ -247,6 +248,12 @@ let g:indentLine_defaultGroup = 'SpecialKey'
 " Why - The special key highlight group is the same light grey as comments,
 " otherwise the default is a darker grey like body text
 " *** PLUGIN END: indentLine
+"
+" *** PLUGIN START: vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+" *** PLUGIN END: vimwiki
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
