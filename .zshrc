@@ -161,10 +161,10 @@ export PATH="$HOME/.local/bin:$PATH"
 #  \__,_|_|_|\__,_|___/\___||___/ 
 alias vim=nvim
 alias weather="curl wttr.in | less"
-alias nnn="nnn -c"
+alias nnn="nnn"
 alias connectmon="
   xrandr --output DP-1.1 --rotate left --left-of DP-1.2.2.1 && xrandr --output DP-1.2.1 --below  DP-1.2.2.1 && xrandr --output DP-1.2.2.1 --rotate inverted --primary && xrandr --output DP-1.2.2.2.1 --rotate right --right-of DP-1.2.2.1"
-  
+alias icat="kitty +kitten icat"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/ngreen/.config/netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.config/netlify/helper/path.zsh.inc'; fi
