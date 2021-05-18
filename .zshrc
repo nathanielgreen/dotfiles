@@ -154,6 +154,9 @@ if [ -f '/home/ngreen/.netlify/helper/path.zsh.inc' ]; then source '/home/ngreen
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Flutter Pub executables
+export PATH="$PATH":"$HOME/.asdf/installs/flutter/2.0.6/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
@@ -163,7 +166,6 @@ alias vim=nvim
 alias weather="curl wttr.in | less"
 alias nnn="nnn"
 alias connectmon="~/.screenlayout/four-monitor.sh"
-  
 alias icat="kitty +kitten icat"
 
 # The next line updates PATH for Netlify's Git Credential Helper.

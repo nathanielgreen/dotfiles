@@ -7,13 +7,13 @@ Plug 'leafgarland/typescript-vim'
 Plug 'google/vim-jsonnet'
 " Plug 'posva/vim-vue'
 " Plug 'evanleck/vim-svelte'
-" Plug 'dart-lang/dart-vim-plugin'
+Plug 'dart-lang/dart-vim-plugin'
 " Plug 'elixir-editors/vim-elixir'
 " Plug 'mhinz/vim-mix-format'
 " Plug 'peitalin/vim-jsx-typescript'
 " Plug 'elmcast/elm-vim': Disabled as not using elm
 " Plug 'tomlion/vim-solidity': Disabled as not using solidity
-" Plug 'thosakwe/vim-flutter': Disabled as not using flutter
+Plug 'thosakwe/vim-flutter' " Disabled as not using flutter
 
 " Themes
 Plug 'vim-airline/vim-airline'
@@ -40,7 +40,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "      _                _             _
@@ -255,6 +255,11 @@ filetype plugin on
 syntax on
 " *** PLUGIN END: vimwiki
 "        _             _                            _
+"
+" *** PLUGIN START: dart-vim-plugin
+let g:dart_format_on_save = 1
+" *** PLUGIN END: dart-vim-plugin
+"
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
 " | |_) | | |_| | (_| | | | | \__ \ |  __/ | | | (_| |
