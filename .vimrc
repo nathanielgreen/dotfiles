@@ -5,28 +5,20 @@ Plug 'rust-lang/rust.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'google/vim-jsonnet'
-" Plug 'posva/vim-vue'
-" Plug 'evanleck/vim-svelte'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'elixir-editors/vim-elixir'
 " Plug 'mhinz/vim-mix-format'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'elmcast/elm-vim': Disabled as not using elm
 " Plug 'tomlion/vim-solidity': Disabled as not using solidity
-Plug 'thosakwe/vim-flutter' " Disabled as not using flutter
 
 " Themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
 Plug 'chriskempson/base16-vim'
-" Plug 'tpope/vim-vinegar': Disabled as not using netrw anymore for the - shortcut
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
 
 " Code Completion, formatting, and linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -179,12 +171,14 @@ augroup ColorcolumnOnlyInInsertMode
 augroup END
 " Why - Easier to read
 
-" What - Set the base16 color space to 256 to allow full theme colors to display
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-" Why - Otherwise the base16 shell theme will not display properly in vim
+
+" What - Set the base16 theme
+colorscheme base16-outrun-dark
+
+" What - Access colors present in 256 colorspace
+let base16colorspace=256  
+" Why - Otherwise colors will display incorrectly
+
 "  _   _                                          _
 " | |_| |__   ___ _ __ ___   ___    ___ _ __   __| |
 " | __| '_ \ / _ \ '_ ` _ \ / _ \  / _ \ '_ \ / _` |
