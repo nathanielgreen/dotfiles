@@ -98,7 +98,10 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z)
+plugins=(git)
+
+# Z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 source $ZSH/oh-my-zsh.sh
 
