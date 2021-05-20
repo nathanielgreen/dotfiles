@@ -34,6 +34,7 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 sudo ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
+sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 ```
 
 # Post Install
