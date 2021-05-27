@@ -15,6 +15,7 @@ This is where my dotfiles are stored.
 ### Laptop
 
 - Model: Thinkpad X260
+- OS: Arch Linux
 - WM: i3
 
 # Pre-requisties
@@ -54,7 +55,7 @@ sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 # Desktop
 sudo ln -s ~/.dotfiles/desktop/.screenlayout ~/.screenlayout
 sudo ln -s ~/.dotfiles/desktop/.xinitrc ~/.xinitrc
-
+sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
 ```
 
 # Post Install
