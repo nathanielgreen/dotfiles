@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #  _   _
 # | |_| |__   ___ _ __ ___   ___
 # | __| '_ \ / _ \ '_ ` _ \ / _ \
@@ -149,9 +156,14 @@ export BROWSER=/usr/bin/firefox
 # Kubernetes Config
 export KUBECONFIG=~/.config/kubeconfig
 
-
 # The next line updates PATH for Netlify's Git Credential Helper.
-if [ -f '/home/ngreen/.netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.netlify/helper/path.zsh.inc'; fi
+if [ -f '/home/ngreen/.config/netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.config/netlify/helper/path.zsh.inc'; fi
+# The next line updates PATH for Netlify's Git Credential Helper.
+test -f '/home/ngreen/.config/netlify/helper/path.zsh.inc' && source '/home/ngreen/.config/netlify/helper/path.zsh.inc'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -171,5 +183,3 @@ alias nnn="nnn"
 alias connectmon="~/.screenlayout/four-monitor.sh"
 alias icat="kitty +kitten icat"
 
-# The next line updates PATH for Netlify's Git Credential Helper.
-if [ -f '/home/ngreen/.config/netlify/helper/path.zsh.inc' ]; then source '/home/ngreen/.config/netlify/helper/path.zsh.inc'; fi

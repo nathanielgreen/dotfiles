@@ -53,8 +53,6 @@ sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 # Desktop
-sudo ln -s ~/.dotfiles/desktop/.screenlayout ~/.screenlayout
-sudo ln -s ~/.dotfiles/desktop/.xinitrc ~/.xinitrc
 sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
 ```
 
