@@ -180,6 +180,6 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 alias vim=nvim
 alias weather="curl wttr.in | less"
 alias nnn="nnn"
-alias connectmon="~/.screenlayout/four-monitor.sh"
 alias icat="kitty +kitten icat"
+alias screenshot="maim -s | xclip -selection clipboard -t image/png"
 
