@@ -24,15 +24,17 @@ This is where my dotfiles are stored.
 - Shell: [zsh](https://www.zsh.org/)
   - [zsh-z](https://github.com/agkozak/zsh-z)
   - [oh-my-zsh](https://ohmyz.sh/)
-    - Prompt Theme: [bullet-train.zsh](https://github.com/caiogondim/bullet-train.zsh)
+    - Prompt Theme: [p10k](https://github.com/romkatv/powerlevel10k)
 - Terminal Colors/Theme: [base16 (outrun-dark)](http://www.chriskempson.com/projects/base16/)
 - Utilities:
-  - Code searcher: [ag](https://github.com/ggreer/the_silver_searcher)
+  - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - Fuzzy finder: [fzf](https://github.com/junegunn/fzf)
 - Runtime Manager: [asdf](https://asdf-vm.com/)
   - [asdf-node](https://github.com/asdf-vm/asdf-nodejs)
   - [asdf-go](https://github.com/kennyp/asdf-golang)
   - [asdf-python](https://github.com/danhper/asdf-python)
+  - [asdf-neovim](https://github.com/richin13/asdf-neovim)
+  - [asdf-flutter](https://github.com/oae/asdf-flutter)
 - Editor: [neovim](https://github.com/neovim/neovim)
   - Plugin Manager: [vim-plug](https://github.com/junegunn/vim-plug)
 - Terminal Multiplexer: [tmux](https://github.com/tmux/tmux)
@@ -56,8 +58,16 @@ sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
 ```
 
+To tell neovim to use ~/.vimrc, add the following to your
+`~/.config/nvim/init.vim`:
+```bash
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+```
+
 # Post Install
 
-### Vim
+### Neovim
 
-In vim run: `:CocInstall coc-tsserver coc-snippets coc-prettier`
+In vim run: `:TSInstall javascript tsx json dart html typescript`

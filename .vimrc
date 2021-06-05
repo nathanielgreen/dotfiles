@@ -211,6 +211,18 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " --- PLUGIN END: telescope
 
+
+
+" --- PLUGIN START: Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+" --- PLUGIN END: Treesitter
+
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
