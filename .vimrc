@@ -11,6 +11,9 @@ Plug 'chriskempson/base16-vim'
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
+Plug 'nvim-lua/popup.nvim' " Telescope Dependency
+Plug 'nvim-lua/plenary.nvim' " Telescope Dependency
+Plug 'nvim-telescope/telescope.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
@@ -21,9 +24,6 @@ Plug 'tpope/vim-commentary' " Comment Shortcuts
 Plug 'tpope/vim-abolish' " For search and replace 
 Plug 'Yggdroot/indentLine' " For showing the ¦ for indents
 
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 "      _                _             _
