@@ -126,7 +126,7 @@ set splitright
 "  \__|_| |_|\___|_| |_| |_|\___|
 
 " What - Set the base16 theme
-colorscheme base16-outrun-dark
+colorscheme base16-eighties
 
 " What - Access colors present in 256 colorspace
 let base16colorspace=256  

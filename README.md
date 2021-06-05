@@ -25,7 +25,7 @@ This is where my dotfiles are stored.
   - [zsh-z](https://github.com/agkozak/zsh-z)
   - [oh-my-zsh](https://ohmyz.sh/)
     - Prompt Theme: [p10k](https://github.com/romkatv/powerlevel10k)
-- Terminal Colors/Theme: [base16 (outrun-dark)](http://www.chriskempson.com/projects/base16/)
+- Terminal Colors/Theme: [base16 (eighties)](http://www.chriskempson.com/projects/base16/)
 - Utilities:
   - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - Fuzzy finder: [fzf](https://github.com/junegunn/fzf)
