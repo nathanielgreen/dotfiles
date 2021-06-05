@@ -181,5 +181,4 @@ alias vim=nvim
 alias weather="curl wttr.in | less"
 alias nnn="nnn"
 alias icat="kitty +kitten icat"
-alias screenshot="maim -s | xclip -selection clipboard -t image/png"
 

@@ -1,14 +1,8 @@
 " Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
 " Syntax Support
-Plug 'rust-lang/rust.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'google/vim-jsonnet'
-Plug 'dart-lang/dart-vim-plugin'
-" Plug 'elixir-editors/vim-elixir'
-" Plug 'mhinz/vim-mix-format'
-" Plug 'tomlion/vim-solidity': Disabled as not using solidity
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'neovim/nvim-lspconfig'
 
 " Themes
 Plug 'vim-airline/vim-airline'
@@ -17,22 +11,19 @@ Plug 'chriskempson/base16-vim'
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Code Completion, formatting, and linting
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
 
 " Other
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-abolish'
-Plug 'junegunn/goyo.vim'
-" Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-sensible' " Good defaults
+Plug 'tpope/vim-commentary' " Comment Shortcuts
+Plug 'tpope/vim-abolish' " For search and replace 
+Plug 'Yggdroot/indentLine' " For showing the ¦ for indents
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 "      _                _             _
@@ -43,9 +34,6 @@ call plug#end()
 "
 " What - Map Leader Key to space
 let mapleader = " "
-
-" What - Shortcut to change buffer quickly
-nnoremap gb :ls<CR>:b<Space>
 
 " What - Sets relative number to be on by default
 set relativenumber
@@ -93,17 +81,13 @@ nnoremap <C-l> <C-w>l
 " | |_| | |_| | | | |_| |_| |
 "  \__,_|\__|_|_|_|\__|\__, |
 "                      |___/
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
 
 " What - no autocreation of backup files
 set nobackup      " No autocreation of backup files
 set nowritebackup " No autocreation of backup files
 " Why - BUG: Without these lines, storybook and angular will halt when tring to
 " save files
-"
+
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set autowrite     " Automatically :write before running commands
 
@@ -126,22 +110,6 @@ set splitbelow
 set splitright
 " Why - Otherwise they open by default to left and the top which is mental
 
-" What - Tab completion, that will insert tab at beginning of line, or
-" will use completion if not at beginning
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? coc#_select_confirm() :
-    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-" Why - Otherwise pressing tab to autocomplete will just instert a tab/space
-" characters, and the arrow keys must be used instead.
 "        _   _ _ _ _                          _
 "  _   _| |_(_) (_) |_ _   _    ___ _ __   __| |
 " | | | | __| | | | __| | | |  / _ \ '_ \ / _` |
@@ -156,6 +124,13 @@ let g:coc_snippet_next = '<tab>'
 " | __| '_ \ / _ \ '_ ` _ \ / _ \
 " | |_| | | |  __/ | | | | |  __/
 "  \__|_| |_|\___|_| |_| |_|\___|
+
+" What - Set the base16 theme
+colorscheme base16-outrun-dark
+
+" What - Access colors present in 256 colorspace
+let base16colorspace=256  
+" Why - Otherwise colors will display incorrectly
 "
 " What - Enable syntax highlighting
 syntax enable
@@ -171,14 +146,6 @@ augroup ColorcolumnOnlyInInsertMode
 augroup END
 " Why - Easier to read
 
-
-" What - Set the base16 theme
-colorscheme base16-outrun-dark
-
-" What - Access colors present in 256 colorspace
-let base16colorspace=256  
-" Why - Otherwise colors will display incorrectly
-
 "  _   _                                          _
 " | |_| |__   ___ _ __ ___   ___    ___ _ __   __| |
 " | __| '_ \ / _ \ '_ ` _ \ / _ \  / _ \ '_ \ / _` |
@@ -193,7 +160,8 @@ let base16colorspace=256
 " | |_) | | |_| | (_| | | | | \__ \
 " | .__/|_|\__,_|\__, |_|_| |_|___/
 " |_|            |___/
-" *** PLUGIN START: nnn
+
+" --- PLUGIN START: nnn
 " What - Shortcuts to open the selected file in splits
 let g:nnn#action = {
       \ '<c-t>': 'tab split',
@@ -207,28 +175,19 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 
 " What - Open nnn with key `-` in the current working directory
 nnoremap - :NnnPicker %:p:h<CR>
-" *** PLUGIN END: nnn
+" --- PLUGIN END: nnn
 
 
 
-" *** PLUGIN START: fzf
-map <Leader>f :FZF<CR>
-
-" What - Shortcut to open window switcher
-map <Leader>w :W<cr>
-" *** PLUGIN END: fzf
-
-
-
-" *** PLUGIN START: vim-airline
+" --- PLUGIN START: vim-airline
 " What - Sets the airline theme to match the shell theme of base16
 let g:airline_theme='base16'
 " Why - Otherwise it does not match the terminal colorscheme
-" *** PLUGIN END: vim-airline
+" --- PLUGIN END: vim-airline
 
 
 
-" *** PLUGIN START: indentLine
+" --- PLUGIN START: indentLine
 " What - Set the indentLine vim-conceal cursor to empty
 let g:indentLine_concealcursor=""
 " Why - If not set, in JSON files, the line under the cursor will not show
@@ -241,23 +200,22 @@ let g:indentLine_concealcursor=""
 let g:indentLine_defaultGroup = 'SpecialKey'
 " Why - The special key highlight group is the same light grey as comments,
 " otherwise the default is a darker grey like body text
-" *** PLUGIN END: indentLine
-"
-" *** PLUGIN START: vimwiki
-set nocompatible
-filetype plugin on
-syntax on
-" *** PLUGIN END: vimwiki
+" --- PLUGIN END: indentLine
+
+
+" --- PLUGIN START: telescope
+" What - Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" --- PLUGIN END: telescope
+
 "        _             _                            _
-"
-" *** PLUGIN START: dart-vim-plugin
-let g:dart_format_on_save = 1
-" *** PLUGIN END: dart-vim-plugin
-"
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
 " | |_) | | |_| | (_| | | | | \__ \ |  __/ | | | (_| |
 " | .__/|_|\__,_|\__, |_|_| |_|___/  \___|_| |_|\__,_|
 " |_|            |___/
-
-
+"
+"
