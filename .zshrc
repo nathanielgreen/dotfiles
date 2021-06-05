@@ -5,29 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#  _   _
-# | |_| |__   ___ _ __ ___   ___
-# | __| '_ \ / _ \ '_ ` _ \ / _ \
-# | |_| | | |  __/ | | | | |  __/
-#  \__|_| |_|\___|_| |_| |_|\___|
-# Bullet Train Zsh Theme
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  dir
-  git
-)
-BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_NVM_FG=black
-BULLETTRAIN_KCTX_FG=black
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-
 #           _
 #  ___  ___| |_ _   _ _ __
 # / __|/ _ \ __| | | | '_ \
@@ -38,20 +15,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 export ZSH="/home/ngreen/.oh-my-zsh"
 
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
-
-
-
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
