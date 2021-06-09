@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 " Syntax Support
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'neovim/nvim-lspconfig'
+Plug 'sbdchd/neoformat'
+Plug 'akinsho/flutter-tools.nvim'
 
 " Themes
 Plug 'vim-airline/vim-airline'
@@ -12,7 +14,7 @@ Plug 'chriskempson/base16-vim'
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'nvim-lua/popup.nvim' " Telescope Dependency
-Plug 'nvim-lua/plenary.nvim' " Telescope Dependency
+Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency
 Plug 'nvim-telescope/telescope.nvim'
 
 " Git
@@ -56,7 +58,7 @@ function! SetNoPaste()
 endfunc
 
 " What - Shortcut for better Pasting
-map <Leader>pp :set paste<cr>
+map <Leader>yp :set paste<cr>
 map <Leader>np :set nopaste<cr>
 " Why - When trying to paste without :set paste, the first line can be
 " incorrectly indented
@@ -168,7 +170,7 @@ let g:nnn#action = {
       \ '<c-x>': 'split',
       \ '<c-v>': 'vsplit' }
 
-let g:nnn#command = 'nnn -c'
+let g:nnn#command = 'nnn -co'
 
 " What - Open nnn in a floating window instead of the default pane
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
@@ -224,11 +226,38 @@ require'nvim-treesitter.configs'.setup {
 EOF
 " --- PLUGIN END: Treesitter
 
+
+" --- PLUGIN START: LSP
+lua << EOF
+-- What - Set up typescript server
+require'lspconfig'.tsserver.setup{}
+EOF
+" --- PLUGIN END: LSP
+
+
+
+" --- PLUGIN START: Neoformat
+" What - Shortcut to run Neoformat
+nnoremap <leader>p <cmd>Neoformat<cr>
+" --- PLUGIN END: Neoformat
+
+
+
+" --- PLUGIN START: Flutter tools
+lua << EOF
+require("flutter-tools").setup{
+  dev_log = {
+    open_cmd = "tabedit", -- command to use to open the log buffer
+  },
+}
+EOF
+" --- PLUGIN END: Flutter tools
+
+
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
 " | |_) | | |_| | (_| | | | | \__ \ |  __/ | | | (_| |
 " | .__/|_|\__,_|\__, |_|_| |_|___/  \___|_| |_|\__,_|
 " |_|            |___/
-"
-"
+
