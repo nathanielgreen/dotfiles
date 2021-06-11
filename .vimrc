@@ -212,10 +212,7 @@ nnoremap - :NnnPicker %:p:h<CR>
 
 
 " *** PLUGIN START: fzf
-map <Leader>f :FZF<CR>
-
-" What - Shortcut to open window switcher
-map <Leader>w :W<cr>
+map <Leader>ff :FZF<CR>
 " *** PLUGIN END: fzf
 
 
