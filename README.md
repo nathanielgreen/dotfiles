@@ -60,6 +60,7 @@ sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
 
 To tell neovim to use ~/.vimrc, add the following to your
 `~/.config/nvim/init.vim`:
+
 ```bash
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
@@ -68,6 +69,10 @@ source ~/.vimrc
 
 # Post Install
 
-### Neovim
+### Neovim pre-0.5
+
+In vim run: `:CocInstall coc-prettier coc-tailwindcss coc-tsserver`
+
+### Neovim 0.5+
 
 In vim run: `:TSInstall javascript tsx json dart html typescript`

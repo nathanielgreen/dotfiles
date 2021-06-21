@@ -19,6 +19,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'unblevable/quick-scope'
 
 " Code Completion, formatting, and linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
