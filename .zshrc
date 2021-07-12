@@ -132,9 +132,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# Flutter Pub executables
-export PATH="$PATH":"$HOME/.asdf/installs/flutter/2.0.6/.pub-cache/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+# Flutter Path Settings
+export PATH="$PATH":"/usr/local/bin/flutter/bin"
+export CHROME_EXECUTABLE=/usr/bin/chromium
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
