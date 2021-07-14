@@ -1,15 +1,16 @@
 " Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
 " Syntax Support
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig' 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Extra Detailed Syntax Highlighting
 
 " Themes
-Plug 'hoob3rt/lualine.nvim'
-Plug 'folke/tokyonight.nvim'
+Plug 'hoob3rt/lualine.nvim' " Powerline
+Plug 'folke/tokyonight.nvim' " Theme
 Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine
 
 " Navigation
+Plug 'akinsho/nvim-bufferline.lua' " Tabbed buffer line
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'unblevable/quick-scope' " First Letter Highlighting
 Plug 'nvim-lua/popup.nvim' " Telescope Dependency
@@ -18,7 +19,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Code Completion, formatting, and linting
 Plug 'folke/trouble.nvim' " Better Diagnostics
-Plug 'akinsho/flutter-tools.nvim'
+Plug 'mhartington/formatter.nvim' " Formatting
 
 " Git
 Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
@@ -28,6 +29,7 @@ Plug 'tpope/vim-sensible' " Good defaults
 Plug 'tpope/vim-commentary' " Comment Shortcuts
 Plug 'tpope/vim-abolish' " For search and replace 
 Plug 'Yggdroot/indentLine' " For showing the ¦ for indents
+Plug 'akinsho/flutter-tools.nvim' " Flutter Tools in Telescope
 call plug#end()
 
 "      _                _             _
@@ -238,10 +240,10 @@ EOF
 
 
 " --- PLUGIN START: Trouble
+map <Leader>t :TroubleToggle<cr>
 lua << EOF
 require("trouble").setup {
   mode = "lsp_document_diagnostics",
-  auto_open = true,
 }
 EOF
 " --- PLUGIN END: Trouble
@@ -267,6 +269,55 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.dartls.setup{}
 EOF
 " --- PLUGIN END: LspConfig
+
+
+
+" --- PLUGIN START: Bufferline
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
+" --- PLUGIN END: Bufferline
+
+
+
+" --- PLUGIN START: Format
+
+" What - Shortcut to format
+nnoremap <silent> <leader>p :Format<CR>
+
+" Format on save
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.tsx,*.ts,*.jsx,*.js FormatWrite
+augroup END
+
+lua << EOF
+require('formatter').setup({
+  logging = false,
+  filetype = {
+    typescriptreact = {
+     function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+          stdin = true
+        }
+      end
+    },
+    javascript = {
+     function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+          stdin = true
+        }
+      end
+    },
+  },
+})
+EOF
+" --- PLUGIN END: Format
 
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
