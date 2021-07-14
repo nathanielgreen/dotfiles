@@ -12,6 +12,7 @@ Plug 'akinsho/flutter-tools.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
+Plug 'kyazdani42/nvim-web-devicons' " Require for Trouble plugin
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
@@ -126,22 +127,18 @@ set splitbelow
 set splitright
 " Why - Otherwise they open by default to left and the top which is mental
 
-" What - Tab completion, that will insert tab at beginning of line, or
-" will use completion if not at beginning
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? coc#_select_confirm() :
-    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-" Why - Otherwise pressing tab to autocomplete will just instert a tab/space
-" characters, and the arrow keys must be used instead.
+" What - Turns off virtual text for LSP Diagnostics
+lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+        underline = true,
+        signs = true,
+    }
+)
+EOF
+" Why - Otherwise virtual text is enabled, but doesn't wrap so is useless
+"
 "        _   _ _ _ _                          _
 "  _   _| |_(_) (_) |_ _   _    ___ _ __   __| |
 " | | | | __| | | | __| | | |  / _ \ '_ \ / _` |
