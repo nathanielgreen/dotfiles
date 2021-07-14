@@ -289,7 +289,7 @@ nnoremap <silent> <leader>p :Format<CR>
 " Format on save
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.tsx,*.ts,*.jsx,*.js FormatWrite
+  autocmd BufWritePost *.tsx,*.ts,*.jsx,*.js,*.dart FormatWrite
 augroup END
 
 lua << EOF
@@ -302,6 +302,15 @@ require('formatter').setup({
           exe = "prettier",
           args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
           stdin = true
+        }
+      end
+    },
+    dart = {
+     function()
+        return {
+          exe = "dart format",
+          args = {"--summary=none", "--show=none", "--output=write", vim.api.nvim_buf_get_name(0)},
+          stdin = false
         }
       end
     },
