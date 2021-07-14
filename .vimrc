@@ -1,8 +1,7 @@
 " Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
 " Syntax Support
-" Plug 'dart-lang/dart-vim-plugin'
- Plug 'akinsho/flutter-tools.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'neovim/nvim-lspconfig'
 
 " Themes
@@ -18,20 +17,17 @@ Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency
 Plug 'nvim-telescope/telescope.nvim'
 
 " Code Completion, formatting, and linting
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'folke/trouble.nvim' " Better Diagnostics
-
+Plug 'akinsho/flutter-tools.nvim'
 
 " Git
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
 
 " Other
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-abolish'
-Plug 'junegunn/goyo.vim'
-" Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-sensible' " Good defaults
+Plug 'tpope/vim-commentary' " Comment Shortcuts
+Plug 'tpope/vim-abolish' " For search and replace 
+Plug 'Yggdroot/indentLine' " For showing the ¦ for indents
 call plug#end()
 
 "      _                _             _
@@ -42,9 +38,6 @@ call plug#end()
 "
 " What - Map Leader Key to space
 let mapleader = " "
-
-" What - Shortcut to change buffer quickly
-nnoremap gb :ls<CR>:b<Space>
 
 " What - Sets relative number to be on by default
 set relativenumber
@@ -170,10 +163,6 @@ augroup END
 " What - Set the tokyonight 
 colorscheme tokyonight
 
-" What - Access colors present in 256 colorspace
-let base16colorspace=256  
-" Why - Otherwise colors will display incorrectly
-
 "  _   _                                          _
 " | |_| |__   ___ _ __ ___   ___    ___ _ __   __| |
 " | __| '_ \ / _ \ '_ ` _ \ / _ \  / _ \ '_ \ / _` |
@@ -188,7 +177,8 @@ let base16colorspace=256
 " | |_) | | |_| | (_| | | | | \__ \
 " | .__/|_|\__,_|\__, |_|_| |_|___/
 " |_|            |___/
-" *** PLUGIN START: nnn
+"
+" --- PLUGIN START: nnn
 " What - Shortcuts to open the selected file in splits
 let g:nnn#action = {
       \ '<c-t>': 'tab split',
@@ -202,7 +192,7 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 
 " What - Open nnn with key `-` in the current working directory
 nnoremap - :NnnPicker %:p:h<CR>
-" *** PLUGIN END: nnn
+" --- PLUGIN END: nnn
 
 
 
@@ -214,14 +204,6 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>gs :lua require'telescope.builtin'.git_status{}<cr>
 " --- PLUGIN END: telescope
-
-
-
-" --- PLUGIN START: vim-airline
-" What - Sets the airline theme to match the shell theme of base16
-let g:airline_theme='base16'
-" Why - Otherwise it does not match the terminal colorscheme
-" --- PLUGIN END: vim-airline
 
 
 
@@ -239,20 +221,6 @@ let g:indentLine_defaultGroup = 'SpecialKey'
 " Why - The special key highlight group is the same light grey as comments,
 " otherwise the default is a darker grey like body text
 " --- PLUGIN END: indentLine
-
-
-
-" --- PLUGIN START: vimwiki
-set nocompatible
-filetype plugin on
-syntax on
-" --- PLUGIN END: vimwiki
-
-
-
-" --- PLUGIN START: dart-vim-plugin
-let g:dart_format_on_save = 1
-" --- PLUGIN END: dart-vim-plugin
 
 
 
@@ -287,8 +255,18 @@ require('lualine').setup({
     theme = 'tokyonight'
   }
 })
+require'lspconfig'.tsserver.setup{}
 EOF
 " --- PLUGIN END: Lualine
+
+
+
+" --- PLUGIN START: LspConfig
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.dartls.setup{}
+EOF
+" --- PLUGIN END: LspConfig
 
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
