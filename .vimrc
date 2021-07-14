@@ -1,18 +1,14 @@
 " Set up VimPlug package installer 
 call plug#begin('~/.vim/plugged')
 " Syntax Support
-Plug 'rust-lang/rust.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'google/vim-jsonnet'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'akinsho/flutter-tools.nvim'
+" Plug 'dart-lang/dart-vim-plugin'
+ Plug 'akinsho/flutter-tools.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 " Themes
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
-Plug 'kyazdani42/nvim-web-devicons' " Require for Trouble plugin
+Plug 'hoob3rt/lualine.nvim'
+Plug 'folke/tokyonight.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
@@ -22,7 +18,9 @@ Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency
 Plug 'nvim-telescope/telescope.nvim'
 
 " Code Completion, formatting, and linting
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'folke/trouble.nvim' " Better Diagnostics
+
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -169,8 +167,8 @@ augroup END
 " Why - Easier to read
 
 
-" What - Set the base16 theme
-colorscheme base16-eighties
+" What - Set the tokyonight 
+colorscheme tokyonight
 
 " What - Access colors present in 256 colorspace
 let base16colorspace=256  
@@ -268,6 +266,29 @@ require("flutter-tools").setup{
 }
 EOF
 " --- PLUGIN END: Flutter tools
+
+
+
+" --- PLUGIN START: Trouble
+lua << EOF
+require("trouble").setup {
+  mode = "lsp_document_diagnostics",
+  auto_open = true,
+}
+EOF
+" --- PLUGIN END: Trouble
+
+
+
+" --- PLUGIN START: Lualine
+lua << EOF
+require('lualine').setup({
+  options = {
+    theme = 'tokyonight'
+  }
+})
+EOF
+" --- PLUGIN END: Lualine
 
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
