@@ -6,9 +6,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'google/vim-jsonnet'
 Plug 'dart-lang/dart-vim-plugin'
-" Plug 'elixir-editors/vim-elixir'
-" Plug 'mhinz/vim-mix-format'
-" Plug 'tomlion/vim-solidity': Disabled as not using solidity
+Plug 'akinsho/flutter-tools.nvim'
 
 " Themes
 Plug 'vim-airline/vim-airline'
@@ -17,9 +15,10 @@ Plug 'chriskempson/base16-vim'
 
 " Navigation
 Plug 'mcchrish/nnn.vim' " Folder Navigation
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope' " First Letter Highlighting
+Plug 'nvim-lua/popup.nvim' " Telescope Dependency
+Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency
+Plug 'nvim-telescope/telescope.nvim'
 
 " Code Completion, formatting, and linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -212,21 +211,26 @@ nnoremap - :NnnPicker %:p:h<CR>
 
 
 
-" *** PLUGIN START: fzf
-map <Leader>ff :FZF<CR>
-" *** PLUGIN END: fzf
+" --- PLUGIN START: telescope
+" What - Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gs :lua require'telescope.builtin'.git_status{}<cr>
+" --- PLUGIN END: telescope
 
 
 
-" *** PLUGIN START: vim-airline
+" --- PLUGIN START: vim-airline
 " What - Sets the airline theme to match the shell theme of base16
 let g:airline_theme='base16'
 " Why - Otherwise it does not match the terminal colorscheme
-" *** PLUGIN END: vim-airline
+" --- PLUGIN END: vim-airline
 
 
 
-" *** PLUGIN START: indentLine
+" --- PLUGIN START: indentLine
 " What - Set the indentLine vim-conceal cursor to empty
 let g:indentLine_concealcursor=""
 " Why - If not set, in JSON files, the line under the cursor will not show
@@ -239,19 +243,36 @@ let g:indentLine_concealcursor=""
 let g:indentLine_defaultGroup = 'SpecialKey'
 " Why - The special key highlight group is the same light grey as comments,
 " otherwise the default is a darker grey like body text
-" *** PLUGIN END: indentLine
-"
-" *** PLUGIN START: vimwiki
+" --- PLUGIN END: indentLine
+
+
+
+" --- PLUGIN START: vimwiki
 set nocompatible
 filetype plugin on
 syntax on
-" *** PLUGIN END: vimwiki
-"        _             _                            _
-"
-" *** PLUGIN START: dart-vim-plugin
+" --- PLUGIN END: vimwiki
+
+
+
+" --- PLUGIN START: dart-vim-plugin
 let g:dart_format_on_save = 1
-" *** PLUGIN END: dart-vim-plugin
-"
+" --- PLUGIN END: dart-vim-plugin
+
+
+
+" --- PLUGIN START: Flutter tools
+nnoremap <leader>fl <cmd>Telescope flutter commands<cr>
+lua << EOF
+require("flutter-tools").setup{
+  dev_log = {
+    open_cmd = "tabedit", -- command to use to open the log buffer
+  },
+}
+EOF
+" --- PLUGIN END: Flutter tools
+
+"        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
 " | '_ \| | | | |/ _` | | '_ \/ __|  / _ \ '_ \ / _` |
 " | |_) | | |_| | (_| | | | | \__ \ |  __/ | | | (_| |
