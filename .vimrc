@@ -7,10 +7,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Extra Detailed Syn
 " Themes
 Plug 'hoob3rt/lualine.nvim' " Powerline
 Plug 'folke/tokyonight.nvim' " Theme
-Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine
+Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine + BarBar
 
 " Navigation
-Plug 'akinsho/nvim-bufferline.lua' " Tabbed buffer line
+Plug 'romgrk/barbar.nvim' " Tabline
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'unblevable/quick-scope' " First Letter Highlighting
 Plug 'nvim-lua/popup.nvim' " Telescope Dependency
@@ -269,15 +269,6 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.dartls.setup{}
 EOF
 " --- PLUGIN END: LspConfig
-
-
-
-" --- PLUGIN START: Bufferline
-set termguicolors
-lua << EOF
-require("bufferline").setup{}
-EOF
-" --- PLUGIN END: Bufferline
 
 
 
