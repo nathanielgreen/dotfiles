@@ -62,7 +62,7 @@ function! SetNoPaste()
 endfunc
 
 " What - Shortcut for better Pasting
-map <Leader>pp :set paste<cr>
+map <Leader>yp :set paste<cr>
 map <Leader>np :set nopaste<cr>
 " Why - When trying to paste without :set paste, the first line can be
 " incorrectly indented
@@ -269,6 +269,18 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.dartls.setup{}
 EOF
 " --- PLUGIN END: LspConfig
+
+
+
+" --- PLUGIN START: Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+" --- PLUGIN END: Treesitter
 
 
 

@@ -33,8 +33,6 @@ This is where my dotfiles are stored.
   - [asdf-node](https://github.com/asdf-vm/asdf-nodejs)
   - [asdf-go](https://github.com/kennyp/asdf-golang)
   - [asdf-python](https://github.com/danhper/asdf-python)
-  - [asdf-neovim](https://github.com/richin13/asdf-neovim)
-  - [asdf-flutter](https://github.com/oae/asdf-flutter)
 - Editor: [neovim](https://github.com/neovim/neovim)
   - Plugin Manager: [vim-plug](https://github.com/junegunn/vim-plug)
 - Terminal Multiplexer: [tmux](https://github.com/tmux/tmux)
@@ -69,10 +67,6 @@ source ~/.vimrc
 
 # Post Install
 
-### Neovim pre-0.5
-
-In vim run: `:CocInstall coc-prettier coc-tailwindcss coc-tsserver`
-
-### Neovim 0.5+
+### Neovim 0.5
 
 In vim run: `:TSInstall javascript tsx json dart html typescript`
