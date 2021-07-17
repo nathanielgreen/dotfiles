@@ -7,10 +7,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Extra Detailed Syn
 " Themes
 Plug 'hoob3rt/lualine.nvim' " Powerline
 Plug 'folke/tokyonight.nvim' " Theme
-Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine + BarBar
+Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine
 
 " Navigation
-Plug 'romgrk/barbar.nvim' " Tabline
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'unblevable/quick-scope' " First Letter Highlighting
 Plug 'nvim-lua/popup.nvim' " Telescope Dependency
@@ -206,6 +205,13 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>gs :lua require'telescope.builtin'.git_status{}<cr>
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = { "node_modules/**", ".git/**", ".netlify/**" , ".next/**" },
+  }
+}
+EOF
 " --- PLUGIN END: telescope
 
 
@@ -318,6 +324,15 @@ require('formatter').setup({
         }
       end
     },
+    typescript = {
+     function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+          stdin = true
+        }
+      end
+    },
     dart = {
      function()
         return {
@@ -347,7 +362,7 @@ EOF
 set completeopt=menuone,noselect
 lua << EOF
 
-
+-- What - Defaults copied from README
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -382,7 +397,16 @@ require'compe'.setup {
   };
 }
 EOF
+
+" What - Keymaps
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 " --- PLUGIN END: Compe
+
+
 
 "        _             _                            _
 "  _ __ | |_   _  __ _(_)_ __  ___    ___ _ __   __| |
