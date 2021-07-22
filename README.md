@@ -20,6 +20,7 @@ This is where my dotfiles are stored.
 
 # Pre-requisties
 
+- Font: [FiraCode](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Shell: [zsh](https://www.zsh.org/)
   - [zsh-z](https://github.com/agkozak/zsh-z)
