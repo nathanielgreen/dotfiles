@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Syntax Support
 Plug 'neovim/nvim-lspconfig' 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Extra Detailed Syntax Highlighting
+Plug 'google/vim-jsonnet'
 
 " Themes
 Plug 'hoob3rt/lualine.nvim' " Powerline
@@ -330,6 +331,15 @@ require('formatter').setup({
           exe = "prettier",
           args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
           stdin = true
+        }
+      end
+    },
+    jsonnet = {
+     function()
+        return {
+          exe = "jsonnetfmt -i",
+          args = {vim.api.nvim_buf_get_name(0)},
+          stdin = false
         }
       end
     },
