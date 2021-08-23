@@ -22,7 +22,7 @@ exec --no-startup-id ~/.dotfiles/desktop/monitor-setup.sh
 exec --no-startup-id nm-applet
 
 # Setup Logitech Mouse 
-exec --no-startup-id solaar
+exec --no-startup-id solaar -w hide
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
