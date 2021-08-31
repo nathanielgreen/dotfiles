@@ -134,7 +134,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Flutter Path Settings
 export PATH="$PATH":"/usr/local/bin/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 export CHROME_EXECUTABLE=/usr/bin/chromium
+
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
@@ -144,4 +146,6 @@ alias vim=nvim
 alias weather="curl wttr.in | less"
 alias nnn="nnn"
 alias icat="kitty +kitten icat"
+alias cputemp="watch -n 2 sensors"
+alias gputemp="watch -n 2 nvidia-smi"
 
