@@ -140,6 +140,9 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 # Maven & Java Path
 export PATH="$PATH":"/opt/apache-maven-3.8.2/bin/"
 
+# Ruby Path
+export PATH="$PATH":"$(ruby -e 'print Gem.user_dir')/bin"
+
 #        _ _
 #   __ _| (_) __ _ ___  ___  ___
 #  / _` | | |/ _` / __|/ _ \/ __|
