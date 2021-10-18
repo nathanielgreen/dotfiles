@@ -166,6 +166,10 @@ augroup END
 " What - Set the tokyonight 
 colorscheme tokyonight
 
+" What - Set filetype for .arb files to be JSON
+au BufRead,BufNewFile *.arb set filetype=json
+" Why - Otherwise vim does not recognise the syntax and doesn't highlight
+
 "  _   _                                          _
 " | |_| |__   ___ _ __ ___   ___    ___ _ __   __| |
 " | __| '_ \ / _ \ '_ ` _ \ / _ \  / _ \ '_ \ / _` |
