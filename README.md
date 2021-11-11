@@ -6,7 +6,7 @@ This is where my dotfiles are stored.
 
 ### Desktop
 
-- OS: Arch Linux
+- OS: Fedora 35
 - WM: i3
 - CPU: Intel i5-4690K
 - GPU: NVIDIA GeForce GTX 780 Ti
@@ -15,7 +15,7 @@ This is where my dotfiles are stored.
 ### Laptop
 
 - Model: Thinkpad X260
-- OS: Arch Linux
+- OS: Fedora 35
 - WM: i3
 
 # Pre-requisties
@@ -23,10 +23,10 @@ This is where my dotfiles are stored.
 - Font: [FiraCode](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Shell: [zsh](https://www.zsh.org/)
-  - [zsh-z](https://github.com/agkozak/zsh-z)
+  - [zoxide](https://github.com/ajeetdsouza/zoxide)
   - [oh-my-zsh](https://ohmyz.sh/)
-    - Prompt Theme: [p10k](https://github.com/romkatv/powerlevel10k)
-- Terminal Colors/Theme: [base16 (eighties)](http://www.chriskempson.com/projects/base16/)
+    - Prompt Theme: robbyrussel
+- Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - Utilities:
   - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - Fuzzy finder: [fzf](https://github.com/junegunn/fzf)
@@ -36,8 +36,7 @@ This is where my dotfiles are stored.
   - [asdf-python](https://github.com/danhper/asdf-python)
 - Editor: [neovim](https://github.com/neovim/neovim)
   - Plugin Manager: [vim-plug](https://github.com/junegunn/vim-plug)
-- Terminal Multiplexer: [tmux](https://github.com/tmux/tmux)
-  - Plugin Manager: [tpm](https://github.com/tmux-plugins/tpm)
+- Terminal Multiplexer: [zellij](https://zellij.dev/)
 
 # Installation
 
@@ -48,7 +47,6 @@ Once all the above programs are installed run the following commands:
 git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 
 # Set up symlinks
-sudo ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
