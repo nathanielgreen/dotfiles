@@ -21,6 +21,9 @@ exec --no-startup-id ~/.dotfiles/desktop/monitor-setup.sh
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Setup Volume applet
+exec --no-startup-id volumeicon
+
 # Setup Logitech Mouse 
 exec --no-startup-id solaar -w hide
 
