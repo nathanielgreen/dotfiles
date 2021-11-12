@@ -4,6 +4,9 @@ export ZSH="/home/ngreen/.oh-my-zsh"
 # Theme
 ZSH_THEME="robbyrussell"
 
+# Setup zoxide
+eval "$(zoxide init zsh)"
+
 # Plugins
 plugins=(git)
 

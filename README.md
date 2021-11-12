@@ -49,12 +49,13 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 # Set up symlinks
 sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
-sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 # Desktop
 sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
+sudo ln -s ~/.dotfiles/desktop/kitty.conf ~/.config/kitty/kitty.conf
 
 # Laptop
+sudo ln -s ~/.dotfiles/laptop/kitty.conf ~/.config/kitty/kitty.conf
 sudo ln -s ~/.dotfiles/laptop/i3config ~/.config/i3/config
 sudo ln -s ~/.dotfiles/laptop/i3status ~/.config/i3status/config
 ```
