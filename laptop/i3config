@@ -31,10 +31,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Map Caps Lock to Ctrl
-exec --no-startup-id setxkmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 # Set wallpaper
-feh --bg-center ~/.dotfiles/wallpapers/skull.png
+exec --no-startup-id feh --bg-center ~/.dotfiles/wallpapers/skull.png
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
