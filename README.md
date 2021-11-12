@@ -53,6 +53,9 @@ sudo ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 # Desktop
 sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
+
+# Laptop
+sudo ln -s ~/.dotfiles/laptop/i3config ~/.config/i3/config
 ```
 
 To tell neovim to use ~/.vimrc, add the following to your
@@ -67,5 +70,13 @@ source ~/.vimrc
 # Post Install
 
 ### Neovim 0.5
+
+**NOTE:** If on Fedora 35 you'll need to install some dependencies before
+installing Treesitter packages:
+
+```
+sudo dnf install gcc-c++
+sudo dnf install libstdc++-static
+```
 
 In vim run: `:TSInstall javascript tsx json dart html typescript`
