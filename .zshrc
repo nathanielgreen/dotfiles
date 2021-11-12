@@ -28,6 +28,9 @@ export PATH="$PATH":"/home/ngreen/Android/Sdk/emulator"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/tools"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/platform-tools"
 
+# Setup Flutter
+export PATH="$PATH":"/usr/local/bin/flutter/bin"
+
 # -----
 # Aliases
 # =====
