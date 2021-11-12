@@ -56,6 +56,7 @@ sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
 
 # Laptop
 sudo ln -s ~/.dotfiles/laptop/i3config ~/.config/i3/config
+sudo ln -s ~/.dotfiles/laptop/i3status ~/.config/i3status/config
 ```
 
 To tell neovim to use ~/.vimrc, add the following to your
