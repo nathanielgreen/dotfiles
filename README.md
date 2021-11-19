@@ -81,4 +81,4 @@ sudo dnf install gcc-c++
 sudo dnf install libstdc++-static
 ```
 
-In vim run: `:TSInstall javascript tsx json dart html typescript`
+In vim run: `:TSInstall javascript tsx json dart html typescript svelte`

@@ -30,6 +30,10 @@ export PATH="$PATH":"/home/ngreen/Android/Sdk/platform-tools"
 
 # Setup Flutter
 export PATH="$PATH":"/usr/local/bin/flutter/bin"
+# Flutter global Executables
+export PATH="$PATH":"/usr/local/bin/flutter/.pub-cache/bin"
+# Dart global Executables
+ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # -----
 # Aliases
