@@ -14,11 +14,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Set keyboard to GB
 exec --no-startup-id setxkbmap gb
 
-# Setup Monitors
-exec --no-startup-id ~/.dotfiles/desktop/monitor-setup.sh
-
 # Setup Background
 exec --no-startup-id feh --bg-center ~/.dotfiles/wallpapers/skull.png
+
+# Setup Monitors
+exec --no-startup-id ~/.dotfiles/desktop/monitor-setup.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
