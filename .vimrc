@@ -26,6 +26,7 @@ Plug 'hrsh7th/nvim-compe' " Autocompletion
 Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
 
 " Other
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'tpope/vim-sensible' " Good defaults
 Plug 'tpope/vim-commentary' " Comment Shortcuts
 Plug 'tpope/vim-abolish' " For search and replace 

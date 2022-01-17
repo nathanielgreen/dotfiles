@@ -24,8 +24,7 @@ This is where my dotfiles are stored.
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - Shell: [zsh](https://www.zsh.org/)
   - [zoxide](https://github.com/ajeetdsouza/zoxide)
-  - [oh-my-zsh](https://ohmyz.sh/)
-    - Prompt Theme: robbyrussel
+  - [starship](https://starship.rs/)
 - Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - Utilities:
   - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)

@@ -1,28 +1,24 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/home/ngreen/.oh-my-zsh"
-
-# Theme
-ZSH_THEME="robbyrussell"
-
 # Setup zoxide
 eval "$(zoxide init zsh)"
-
-# Plugins
-plugins=(git)
 
 # Setup ASDF Version manager
 . $HOME/.asdf/asdf.sh
 
+
 # -----
 # Exports
 # =====
-
-# Editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-
 export BROWSER=/usr/bin/firefox
+export CHROME_EXECUTABLE="/usr/lib64/chromium-browser/chromium-browser"
+export STARSHIP_CONFIG="/home/ngreen/.config/starship.toml"
 
+
+
+# -----
+# Path
+# =====
 # Android Tools Path
 export PATH="$PATH":"/home/ngreen/Android/Sdk/emulator"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/tools"
@@ -33,7 +29,9 @@ export PATH="$PATH":"/usr/local/bin/flutter/bin"
 # Flutter global Executables
 export PATH="$PATH":"/usr/local/bin/flutter/.pub-cache/bin"
 # Dart global Executables
- export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
 
 # -----
 # Aliases
@@ -45,4 +43,5 @@ alias icat="kitty +kitten icat"
 alias cputemp="watch -n 2 sensors"
 alias gputemp="watch -n 2 nvidia-smi"
 
-source $ZSH/oh-my-zsh.sh
+# Init Starship
+eval "$(starship init zsh)"
