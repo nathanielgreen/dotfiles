@@ -14,18 +14,21 @@ Plug 'kyazdani42/nvim-web-devicons' " Icons for Trouble and Lualine
 Plug 'mcchrish/nnn.vim' " Folder Navigation
 Plug 'unblevable/quick-scope' " First Letter Highlighting
 Plug 'nvim-lua/popup.nvim' " Telescope Dependency
-Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency
+Plug 'nvim-lua/plenary.nvim' " Telescope + Flutter Tools Dependency + Spectre
 Plug 'nvim-telescope/telescope.nvim'
 
 " Code Completion, formatting, and linting
 Plug 'folke/trouble.nvim' " Better Diagnostics
 Plug 'mhartington/formatter.nvim' " Formatting
 Plug 'hrsh7th/nvim-compe' " Autocompletion
+Plug 'windwp/nvim-spectre' " Search and replace
 
 " Git
 Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
 
 " Other
+Plug 'mfussenegger/nvim-dap' " Debugging
+Plug 'rcarriga/nvim-dap-ui' " Debugging UI
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'tpope/vim-sensible' " Good defaults
 Plug 'tpope/vim-commentary' " Comment Shortcuts
@@ -256,7 +259,7 @@ EOF
 map <Leader>t :TroubleToggle<cr>
 lua << EOF
 require("trouble").setup {
-  mode = "lsp_document_diagnostics",
+  mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 }
 EOF
 " --- PLUGIN END: Trouble
@@ -430,6 +433,38 @@ inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 " --- PLUGIN END: Compe
 
+
+
+" --- PLUGIN START: Spectre
+nnoremap <leader>S :lua require('spectre').open()<CR>
+" --- PLUGIN END: Spectre
+"
+" --- PLUGIN START: Dap
+nnoremap <leader>dt :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <leader>dc :lua require('dap').continue()<CR>
+nnoremap <leader>dso :lua require('dap').step_over()<CR>
+nnoremap <leader>dsi :lua require('dap').step_into()<CR>
+nnoremap <leader>dr :lua require('dap').repl.open()<CR>
+lua << EOF
+local dap = require('dap')
+dap.adapters.dart = {
+  type = "executable",
+  command = "node",
+  args = {"/home/ngreen/Work/dartdebug/out/dist/debug.js", "flutter"}
+}
+dap.configurations.dart = {
+  {
+    type = "dart",
+    request = "launch",
+    name = "Launch flutter",
+    dartSdkPath = "/usr/local/bin/flutter/bin/cache/dart-sdk/",
+    flutterSdkPath = "/usr/local/bin/flutter/",
+    program = "${workspaceFolder}/lib/main.dart",
+    cwd = "${workspaceFolder}",
+  }
+}
+EOF
+" --- PLUGIN END: Dap
 
 
 "        _             _                            _
