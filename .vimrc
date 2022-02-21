@@ -405,7 +405,7 @@ EOF
 
 
 " --- PLUGIN Start: Compe
-set completeopt=menu,menuone,noselect
+set completeopt=menuone,noselect
 lua <<EOF
   -- Setup nvim-cmp.
   local cmp = require'cmp'
