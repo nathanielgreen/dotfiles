@@ -20,11 +20,9 @@ Plug 'nvim-telescope/telescope.nvim'
 " Formatting, and linting
 Plug 'folke/trouble.nvim' " Better Diagnostics
 Plug 'mhartington/formatter.nvim' " Formatting
-" Plug 'hrsh7th/nvim-cmp' " Autocompletion
-Plug 'windwp/nvim-spectre' " Search and replace
+Plug 'windwp/nvim-spectre' " Project-wide Search and replace
 
 " Code Completion
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -32,6 +30,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'Neevash/awesome-flutter-snippets'
 
 " Git
 Plug 'tpope/vim-fugitive' " Git Shortcuts like git blame
@@ -135,16 +134,16 @@ set splitbelow
 set splitright
 " Why - Otherwise they open by default to left and the top which is mental
 
-" What - Turns off virtual text for LSP Diagnostics
-lua << EOF
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false,
-        underline = true,
-        signs = true,
-    }
-)
-EOF
+" What - Turns on virtual text for LSP Diagnostics
+" lua << EOF
+" vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+"     vim.lsp.diagnostic.on_publish_diagnostics, {
+"         virtual_text = true,
+"         underline = true,
+"         signs = true,
+"     }
+" )
+" EOF
 " Why - Otherwise virtual text is enabled, but doesn't wrap so is useless
 "
 "        _   _ _ _ _                          _
@@ -272,6 +271,7 @@ require("trouble").setup {
   mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 }
 EOF
+
 " --- PLUGIN END: Trouble
 
 
@@ -292,7 +292,6 @@ EOF
 " --- PLUGIN START: LspConfig
 lua << EOF
 require'lspconfig'.tsserver.setup{}
-require'lspconfig'.dartls.setup{}
 EOF
 " --- PLUGIN END: LspConfig
 
@@ -405,7 +404,7 @@ EOF
 
 
 " --- PLUGIN Start: Compe
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 lua <<EOF
   -- Setup nvim-cmp.
   local cmp = require'cmp'
@@ -464,9 +463,9 @@ lua <<EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['dartls'].setup {
-    capabilities = capabilities
-  }
+  --- require('lspconfig')['dartls'].setup { <-- Configured by Flutter Tools
+  ---  capabilities = capabilities
+  ---}
 EOF
 " --- PLUGIN END: Compe
 
