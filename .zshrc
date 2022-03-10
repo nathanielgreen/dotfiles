@@ -56,12 +56,5 @@ alias nnn="nnn"
 alias icat="kitty +kitten icat"
 alias cputemp="watch -n 2 sensors"
 alias gputemp="watch -n 2 nvidia-smi"
-alias blayout='i3-msg "workspace 4; append_layout /home/ngreen/.config/i3/runners.json"'
-alias btest='i3-msg "workspace 4; append_layout /home/ngreen/.config/i3/test.json"'
-alias bapi="mvn appengine:run -pl evogro-server-api"
-alias badmin="mvn appengine:run -pl evogro-server-admin"
-alias bmobile="mvn appengine:run -pl evogro-server-mobile"
-alias blogin="mvn appengine:run -pl evogro-server-login"
-alias bseed='mvn -pl evogro-server-api -Dtest="com.evogro.farmino.acceptancetest.FarminoAcceptanceTest#createDataForNat" test'
 
 eval "$(starship init zsh)"
