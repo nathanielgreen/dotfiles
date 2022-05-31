@@ -14,19 +14,25 @@ This is where my dotfiles are stored.
 
 ### Laptop
 
-- Model: Thinkpad X260
-- OS: Fedora 35
-- WM: i3
+- Model: 14" 2021 Macbook Pro
+- OS: MacOS Monterey
+- WM: Rectangle
+- CPU: M1 Max with 10-core  
+- GPU: M1 Max 24-core, 16-core Neural Engine
+- RAM: 32GB
 
 # Pre-requisties
 
 - Font: [FiraCode](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
-- Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
-- Shell: [bash + fish](https://fishshell.com/)
-  - [zoxide](https://github.com/ajeetdsouza/zoxide)
-  - [starship](https://starship.rs/)
+- Terminal:
+  - Linux: [kitty](https://sw.kovidgoyal.net/kitty/)
+  - Mac: [iTerm2](https://iterm2.com/)
+- Shell: 
+  - Login: [zsh](https://www.zsh.org/)
+  - Interactive Shell [fish](https://fishshell.com/)
 - Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - Utilities:
+  - Quick Navigation: [zoxide](https://github.com/ajeetdsouza/zoxide)
   - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - Fuzzy finder: [fzf](https://github.com/junegunn/fzf)
 - Runtime Manager: [asdf](https://asdf-vm.com/)
@@ -41,24 +47,35 @@ This is where my dotfiles are stored.
 
 Once all the above programs are installed run the following commands:
 
-```bash
-# Clone the repo using SSH
-git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
+<details>
+  <summary>Fedora 35</summary>
+  ```bash
+  # Clone the repo using SSH
+  git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 
-# Set up symlinks
-sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
-sudo ln -s ~/.dotfiles/.bashrc ~/.bashrc
-sudo ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
+  # Set up symlinks
+  sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
+  sudo ln -s ~/.dotfiles/.bashrc ~/.bashrc
 
-# Desktop
-sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
-sudo ln -s ~/.dotfiles/desktop/kitty.conf ~/.config/kitty/kitty.conf
+  # Desktop Specific
+  sudo ln -s ~/.dotfiles/desktop/config.fish ~/.config/fish/config.fish
+  sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
+  sudo ln -s ~/.dotfiles/desktop/kitty.conf ~/.config/kitty/kitty.conf
+  ```
+</details>
 
-# Laptop
-sudo ln -s ~/.dotfiles/laptop/kitty.conf ~/.config/kitty/kitty.conf
-sudo ln -s ~/.dotfiles/laptop/i3config ~/.config/i3/config
-sudo ln -s ~/.dotfiles/laptop/i3status ~/.config/i3status/config
-```
+<details>
+  <summary>MacOS</summary>
+  ```bash
+  # Clone the repo using SSH
+  git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
+
+  # Set up symlinks
+  sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
+  sudo ln -s ~/.dotfiles/mac/config.fish ~/.config/fish/config.fish
+  ```
+</details>
+
 
 To tell neovim to use ~/.vimrc, add the following to your
 `~/.config/nvim/init.vim`:
