@@ -1,20 +1,13 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
 # Setup zoxide
-eval "$(zoxide init zsh)"
+zoxide init fish | source
 
 # Setup ASDF Version manager
-. $HOME/.asdf/asdf.sh
-. ~/.asdf/plugins/java/set-java-home.zsh
+source ~/.asdf/asdf.fish
 
-# Set up zsh autocomplete
-source /home/ngreen/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-# ZSH History config
-setopt appendhistory
-setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
-setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
-setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
-setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
-setopt EXTENDED_HISTORY # record command start time
 
 
 # -----
@@ -22,9 +15,6 @@ setopt EXTENDED_HISTORY # record command start time
 # =====
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export HISTFILE="/home/ngreen/.zsh_history"
-export HISTSIZE=1000
-export SAVEHIST=1000
 export BROWSER=/usr/bin/firefox
 export CHROME_EXECUTABLE="/usr/lib64/chromium-browser/chromium-browser"
 export STARSHIP_CONFIG="/home/ngreen/.config/starship.toml"
@@ -38,6 +28,7 @@ export STARSHIP_CONFIG="/home/ngreen/.config/starship.toml"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/emulator"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/tools"
 export PATH="$PATH":"/home/ngreen/Android/Sdk/platform-tools"
+
 # Setup Flutter
 export PATH="$PATH":"/usr/local/bin/flutter/bin"
 # Flutter global Executables
@@ -57,4 +48,6 @@ alias icat="kitty +kitten icat"
 alias cputemp="watch -n 2 sensors"
 alias gputemp="watch -n 2 nvidia-smi"
 
-eval "$(starship init zsh)"
+
+
+starship init fish | source

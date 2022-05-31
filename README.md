@@ -22,7 +22,7 @@ This is where my dotfiles are stored.
 
 - Font: [FiraCode](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
-- Shell: [zsh](https://www.zsh.org/)
+- Shell: [bash + fish](https://fishshell.com/)
   - [zoxide](https://github.com/ajeetdsouza/zoxide)
   - [starship](https://starship.rs/)
 - Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
@@ -47,7 +47,8 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 
 # Set up symlinks
 sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
-sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
+sudo ln -s ~/.dotfiles/.bashrc ~/.bashrc
+sudo ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
 
 # Desktop
 sudo ln -s ~/.dotfiles/desktop/i3config ~/.config/i3/config
