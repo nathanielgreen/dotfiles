@@ -17,6 +17,18 @@ require "paq" {
   "nvim-lua/popup.nvim";              -- Telescope Dependency
   "nvim-lua/plenary.nvim";            -- Telescope + Flutter Tools Dependency + Spectre
   "nvim-telescope/telescope.nvim";
+
+
+  -- Formatting, and linting
+  "folke/trouble.nvim";               -- Better Diagnostics
+  "mhartington/formatter.nvim";       -- Formatting
+  "windwp/nvim-spectre";              -- Project-wide Search and replace
+
+  -- Other
+  "tpope/vim-sensible";               -- Good defaults
+  "tpope/vim-commentary";             -- Comment Shortcuts
+  "tpope/vim-abolish";                -- For search and replace 
+  "Yggdroot/indentLine";              -- For showing the ¦ for indents
 }
 
 -- Set Leader Key
@@ -51,3 +63,71 @@ vim.api.nvim_set_keymap("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { si
 vim.api.nvim_set_keymap("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { silent = true })
 -- PLUGIN END: telescope
+
+
+
+-- PLUGIN START: Trouble
+require("trouble").setup {
+ mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+}
+vim.api.nvim_set_keymap("n", "<Leader>t", ":TroubleToggle<CR>", { silent = true });
+-- PLUGIN END: Trouble
+
+
+
+--- PLUGIN START: Format
+-- What: Shortcut to format
+vim.api.nvim_set_keymap("n", "<leader>p", ":Format<CR>", { silent = true })
+ 
+require('formatter').setup({
+  logging = false,
+  filetype = {
+    json = {
+      function()
+       return {
+         exe = "prettier",
+         args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+         stdin = true
+       }
+      end
+    },
+    dart = {
+      function()
+       return {
+         exe = "dart format",
+         args = {"--summary=none", "--show=none", "--output=write", vim.api.nvim_buf_get_name(0)},
+         stdin = false
+       }
+      end
+    },
+  },
+})
+
+-- Format on save
+vim.cmd [[augroup FormatAutogroup]]
+vim.cmd [[autocmd!]]
+vim.cmd [[autocmd BufWritePost *.json,*.dart FormatWrite]]
+vim.cmd [[augroup END]]
+--- PLUGIN END: Format
+
+
+--- PLUGIN START: Spectre
+vim.api.nvim_set_keymap("n", "<leader>S", ":lua require('spectre').open()<CR>", { silent = true });
+--- PLUGIN END: Spectre
+
+
+
+--- PLUGIN START: indentLine
+-- What - Set the indentLine vim-conceal cursor to empty
+vim.g.indentLine_concealcursor=""
+-- Why - If not set, in JSON files, the line under the cursor will not show
+-- double quote characters, which makes it a pain to edit. This sets it so that
+-- the line underneath the cursor will show as normal as if vim-conceal was set
+-- to 0. 
+-- See https://github.com/elzr/vim-json#common-problems for more info.
+
+-- What - Set the indentLine characters default highlight group to Special key
+vim.g.indentLine_defaultGroup = "SpecialKey"
+-- Why - The special key highlight group is the same light grey as comments,
+-- otherwise the default is a darker grey like body text
+--- PLUGIN END: indentLine
