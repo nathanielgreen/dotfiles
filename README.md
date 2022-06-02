@@ -71,7 +71,8 @@ Once all the above programs are installed run the following commands:
   git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 
   # Set up symlinks
-  sudo ln -s ~/.dotfiles/.vimrc ~/.vimrc
+  sudo ln -s ~/.dotfiles/mac/init.lua ~/.config/nvim/init.lua
+  sudo ln -s ~/.dotfiles/mac/lua ~/.config/nvim/lua
   sudo ln -s ~/.dotfiles/mac/config.fish ~/.config/fish/config.fish
   ```
 </details>
