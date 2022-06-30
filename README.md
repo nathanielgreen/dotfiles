@@ -71,9 +71,10 @@ Once all the above programs are installed run the following commands:
   git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 
   # Set up symlinks
-  sudo ln -s ~/.dotfiles/mac/init.lua ~/.config/nvim/init.lua
-  sudo ln -s ~/.dotfiles/mac/lua ~/.config/nvim/lua
-  sudo ln -s ~/.dotfiles/mac/config.fish ~/.config/fish/config.fish
+  sudo ln -s ~/.dotfiles/mac/neovim/init.lua ~/.config/nvim/init.lua
+  sudo ln -s ~/.dotfiles/mac/neovim/lua ~/.config/nvim/lua
+  sudo ln -s ~/.dotfiles/mac/fish/config.fish ~/.config/fish/config.fish
+  sudo ln -s ~/.dotfiles/mac/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
   ```
 </details>
 
