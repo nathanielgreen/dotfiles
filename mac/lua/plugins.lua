@@ -5,6 +5,7 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
+  "dart-lang/dart-vim-plugin";        -- Temporary While Treesitter dart is broken
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
@@ -40,6 +41,12 @@ vim.g.mapleader = " "
 
 -- PLUGIN START: nnn
 vim.api.nvim_set_keymap("n", "-", ":NnnPicker %:p:h<CR>", { silent = true })
+vim.api.nvim_exec([[
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-s>': 'split',
+      \ '<c-v>': 'vsplit' }
+]], true)
 -- PLUGIN END: nnn
  
 
