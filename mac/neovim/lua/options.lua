@@ -1,5 +1,5 @@
 vim.wo.number            = true  -- Show numbers
-vim.wo.numberwidth          = 4
+vim.wo.numberwidth       = 4     -- Set number width
 vim.wo.relativenumber    = true  -- Show relative numbers
 vim.o.showtabline        = 2 	   -- Always Show Tabline
 vim.o.expandtab          = true  -- Convert tabs to spaces.

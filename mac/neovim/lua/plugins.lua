@@ -5,7 +5,6 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
-  "dart-lang/dart-vim-plugin";        -- Temporary While Treesitter dart is broken
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
@@ -64,7 +63,7 @@ require('lualine').setup({
 -- PLUGIN START: telescope
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules/**", ".git/**", ".netlify/**" , ".next/**" },
+    file_ignore_patterns = { "node_modules", ".git/**", ".netlify/**" , ".next/**" },
   }
 }
 -- What - Find files using Telescope command-line sugar.
