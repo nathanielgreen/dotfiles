@@ -28,6 +28,10 @@ export PATH="$PATH":"/usr/local/bin/flutter/.pub-cache/bin"
 # Dart global Executables
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+# Docker
+export PATH="/usr/local/bin:$PATH"
+
+
 
 # -----
 # Aliases
