@@ -17,6 +17,7 @@ require "paq" {
   "nvim-lua/popup.nvim";              -- Telescope Dependency
   "nvim-lua/plenary.nvim";            -- Telescope + Flutter Tools Dependency + Spectre
   "nvim-telescope/telescope.nvim";
+  "akinsho/bufferline.nvim";          -- Bufferline
 
 
   -- Formatting, and linting
@@ -162,3 +163,9 @@ require("flutter-tools").setup{
 }
 vim.api.nvim_set_keymap("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", { silent = true });
 --- PLUGIN END: Flutter tools
+
+
+
+--- PLUGIN START: Bufferline
+require("bufferline").setup{}
+--- PLUGIN END: Bufferline
