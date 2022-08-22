@@ -31,6 +31,13 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Docker
 export PATH="/usr/local/bin:$PATH"
 
+# Android Tools
+export ANDROID_HOME="/Users/nathanielgreen/Library/Android/sdk"
+export ANDROID_SDK_ROOT="/Users/nathanielgreen/Library/Android/sdk"
+export ANDROID_AVD_HOME="/Users/nathanielgreen/.android/avd"
+export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+
+
 
 
 # -----

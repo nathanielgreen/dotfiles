@@ -5,6 +5,7 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
+  "dart-lang/dart-vim-plugin";        -- Dart Support
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
@@ -17,7 +18,7 @@ require "paq" {
   "nvim-lua/popup.nvim";              -- Telescope Dependency
   "nvim-lua/plenary.nvim";            -- Telescope + Flutter Tools Dependency + Spectre
   "nvim-telescope/telescope.nvim";
-  "akinsho/bufferline.nvim";          -- Bufferline
+  -- "akinsho/bufferline.nvim";          -- Bufferline
 
 
   -- Formatting, and linting
@@ -156,16 +157,23 @@ require'nvim-treesitter.configs'.setup {
 
 
 --- PLUGIN START: Flutter tools
-require("flutter-tools").setup{
- dev_log = {
-   open_cmd = "tabedit", -- command to use to open the log buffer
- },
-}
-vim.api.nvim_set_keymap("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", { silent = true });
+-- require("flutter-tools").setup{
+--  dev_log = {
+--    open_cmd = "tabedit", -- command to use to open the log buffer
+--  },
+-- }
+-- vim.api.nvim_set_keymap("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", { silent = true });
 --- PLUGIN END: Flutter tools
 
 
 
 --- PLUGIN START: Bufferline
-require("bufferline").setup{}
+-- require("bufferline").setup{}
 --- PLUGIN END: Bufferline
+
+
+
+--- PLUGIN START: LSP Config
+require'lspconfig'.dartls.setup{}
+--- PLUGIN END: LSP Config
+
