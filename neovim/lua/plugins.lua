@@ -5,11 +5,10 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
-  "dart-lang/dart-vim-plugin";        -- Dart Support
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
-  "folke/tokyonight.nvim";            -- Theme
+  "rebelot/kanagawa.nvim";            -- Theme
   "kyazdani42/nvim-web-devicons";     -- Icons for Trouble and Lualine
 
   -- Navigation
@@ -25,13 +24,13 @@ require "paq" {
   "folke/trouble.nvim";               -- Better Diagnostics
   "mhartington/formatter.nvim";       -- Formatting
   "windwp/nvim-spectre";              -- Project-wide Search and replace
+  "echasnovski/mini.nvim";            -- Completion
 
   -- Other
   "tpope/vim-sensible";               -- Good defaults
   "tpope/vim-commentary";             -- Comment Shortcuts
   "tpope/vim-abolish";                -- For search and replace 
   "Yggdroot/indentLine";              -- For showing the ¦ for indents
-  "akinsho/flutter-tools.nvim";       -- Flutter Tools in Telescope
 
 }
 
@@ -92,6 +91,15 @@ vim.api.nvim_set_keymap("n", "<Leader>t", ":TroubleToggle<CR>", { silent = true 
 require('formatter').setup({
   logging = false,
   filetype = {
+    typescript = {
+      function()
+       return {
+         exe = "prettier",
+         args = {"--stdin-filepath"},
+         stdin = true
+       }
+      end
+    },
     json = {
       function()
        return {
@@ -156,17 +164,6 @@ require'nvim-treesitter.configs'.setup {
 
 
 
---- PLUGIN START: Flutter tools
--- require("flutter-tools").setup{
---  dev_log = {
---    open_cmd = "tabedit", -- command to use to open the log buffer
---  },
--- }
--- vim.api.nvim_set_keymap("n", "<leader>fl", "<CMD>Telescope flutter commands<CR>", { silent = true });
---- PLUGIN END: Flutter tools
-
-
-
 --- PLUGIN START: Bufferline
 -- require("bufferline").setup{}
 --- PLUGIN END: Bufferline
@@ -177,3 +174,8 @@ require'nvim-treesitter.configs'.setup {
 require'lspconfig'.dartls.setup{}
 --- PLUGIN END: LSP Config
 
+
+
+--- PLUGIN START: Mini Completion 
+require('mini.completion').setup()
+--- PLUGIN END: Mini Completion

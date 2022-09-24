@@ -14,4 +14,4 @@ vim.o.autowrite          = true  -- Automatically :write before running commands
 vim.o.autoread           = true  
 vim.o.backup             = false -- No autocreation of backup files
 vim.o.writebackup        = false -- No autocreation of backup files
-
+vim.o.colorcolumn        = "80"
