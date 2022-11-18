@@ -8,7 +8,7 @@ require "paq" {
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
-  "rebelot/kanagawa.nvim";            -- Theme
+  "folke/tokyonight.nvim";            -- Theme
   "kyazdani42/nvim-web-devicons";     -- Icons for Trouble and Lualine
 
   -- Navigation
