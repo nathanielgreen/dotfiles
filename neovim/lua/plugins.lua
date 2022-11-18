@@ -17,7 +17,6 @@ require "paq" {
   "nvim-lua/popup.nvim";              -- Telescope Dependency
   "nvim-lua/plenary.nvim";            -- Telescope + Flutter Tools Dependency + Spectre
   "nvim-telescope/telescope.nvim";
-  -- "akinsho/bufferline.nvim";          -- Bufferline
 
 
   -- Formatting, and linting
@@ -161,12 +160,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 --- PLUGIN END: Treesitter
-
-
-
---- PLUGIN START: Bufferline
--- require("bufferline").setup{}
---- PLUGIN END: Bufferline
 
 
 
