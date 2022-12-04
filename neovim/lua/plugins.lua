@@ -37,7 +37,6 @@ require "paq" {
 vim.g.mapleader = " "
 
 
-
 -- PLUGIN START: nnn
 vim.api.nvim_set_keymap("n", "-", ":NnnPicker %:p:h<CR>", { silent = true })
 vim.api.nvim_exec([[
@@ -90,32 +89,23 @@ vim.api.nvim_set_keymap("n", "<Leader>t", ":TroubleToggle<CR>", { silent = true 
 require('formatter').setup({
   logging = false,
   filetype = {
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
     typescript = {
-      function()
-       return {
-         exe = "prettier",
-         args = {"--stdin-filepath"},
-         stdin = true
-       }
-      end
+      require("formatter.filetypes.typescript").prettier,
+    },
+    javascript = {
+      require("formatter.filetypes.javascriptreact").prettier,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
     },
     json = {
-      function()
-       return {
-         exe = "prettier",
-         args = {"--stdin-filepath"},
-         stdin = true
-       }
-      end
+      require("formatter.filetypes.json").prettier,
     },
     dart = {
-      function()
-       return {
-         exe = "dart format",
-         args = {"--summary=none", "--show=none", "--output=write"},
-         stdin = false
-       }
-      end
+      require("formatter.filetypes.dart").dartformat,
     },
   },
 })
@@ -124,7 +114,7 @@ require('formatter').setup({
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.dart FormatWrite
+  autocmd BufWritePost * FormatWrite
 augroup END
 ]], true)
 --- PLUGIN END: Format
@@ -165,6 +155,7 @@ require'nvim-treesitter.configs'.setup {
 
 --- PLUGIN START: LSP Config
 require'lspconfig'.dartls.setup{}
+require'lspconfig'.eslint.setup{}
 --- PLUGIN END: LSP Config
 
 
