@@ -39,6 +39,10 @@ move < h : yabai -m window --swap west
 move < j : yabai -m window --swap south
 move < k : yabai -m window --swap north
 move < l : yabai -m window --swap east
+move < shift - h : yabai -m window --warp west
+move < shift - j : yabai -m window --warp south
+move < shift - k : yabai -m window --warp north
+move < shift - l : yabai -m window --warp east
 move < alt - h : yabai -m window --display west; yabai -m display --focus west
 move < alt - l : yabai -m window --display east; yabai -m display --focus east
 
