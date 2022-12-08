@@ -1,9 +1,9 @@
 # ***
 # Modes
 # ***
-:: default : yabai -m config active_window_border_color 0xFFFFFFFF
-:: move @ : yabai -m config active_window_border_color 0xFF0000FF
-:: resize @ : yabai -m config active_window_border_color 0xFFFF0000
+:: default : yabai -m config active_window_border_color 0xffbb9af7
+:: move @ : yabai -m config active_window_border_color 0xff7aa2f7
+:: resize @ : yabai -m config active_window_border_color 0xff9ece6a
 
 # Mode Enter and Exit hotkeys
 ctrl + cmd - t ; move # Move mode enter
