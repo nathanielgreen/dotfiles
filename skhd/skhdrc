@@ -1,36 +1,62 @@
-### Windows
+# ***
+# Modes
+# ***
+:: default : yabai -m config active_window_border_color 0xFFFFFFFF
+:: move @ : yabai -m config active_window_border_color 0xFF0000FF
+:: resize @ : yabai -m config active_window_border_color 0xFFFF0000
 
-:: resize @ : yabai highlight_resize
+# Mode Enter and Exit hotkeys
+ctrl + cmd - t ; move # Move mode enter
+move < escape; default # Move mode exit
 
+ctrl + cmd - r ; resize # Resize mode enter
+resize < escape; default # Resize mode exit
 
-ctrl + cmd - r : resize
-#
+# ---
+
+# ***
+# Focus Windows + Displays
+# ***
+
 # Focus Windows
 ctrl + cmd - h : yabai -m window --focus west
 ctrl + cmd - j : yabai -m window --focus south
 ctrl + cmd - k : yabai -m window --focus north
 ctrl + cmd - l : yabai -m window --focus east
 
-# Move Focused window
-ctrl + cmd + shift - h : yabai -m window --warp west
-ctrl + cmd + shift - j : yabai -m window --warp south
-ctrl + cmd + shift - k : yabai -m window --warp north
-ctrl + cmd + shift - l : yabai -m window --warp east
+# Focus Displays
+ctrl + alt - h : yabai -m display --focus west
+ctrl + alt - j : yabai -m display --focus south
+ctrl + alt - k : yabai -m display --focus north
+ctrl + alt - l : yabai -m display --focus east
 
-# Move Focused window
-ctrl + cmd + alt - h : yabai -m window --resize left:-20:0
-ctrl + cmd + alt - j : yabai -m window --resize bottom:-20:0
-ctrl + cmd + alt - k : yabai -m window --resize bottom:0:-20
-ctrl + cmd + alt - l : yabai -m window --resize left:0:-20
+# ---
+
+# ***
+# Move Windows
+# ***
+move < h : yabai -m window --swap west
+move < j : yabai -m window --swap south
+move < k : yabai -m window --swap north
+move < l : yabai -m window --swap east
+move < alt - h : yabai -m window --display west; yabai -m display --focus west
+move < alt - l : yabai -m window --display east; yabai -m display --focus east
+
+# ---
+
+# *** 
+# Resize Windows
+# ***
+resize < h : yabai -m window --resize left:-40:0
+resize < j : yabai -m window --resize bottom:0:-40
+resize < k : yabai -m window --resize bottom:0:40
+resize < l : yabai -m window --resize left:40:0
+
+# ---
+
+# *** 
+# Toggles
+# ***
 
 # Toggle Split
 ctrl + cmd - e : yabai -m window --toggle split
-
-
-## Displays
-# Focus Displays
-ctrl + shift + alt - h : yabai -m display --focus west
-ctrl + shift + alt - j : yabai -m display --focus south
-ctrl + shift + alt - k : yabai -m display --focus north
-ctrl + shift + alt - l : yabai -m display --focus east
-
