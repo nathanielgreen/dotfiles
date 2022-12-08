@@ -1,0 +1,36 @@
+### Windows
+
+:: resize @ : yabai highlight_resize
+
+
+ctrl + cmd - r : resize
+#
+# Focus Windows
+ctrl + cmd - h : yabai -m window --focus west
+ctrl + cmd - j : yabai -m window --focus south
+ctrl + cmd - k : yabai -m window --focus north
+ctrl + cmd - l : yabai -m window --focus east
+
+# Move Focused window
+ctrl + cmd + shift - h : yabai -m window --warp west
+ctrl + cmd + shift - j : yabai -m window --warp south
+ctrl + cmd + shift - k : yabai -m window --warp north
+ctrl + cmd + shift - l : yabai -m window --warp east
+
+# Move Focused window
+ctrl + cmd + alt - h : yabai -m window --resize left:-20:0
+ctrl + cmd + alt - j : yabai -m window --resize bottom:-20:0
+ctrl + cmd + alt - k : yabai -m window --resize bottom:0:-20
+ctrl + cmd + alt - l : yabai -m window --resize left:0:-20
+
+# Toggle Split
+ctrl + cmd - e : yabai -m window --toggle split
+
+
+## Displays
+# Focus Displays
+ctrl + shift + alt - h : yabai -m display --focus west
+ctrl + shift + alt - j : yabai -m display --focus south
+ctrl + shift + alt - k : yabai -m display --focus north
+ctrl + shift + alt - l : yabai -m display --focus east
+

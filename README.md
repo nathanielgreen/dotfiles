@@ -5,8 +5,8 @@ This is where my dotfiles are stored.
 # System
 
 - Model: 14" 2021 Macbook Pro
-- OS: MacOS Monterey
-- WM: Amethyst
+- OS: MacOS Ventura
+- WM: yabai
 - CPU: M1 Max with 10-core  
 - GPU: M1 Max 24-core, 16-core Neural Engine
 - RAM: 32GB
@@ -44,4 +44,6 @@ sudo ln -s ~/.dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 sudo ln -s ~/.dotfiles/neovim/lua ~/.config/nvim/lua
 sudo ln -s ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 sudo ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+sudo ln -s ~/.dotfiles/yabai/yabairc ~/.config/yabai/yabairc
+sudo ln -s ~/.dotfiles/skhd/skhdrc ~/.config/skhd/skhdrc
 ```

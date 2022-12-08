@@ -37,7 +37,8 @@ export ANDROID_SDK_ROOT="/Users/nathanielgreen/Library/Android/sdk"
 export ANDROID_AVD_HOME="/Users/nathanielgreen/.android/avd"
 export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
-
+# NNN Config
+export NNN_OPTS="deio"
 
 
 # -----
