@@ -64,3 +64,6 @@ resize < l : yabai -m window --resize left:40:0
 
 # Toggle Split
 ctrl + cmd - e : yabai -m window --toggle split
+
+# Toggle Float
+ctrl + cmd - f : yabai -m window --toggle float

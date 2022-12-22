@@ -5,6 +5,7 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
+  "dart-lang/dart-vim-plugin";         -- Dart Support as TS crashes randomly
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
@@ -30,6 +31,8 @@ require "paq" {
   "tpope/vim-commentary";             -- Comment Shortcuts
   "tpope/vim-abolish";                -- For search and replace 
   "Yggdroot/indentLine";              -- For showing the ¦ for indents
+  "mfussenegger/nvim-dap";            -- Debugger
+  "rcarriga/nvim-dap-ui";             -- Debugger UI
 
 }
 
@@ -163,3 +166,9 @@ require'lspconfig'.eslint.setup{}
 --- PLUGIN START: Mini Completion 
 require('mini.completion').setup()
 --- PLUGIN END: Mini Completion
+
+
+
+--- PLUGIN START: dap + dapui
+require("dapui").setup()
+--- PLUGIN END: dap + dapui
