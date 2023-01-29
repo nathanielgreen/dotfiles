@@ -18,6 +18,7 @@ require "paq" {
   "nvim-lua/popup.nvim";              -- Telescope Dependency
   "nvim-lua/plenary.nvim";            -- Telescope + Flutter Tools Dependency + Spectre
   "nvim-telescope/telescope.nvim";
+  "ThePrimeagen/harpoon";             -- Scoped Fuzzy find
 
 
   -- Formatting, and linting
@@ -172,3 +173,8 @@ require('mini.completion').setup()
 --- PLUGIN START: dap + dapui
 require("dapui").setup()
 --- PLUGIN END: dap + dapui
+
+
+
+--- PLUGIN START: Harpoon
+--- PLUGIN END: Harpoon
