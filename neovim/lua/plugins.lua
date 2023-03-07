@@ -160,6 +160,7 @@ require'nvim-treesitter.configs'.setup {
 --- PLUGIN START: LSP Config
 require'lspconfig'.dartls.setup{}
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.tsserver.setup{}
 --- PLUGIN END: LSP Config
 
 
