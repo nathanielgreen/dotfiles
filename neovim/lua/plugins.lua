@@ -20,7 +20,6 @@ require "paq" {
   "nvim-telescope/telescope.nvim";
   "ThePrimeagen/harpoon";             -- Scoped Fuzzy find
 
-
   -- Formatting, and linting
   "folke/trouble.nvim";               -- Better Diagnostics
   "mhartington/formatter.nvim";       -- Formatting
@@ -28,12 +27,15 @@ require "paq" {
   "echasnovski/mini.nvim";            -- Completion
 
   -- Other
+  "github/copilot.vim";       
   "tpope/vim-sensible";               -- Good defaults
   "tpope/vim-commentary";             -- Comment Shortcuts
   "tpope/vim-abolish";                -- For search and replace 
   "Yggdroot/indentLine";              -- For showing the ¦ for indents
   "mfussenegger/nvim-dap";            -- Debugger
   "rcarriga/nvim-dap-ui";             -- Debugger UI
+  "stevearc/dressing.nvim";           -- Dependency for Flutter tools
+  "akinsho/flutter-tools.nvim";       -- Flutter Extras
 
 }
 
@@ -158,7 +160,7 @@ require'nvim-treesitter.configs'.setup {
 
 
 --- PLUGIN START: LSP Config
-require'lspconfig'.dartls.setup{}
+-- require'lspconfig'.dartls.setup{} -- Set up by Flutter tools plugin
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.tsserver.setup{}
 --- PLUGIN END: LSP Config
@@ -179,3 +181,9 @@ require("dapui").setup()
 
 --- PLUGIN START: Harpoon
 --- PLUGIN END: Harpoon
+
+
+
+--- PLUGIN START: Flutter tools
+require("flutter-tools").setup {} -- use defaults
+--- PLUGIN END: Flutter tools
