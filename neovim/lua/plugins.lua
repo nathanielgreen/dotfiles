@@ -6,6 +6,7 @@ require "paq" {
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
   "dart-lang/dart-vim-plugin";         -- Dart Support as TS crashes randomly
+  "wuelnerdotexe/vim-astro";          -- Astro support
 
   -- Themes
   "hoob3rt/lualine.nvim";             -- Powerline
@@ -182,6 +183,13 @@ require("dapui").setup()
 --- PLUGIN START: Harpoon
 --- PLUGIN END: Harpoon
 
+
+
+--- PLUGIN START: vim-astro
+vim.api.nvim_exec([[
+let g:astro_typescript = 'enable'
+]], true)
+--- PLUGIN END: vim-astro
 
 
 --- PLUGIN START: Flutter tools
