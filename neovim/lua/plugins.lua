@@ -5,7 +5,7 @@ require "paq" {
   -- Syntax
   "neovim/nvim-lspconfig";       
   "nvim-treesitter/nvim-treesitter";  -- Extra Detailed Syntax Highlighting
-  "dart-lang/dart-vim-plugin";         -- Dart Support as TS crashes randomly
+  "dart-lang/dart-vim-plugin";        -- Dart Support as TS crashes randomly
   "wuelnerdotexe/vim-astro";          -- Astro support
 
   -- Themes
@@ -30,7 +30,6 @@ require "paq" {
   -- Other
   "github/copilot.vim";       
   "tpope/vim-sensible";               -- Good defaults
-  "tpope/vim-commentary";             -- Comment Shortcuts
   "tpope/vim-abolish";                -- For search and replace 
   "Yggdroot/indentLine";              -- For showing the ¦ for indents
   "mfussenegger/nvim-dap";            -- Debugger
@@ -168,9 +167,10 @@ require'lspconfig'.tsserver.setup{}
 
 
 
---- PLUGIN START: Mini Completion 
+--- PLUGIN START: Mini  
 require('mini.completion').setup()
---- PLUGIN END: Mini Completion
+require('mini.comment').setup()
+--- PLUGIN END: Mini 
 
 
 
