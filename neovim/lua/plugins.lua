@@ -9,7 +9,6 @@ require "paq" {
   "wuelnerdotexe/vim-astro";          -- Astro support
 
   -- Themes
-  "hoob3rt/lualine.nvim";             -- Powerline
   "folke/tokyonight.nvim";            -- Theme
   "kyazdani42/nvim-web-devicons";     -- Icons for Trouble and Lualine
 
@@ -25,7 +24,7 @@ require "paq" {
   "folke/trouble.nvim";               -- Better Diagnostics
   "mhartington/formatter.nvim";       -- Formatting
   "windwp/nvim-spectre";              -- Project-wide Search and replace
-  "echasnovski/mini.nvim";            -- Completion
+  "echasnovski/mini.nvim";            -- Collection of small plugins
 
   -- Other
   "github/copilot.vim";       
@@ -50,16 +49,6 @@ let g:nnn#action = {
       \ '<c-v>': 'vsplit' }
 ]], true)
 -- PLUGIN END: nnn
- 
-
-
--- PLUGIN START: lualine
-require('lualine').setup({
-  options = {
-    theme = 'tokyonight'
-  }
-})
--- PLUGIN END: lualine
 
 
 
@@ -155,6 +144,7 @@ require('mini.comment').setup()
 require('mini.indentscope').setup()
 require('mini.jump').setup()
 require('mini.cursorword').setup()
+require('mini.statusline').setup()
 --- PLUGIN END: Mini 
 
 
