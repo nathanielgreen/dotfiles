@@ -31,7 +31,6 @@ require "paq" {
   "github/copilot.vim";       
   "tpope/vim-sensible";               -- Good defaults
   "tpope/vim-abolish";                -- For search and replace 
-  "Yggdroot/indentLine";              -- For showing the ¦ for indents
   "mfussenegger/nvim-dap";            -- Debugger
   "rcarriga/nvim-dap-ui";             -- Debugger UI
   "stevearc/dressing.nvim";           -- Dependency for Flutter tools
@@ -132,23 +131,6 @@ vim.api.nvim_set_keymap("n", "<leader>S", ":lua require('spectre').open()<CR>", 
 
 
 
---- PLUGIN START: indentLine
--- What - Set the indentLine vim-conceal cursor to empty
-vim.g.indentLine_concealcursor=""
--- Why - If not set, in JSON files, the line under the cursor will not show
--- double quote characters, which makes it a pain to edit. This sets it so that
--- the line underneath the cursor will show as normal as if vim-conceal was set
--- to 0. 
--- See https://github.com/elzr/vim-json#common-problems for more info.
-
--- What - Set the indentLine characters default highlight group to Special key
-vim.g.indentLine_defaultGroup = "SpecialKey"
--- Why - The special key highlight group is the same light grey as comments,
--- otherwise the default is a darker grey like body text
---- PLUGIN END: indentLine
-
-
-
 --- PLUGIN START: Treesitter
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -170,6 +152,7 @@ require'lspconfig'.tsserver.setup{}
 --- PLUGIN START: Mini  
 require('mini.completion').setup()
 require('mini.comment').setup()
+require('mini.indentscope').setup()
 --- PLUGIN END: Mini 
 
 
