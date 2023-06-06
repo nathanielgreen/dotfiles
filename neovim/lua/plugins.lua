@@ -29,7 +29,6 @@ require "paq" {
 
   -- Other
   "github/copilot.vim";       
-  "tpope/vim-sensible";               -- Good defaults
   "tpope/vim-abolish";                -- For search and replace 
   "mfussenegger/nvim-dap";            -- Debugger
   "rcarriga/nvim-dap-ui";             -- Debugger UI
@@ -150,9 +149,12 @@ require'lspconfig'.tsserver.setup{}
 
 
 --- PLUGIN START: Mini  
+require('mini.basics').setup()
 require('mini.completion').setup()
 require('mini.comment').setup()
 require('mini.indentscope').setup()
+require('mini.jump').setup()
+require('mini.cursorword').setup()
 --- PLUGIN END: Mini 
 
 
