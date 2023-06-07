@@ -6,3 +6,4 @@ vim.o.softtabstop        = 2
 vim.o.shiftwidth         = 2
 vim.o.termguicolors      = true  -- Use true colors, required for some plugins
 vim.o.colorcolumn        = "80"
+vim.o.swapfile           = false -- http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
