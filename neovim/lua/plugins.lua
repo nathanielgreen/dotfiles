@@ -243,7 +243,7 @@ vim.api.nvim_set_keymap("n", "-", ":Neotree reveal filesystem float <CR>", { sil
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+  require('lspconfig')['dartls'].setup {
     capabilities = capabilities
   }
 -- PLUGIN END: Cmp
