@@ -14,7 +14,7 @@ font:
     family: FiraCode Nerd Font Mono
 
 shell:
-  program: /opt/homebrew/bin/fish
+  program: /bin/zsh
 
 # TokyoNight Alacritty Colors
 colors:

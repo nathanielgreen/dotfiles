@@ -16,8 +16,7 @@ This is where my dotfiles are stored.
 - Font: [FiraCode](https://github.com/tonsky/FiraCode/wiki/)
 - Terminal: [alacritty](https://alacritty.org/)
 - Shell: 
-  - Login: [zsh](https://www.zsh.org/)
-  - Interactive Shell [fish](https://fishshell.com/)
+  - [zsh](https://www.zsh.org/)
 - Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
 - Utilities:
   - Quick Navigation: [zoxide](https://github.com/ajeetdsouza/zoxide)
@@ -28,7 +27,7 @@ This is where my dotfiles are stored.
   - [asdf-go](https://github.com/kennyp/asdf-golang)
   - [asdf-python](https://github.com/danhper/asdf-python)
 - Editor: [neovim](https://github.com/neovim/neovim)
-  - Plugin Manager: [paq](https://github.com/savq/paq-nvim)
+  - Plugin Manager: [lazy](https://www.lazyvim.org/)
 - Terminal Multiplexer: [zellij](https://zellij.dev/)
 
 # Installation
@@ -42,8 +41,8 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 # Set up symlinks
 sudo ln -s ~/.dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 sudo ln -s ~/.dotfiles/neovim/lua ~/.config/nvim/lua
-sudo ln -s ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 sudo ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 sudo ln -s ~/.dotfiles/yabai/yabairc ~/.config/yabai/yabairc
 sudo ln -s ~/.dotfiles/skhd/skhdrc ~/.config/skhd/skhdrc
+sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```
