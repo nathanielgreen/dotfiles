@@ -30,12 +30,6 @@ ctrl + alt - j : yabai -m display --focus south
 ctrl + alt - k : yabai -m display --focus north
 ctrl + alt - l : yabai -m display --focus east
 
-# Focus Spaces
-# ctrl + cmd - 1 : yabai -m window --focus 1
-# ctrl + cmd - 2 : yabai -m space --focus 2
-# ctrl + cmd - 3 : yabai -m space --focus 3
-# ctrl + cmd - 4 : yabai -m space --focus 4
-
 # ---
 
 # ***
@@ -79,3 +73,6 @@ ctrl + cmd - e : yabai -m window --toggle split
 
 # Toggle Float
 ctrl + cmd - f : yabai -m window --toggle float
+
+# Toggle Mouse autoraise
+ctrl + alt + cmd - m : [[ $(yabai -m config focus_follows_mouse) = "disabled" ]] && yabai -m config focus_follows_mouse autofocus || yabai -m config focus_follows_mouse off
