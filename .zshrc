@@ -28,6 +28,11 @@ export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platfo
 # --- Aliases ---
 
 alias vim="nvim"
+alias quadscreen='displayplacer "id:8E338A58-9E07-4871-A1BD-C143D00BF721 res:2560x1440 hz:60 color_depth:8 scaling:off origin:(0,0) degree:0" "id:8B47AF5A-222E-45C4-A5D7-4AB91321B078 res:2560x2880 hz:60 color_depth:8 scaling:off origin:(2560,-1440) degree:0" "id:230BB08D-4F29-4C1B-B24A-72FCD00E2455 res:2560x2880 hz:60 color_depth:7 scaling:off origin:(-2560,-1440) degree:0"'
+alias triplescreen='displayplacer "id:8B47AF5A-222E-45C4-A5D7-4AB91321B078 res:2560x2880 hz:60 color_depth:7 scaling:off origin:(0,0) degree:0" "id:230BB08D-4F29-4C1B-B24A-72FCD00E2455 res:2560x2880 hz:60 color_depth:7 scaling:off origin:(-5120,0) degree:0" "id:8E338A58-9E07-4871-A1BD-C143D00BF721 res:2560x2880 hz:60 color_depth:7 scaling:off origin:(-2560,0) degree:0"'
+
+alias gitlh='git log -n 1 --pretty=format:"%H" | pbcopy' # Copies latest git hash to clipboard
+
 
 # --- Plugins ---
 
@@ -39,3 +44,9 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(mcfly init zsh)"
 source $ZSH/oh-my-zsh.sh
+
+
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
