@@ -6,7 +6,7 @@ This is where my dotfiles are stored.
 
 - Model: 14" 2021 Macbook Pro
 - OS: MacOS Ventura
-- WM: yabai
+- WM: aerospace
 - CPU: M1 Max with 10-core  
 - GPU: M1 Max 24-core, 16-core Neural Engine
 - RAM: 32GB
@@ -42,7 +42,6 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 sudo ln -s ~/.dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 sudo ln -s ~/.dotfiles/neovim/lua ~/.config/nvim/lua
 sudo ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-sudo ln -s ~/.dotfiles/yabai/yabairc ~/.config/yabai/yabairc
-sudo ln -s ~/.dotfiles/skhd/skhdrc ~/.config/skhd/skhdrc
+sudo ln -s ~/.dotfiles/.aerospace.toml ~/.aerospace.toml
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```
