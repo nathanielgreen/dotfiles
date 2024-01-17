@@ -43,6 +43,22 @@ require("lazy").setup({
   "mhartington/formatter.nvim",       -- Formatting
   "windwp/nvim-spectre",              -- Project-wide Search and replace
   "echasnovski/mini.nvim",            -- Collection of small plugins
+  { 
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "sidlatau/neotest-dart",
+    }
+  },
+  {
+    "andythigpen/nvim-coverage",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    }
+  },
+
+
 
   -- Other
   "github/copilot.vim",               -- AI Autocomplete
@@ -55,7 +71,8 @@ require("lazy").setup({
       'nvim-lua/plenary.nvim',
     },
     config = true,
-  }
+  },
+  {'akinsho/toggleterm.nvim', version = "*", config = true} -- Terminal in a floating window
 })
 
 -- Set Leader Key
@@ -249,3 +266,24 @@ vim.api.nvim_set_keymap("n", "-", ":Neotree reveal filesystem float <CR>", { sil
   --   capabilities = capabilities
   -- }
 -- PLUGIN END: Cmp
+
+
+
+-- PLUGIN START: Toggleterm
+require("toggleterm").setup{}
+vim.api.nvim_set_keymap("n", "<Leader>ct", ":ToggleTerm<CR>", { silent = true });
+-- PLUGIN END: Toggleterm
+
+
+
+-- PLUGIN START: Neotest
+require("neotest").setup({
+  adapters = {
+    require("neotest-dart")({
+      command = "flutter",
+      use_lsp = true,
+    }),
+  },
+})
+vim.api.nvim_set_keymap("n", "<Leader>ct", ":ToggleTerm<CR>", { silent = true });
+-- PLUGIN END: Neotest

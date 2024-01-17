@@ -41,7 +41,7 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 # Set up symlinks
 sudo ln -s ~/.dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 sudo ln -s ~/.dotfiles/neovim/lua ~/.config/nvim/lua
-sudo ln -s ~/.dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+sudo ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 sudo ln -s ~/.dotfiles/.aerospace.toml ~/.aerospace.toml
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```

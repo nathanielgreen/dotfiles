@@ -12,6 +12,7 @@ export EDITOR="$VISUAL"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH" # Homebrew Setup
+export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Flutter Setup
@@ -50,3 +51,9 @@ source $ZSH/oh-my-zsh.sh
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nathanielgreen/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nathanielgreen/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nathanielgreen/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathanielgreen/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

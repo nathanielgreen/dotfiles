@@ -86,8 +86,8 @@ alt-shift-k = 'move-through up'
 alt-shift-l = 'move-through right'
 
 # See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/commands.md#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-ctrl-minus = 'resize smart -50'
+alt-ctrl-equal = 'resize smart +50'
 
 # See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/commands.md#workspace
 alt-1 = 'workspace 1'
@@ -101,15 +101,15 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
 # See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/commands.md#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
-alt-shift-6 = 'move-node-to-workspace 6'
-alt-shift-7 = 'move-node-to-workspace 7'
-alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
+alt-ctrl-1 = 'move-node-to-workspace 1'
+alt-ctrl-2 = 'move-node-to-workspace 2'
+alt-ctrl-3 = 'move-node-to-workspace 3'
+alt-ctrl-4 = 'move-node-to-workspace 4'
+alt-ctrl-5 = 'move-node-to-workspace 5'
+alt-ctrl-6 = 'move-node-to-workspace 6'
+alt-ctrl-7 = 'move-node-to-workspace 7'
+alt-ctrl-8 = 'move-node-to-workspace 8'
+alt-ctrl-9 = 'move-node-to-workspace 9'
 
 # See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/commands.md#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -117,8 +117,8 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor next'
 
 # See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/commands.md#mode
-alt-shift-semicolon = 'mode service'
-alt-shift-slash = 'mode join'
+alt-ctrl-semicolon = 'mode service'
+alt-ctrl-slash = 'mode join'
 
 # 'service' binding mode declaration. See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/guide.md#bindings-modes
 [mode.service.binding]
@@ -130,10 +130,10 @@ esc = 'mode main'
 
 # 'join' binding mode declaration. See: https://github.com/nikitabobko/AeroSpace/blob/main/docs/guide.md#bindings-modes
 [mode.join.binding]
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+alt-ctrl-h = ['join-with left', 'mode main']
+alt-ctrl-j = ['join-with down', 'mode main']
+alt-ctrl-k = ['join-with up', 'mode main']
+alt-ctrl-l = ['join-with right', 'mode main']
 esc = ['reload-config', 'mode main']
 
 [workspace-to-monitor-force-assignment]
