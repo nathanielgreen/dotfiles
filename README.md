@@ -5,7 +5,7 @@ This is where my dotfiles are stored.
 # System
 
 - Model: 14" 2021 Macbook Pro
-- OS: MacOS Ventura
+- OS: MacOS Sonoma
 - WM: aerospace
 - CPU: M1 Max with 10-core  
 - GPU: M1 Max 24-core, 16-core Neural Engine
@@ -17,7 +17,7 @@ This is where my dotfiles are stored.
 - Terminal: [alacritty](https://alacritty.org/)
 - Shell: 
   - [zsh](https://www.zsh.org/)
-- Terminal Colors/Theme: [TokyoNight](https://github.com/folke/tokyonight.nvim)
+- Terminal Colors/Theme: [catppuccin](https://github.com/catppuccin/catppuccin)
 - Utilities:
   - Quick Navigation: [zoxide](https://github.com/ajeetdsouza/zoxide)
   - File searcher: [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -28,7 +28,7 @@ This is where my dotfiles are stored.
   - [asdf-python](https://github.com/danhper/asdf-python)
 - Editor: [neovim](https://github.com/neovim/neovim)
   - Plugin Manager: [lazy](https://www.lazyvim.org/)
-- Terminal Multiplexer: [zellij](https://zellij.dev/)
+- Terminal Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 
 # Installation
 
@@ -42,6 +42,7 @@ git clone git@github.com:nathanielgreen/dotfiles.git ~/.dotfiles
 sudo ln -s ~/.dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 sudo ln -s ~/.dotfiles/neovim/lua ~/.config/nvim/lua
 sudo ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+sudo ln -s ~/.dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
 sudo ln -s ~/.dotfiles/.aerospace.toml ~/.aerospace.toml
 sudo ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```

@@ -12,7 +12,11 @@ require("lazy").setup({
 
 
   -- Themes
-  "folke/tokyonight.nvim",            -- Theme
+  { 
+    "catppuccin/nvim",              -- Theme
+    name = "catppuccin", 
+    priority = 1000 
+  },
 
   -- Navigation
   "unblevable/quick-scope",           -- First Letter Highlighting
@@ -36,6 +40,24 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     }
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
   },
 
   -- Formatting, and linting
@@ -287,3 +309,12 @@ require("neotest").setup({
 })
 vim.api.nvim_set_keymap("n", "<Leader>ct", ":ToggleTerm<CR>", { silent = true });
 -- PLUGIN END: Neotest
+
+
+--- PLUGIN START: Cattppuccin
+require("catppuccin").setup({
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
+})
+vim.cmd.colorscheme "catppuccin"
+vim.o.background = "dark"
+--- PLUGIN END: Cattppuccin
