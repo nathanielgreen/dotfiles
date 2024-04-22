@@ -25,6 +25,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
 export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+export JAVA_HOME="/Users/nathanielgreen/Library/Java/JavaVirtualMachines/corretto-17.9.10/Contents/Home"
 
 # --- Aliases ---
 
