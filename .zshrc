@@ -33,7 +33,7 @@ export PATH="/Users/nathanielgreen/.shorebird/bin:$PATH"
 
 alias vim="nvim"
 alias htop='btop'
-alias docu='docker compose -f docker-compose.yml -f docker-compose.mac.yml up -d'
+alias docu='docker compose up -d'
 alias docd='docker compose down'
 alias gitlh='git log -n 1 --pretty=format:"%H" | pbcopy' # Copies latest git hash to clipboard
 
@@ -60,4 +60,6 @@ if [ -f '/Users/nathanielgreen/Downloads/google-cloud-sdk/path.zsh.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/nathanielgreen/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nathanielgreen/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
 
