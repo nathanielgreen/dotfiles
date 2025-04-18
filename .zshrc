@@ -63,3 +63,7 @@ if [ -f '/Users/nathanielgreen/Downloads/google-cloud-sdk/completion.zsh.inc' ];
 
 
 
+# Python Setup installed via Pyenv via brew
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
