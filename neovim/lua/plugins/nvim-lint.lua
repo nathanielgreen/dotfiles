@@ -3,15 +3,15 @@ return {
   config = function()
     local lint = require("lint")
 
-    lint.linters_by_ft = {
-      python = { "ruff" },
-    }
-
-    vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
-      pattern = "*",
-      callback = function()
-        lint.try_lint()
-      end,
-    })
+    -- lint.linters_by_ft = {
+    --   python = { "ruff" },
+    -- }
+    --
+    -- vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+    --   pattern = "*",
+    --   callback = function()
+    --     lint.try_lint()
+    --   end,
+    -- })
   end,
 }
