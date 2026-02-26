@@ -1,9 +1,9 @@
 return {
   "neovim/nvim-lspconfig",       
   config = function()
-    require'lspconfig'.eslint.setup{}
-    require'lspconfig'.ts_ls.setup{}
-    require'lspconfig'.jdtls.setup{}
-    require'lspconfig'.pyright.setup{}
+    vim.lsp.enable('eslint')
+    vim.lsp.enable('ts_ls')
+    vim.lsp.enable('jdtls')
+    vim.lsp.enable('pyright')
   end
 }

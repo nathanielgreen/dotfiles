@@ -5,7 +5,7 @@ This is where my dotfiles are stored.
 # System
 
 - Model: 14" 2021 Macbook Pro
-- OS: MacOS Sonoma
+- OS: MacOS Tahoe
 - WM: aerospace
 - CPU: M1 Max with 10-core  
 - GPU: M1 Max 24-core, 16-core Neural Engine
