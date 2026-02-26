@@ -36,6 +36,7 @@ alias htop='btop'
 alias docu='docker compose up -d'
 alias docd='docker compose down'
 alias gitlh='git log -n 1 --pretty=format:"%H" | pbcopy' # Copies latest git hash to clipboard
+alias venv='source .venv/bin/activate' # Activate Python Virtual Environment
 
 
 # --- Plugins ---
@@ -49,9 +50,11 @@ eval "$(starship init zsh)"
 eval "$(mcfly init zsh)"
 source $ZSH/oh-my-zsh.sh
 
+source ~/.config/op/plugins.sh
 
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 
 
@@ -69,3 +72,27 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 export GEMINI_SANDBOX=true
+
+## Evogro 1P CLI Plugin Completion
+
+# 1. global op completion
+
+eval "$(op completion zsh)"; compdef _op op
+
+# 2. source the 1P plugin config
+
+source ~/.config/op/plugins.sh
+
+# 3. typer completion
+
+#compdef evogro
+
+_evogro_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _EVOGRO_COMPLETE=complete_zsh evogro)
+}
+
+compdef _evogro_completion evogro
+
+## End of 1P Completion
+
+
